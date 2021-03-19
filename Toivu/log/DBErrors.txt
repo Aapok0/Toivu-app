@@ -1,0 +1,17 @@
+index.php: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'commentUserID' cannot be null
+index.php: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'commentUserID' cannot be null
+index.php: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'commentUserID' cannot be null
+index.php: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'commentUserID' cannot be null
+index.php: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'commentUserID' cannot be null
+index.php: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'commentUserID' cannot be null
+index.php: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'commentUserID' cannot be null
+index.php: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'commentUserID' cannot be null
+index.php: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'commentUserID' cannot be null
+index.php: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'commentUserID' cannot be null
+index.php: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'commentUserID' cannot be null
+index.php: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'commentUserID' cannot be null
+index.php: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'commentUserID' cannot be null
+index.php: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'commentUserID' cannot be null
+index.php: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'commentUserID' cannot be null
+index.php: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'commentUserID' cannot be null
+index.php: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'commentUserID' cannot be null

@@ -1,0 +1,67 @@
+/* SITE-WIDE */
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+/* NAVIGATION */
+
+nav {
+    background-color: burlywood;
+}
+
+#nav-bar {
+    padding-top: 50px;
+}
+
+#nav {
+    margin: 13px 0 0 0;
+}
+
+#nav ul li, #user {
+    display: inline;
+    margin: 0 20px 0 0;
+    margin-bottom: 130px;
+    color: black;
+}
+
+#nav a {
+    text-decoration: none;
+    color: black;
+}
+
+#nav a:hover {
+    text-decoration: underline;
+}
+
+/* FORM */
+
+fieldset {
+    margin-top: 25%;
+}
+
+input[type=text], input[type=password] {
+    width: 300px;
+}
+
+label, input[type="radio"] {
+    vertical-align: middle;
+    display: inline;
+    margin-bottom: 0;
+}
+
+#desc {
+    font-style: italic;
+    color: dimgray;
+}
+
+/* FOOTER */
+
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: -200px;
+    padding-top: 20px;
+    background-color: burlywood;
+}
