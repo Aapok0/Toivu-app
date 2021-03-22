@@ -15,12 +15,8 @@
 
         <div id="nav" class="seven columns">
             <ul>
-                <li>
-                    <a href="index.php">Koti</a>
-                </li>
-                <li>
-                    <a href="#">Tietoa</a>
-                </li>
+                <li><a href="index.php">Koti</a></li>
+                <li><a href="infoPage.php">Tietoa</a></li>
             </ul>
         </div>
 
