@@ -59,7 +59,7 @@
           $_SESSION['swarningInput'] = "Annettu salasana ja vahvistus eivät ole samat";
         }
         else if (!empty($_POST['givenHeight'])) {
-          if (filter_var($_POST['givenHeight'], FILTER_VALIDATE_INT)) {
+          if (is_numeric($_POST['givenHeight'] != 1)) {
             $_SESSION['swarningInput'] = "Annettu pituus ei ole numero";
           }
           else {
@@ -67,7 +67,7 @@
           }
         }
         else if (empty($_POST['givenWeight'])) {
-          if (filter_var($_POST['givenWeight'], FILTER_VALIDATE_INT)) {
+          if (is_numeric($_POST['givenWeight'] != 1)) {
             $_SESSION['swarningInput'] = "Annettu paino ei ole numero";
           }
           else {

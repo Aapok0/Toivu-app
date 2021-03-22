@@ -31,6 +31,16 @@
             </div>
         </nav>
 
+        <div class="container">
+            <div class="twelve columns">
+                <h1>
+                    <?php
+                        echo($_SESSION['suserName'] . ":n oma sivu");
+                    ?>
+                </h1>
+            </div>
+        </div>
+
         <?php
         include("includes/ifooter.php");
         ?>
