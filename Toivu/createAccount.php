@@ -9,11 +9,11 @@
       <div id="nav-bar" class="container">
 
         <!-- Logo vasempaan ylälaitaan -->
-        <div class="two columns">
+        <div class="six columns">
             <h1>Logo</h1>
         </div>
 
-        <div id="nav" class="seven columns">
+        <div id="nav" class="three columns">
             <ul>
                 <li><a href="index.php">Koti</a></li>
                 <li><a href="infoPage.php">Tietoa</a></li>
@@ -32,6 +32,8 @@
       </div>
     </div>
 
+    <!-- JOKU HIGHLIGHT, MIKÄ SYÖTE MENI VIKAAN, JA OIKEIN MENNEET SYÖTTEET SAISI PYSYÄ LOMAKKEESSA SEKÄ VOISI SIIRTÄÄ VIESTIN PAIKAN EHKÄ YLÖS -->
+    
     <?php
       //Lomakkeen submit painettu?
       if (isset($_POST['submitUser'])) {
@@ -44,16 +46,15 @@
         }
         else if (strlen($_POST['givenPassword']) < 8) {
           $_SESSION['swarningInput'] = "Puutteellinen salasana (väh. 8 merkkiä)";
-          $password = test_input($_POST["password"]);
-          if (!preg_match("#[0-9]+#", $password)) { //Miten tarkistetaan erikoismerkkejä?
-            $_SESSION['swarningInput'] = "Puutteellinen salasana (väh. 1 numero)";
-          }
-          else if (!preg_match("#[A-Z]+#", $password)) {
-            $_SESSION['swarningInput'] = "Puutteellinen salasana (väh. 1 iso kirjain)";
-          }
-          else if (!preg_match("#[a-z]+#", $password)) {
-            $_SESSION['swarningInput'] = "Puutteellinen salasana (väh. 1 pieni kirjain)";
-          }
+        }
+        else if (!preg_match("#[0-9]+#", $_POST['givenPassword'])) {
+          $_SESSION['swarningInput'] = "Puutteellinen salasana (väh. 1 numero)";
+        }
+        else if (!preg_match("#[A-Z]+#", $_POST['givenPassword'])) {
+          $_SESSION['swarningInput'] = "Puutteellinen salasana (väh. 1 iso kirjain)";
+        }
+        else if (!preg_match("#[a-z]+#", $_POST['givenPassword'])) {
+          $_SESSION['swarningInput'] = "Puutteellinen salasana (väh. 1 pieni kirjain)";
         }
         else if ($_POST['givenPassword'] != $_POST['givenPasswordVerify']) {
           $_SESSION['swarningInput'] = "Annettu salasana ja vahvistus eivät ole samat";

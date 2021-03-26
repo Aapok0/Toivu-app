@@ -8,7 +8,7 @@
     <p>
       Salasana
       <br />
-      <input type="password" name="givenPassword" placeholder="salasana, vähintään 8 merkkiä" maxlength="40"/>
+      <input type="password" name="givenPassword" placeholder="salasana, vähintään 8 merkkiä" maxlength="20"/>
     </p>
     <p>
       <br />

@@ -25,6 +25,6 @@ session_start();
     <link rel="stylesheet" href="css/main.css"/>
 
     <!-- Sovelluksen logo -->
-    <!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
+    <!-- <link rel="icon" type="image/png" href="images/"> -->
     </head>
     <body>

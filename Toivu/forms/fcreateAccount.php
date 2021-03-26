@@ -3,7 +3,7 @@
     <p>
       Käyttäjänimi *
       <br />
-      <input type="text" name="givenUsername" placeholder="käyttäjänimi, vähintään 4 merkkiä" maxlength="40"/>
+      <input type="text" name="givenUsername" placeholder="käyttäjänimi, vähintään 4 merkkiä" maxlength="15"/>
     </p>
     <p>
       Sähköposti *
@@ -14,12 +14,12 @@
       Salasana *
       <br><span id="desc">Väh. 8 merkkiä sekä väh. yksi numero, iso kirjain ja pieni kirjain</span>
       <br />
-      <input type="password" name="givenPassword" placeholder="salasana, vähintään 8 merkkiä" maxlength="40"/>
+      <input type="password" name="givenPassword" placeholder="salasana, vähintään 8 merkkiä" maxlength="20"/>
     </p>
     <p>
       Salasanan vahvistus *
       <br />
-      <input type="password" name="givenPasswordVerify" placeholder="salasana uudestaan" maxlength="40"/>
+      <input type="password" name="givenPasswordVerify" placeholder="salasana uudestaan" maxlength="20"/>
     </p>
     <p>
       Pituus

@@ -1,4 +1,39 @@
+/* VARIABLES */
+
+:root {
+    --artichoke: #A3A380;
+    --medium-champagne: #D6CE93;
+    --cornsilk: #EFEBCE;
+    --tumbleweed: #D8A48F;
+    --old-rose: #BB8588;
+}
+
+/* MEDIA QUERIES */
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
 /* SITE-WIDE */
+
+html {
+    background-color: var(--cornsilk);
+}
 
 #page-container {
     position: relative;
@@ -8,7 +43,7 @@
 /* NAVIGATION */
 
 nav {
-    background-color: burlywood;
+    background-color: var(--artichoke);
 }
 
 #nav-bar {
@@ -63,5 +98,5 @@ footer {
     width: 100%;
     bottom: -200px;
     padding-top: 20px;
-    background-color: burlywood;
+    background-color: var(--artichoke);
 }

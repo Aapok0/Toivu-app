@@ -9,14 +9,14 @@
             <div id="nav-bar" class="container">
 
                 <!-- Logo vasempaan ylälaitaan -->
-                <div class="two columns">
+                <div class="six columns">
                     <h1>Logo</h1>
                 </div>
 
-                <div id="nav" class="seven columns">
+                <div id="nav" class="three columns">
                     <ul>
                         <li><a href="index.php">Koti</a></li>
-                        <li><a href="#">Tietoa</a></li>
+                        <li><a href="infoPage.php">Tietoa</a></li>
                     </ul>
                 </div>
 
