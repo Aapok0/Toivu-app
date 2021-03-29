@@ -6,6 +6,8 @@
     --cornsilk: #EFEBCE;
     --tumbleweed: #D8A48F;
     --old-rose: #BB8588;
+
+    --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 /* MEDIA QUERIES */
@@ -40,10 +42,17 @@ html {
     min-height: 100vh;
 }
 
+/* GENERAL */
+
+#text-center {
+    text-align: center;
+}
+
 /* NAVIGATION */
 
 nav {
     background-color: var(--artichoke);
+    color: white;
 }
 
 #nav-bar {
@@ -58,16 +67,22 @@ nav {
     display: inline;
     margin: 0 20px 0 0;
     margin-bottom: 130px;
-    color: black;
+    color: white;
 }
 
 #nav a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 #nav a:hover {
     text-decoration: underline;
+}
+
+/* INDEX SITE */
+
+#intro {
+    margin-top: 25%;
 }
 
 /* FORM */
@@ -90,6 +105,23 @@ label, input[type="radio"] {
     font-style: italic;
     color: dimgray;
 }
+
+/* CALENDAR */
+
+#calendar {
+    background: #BB8588;
+    margin: 50px 0 50px 0;
+    box-shadow: var(--shadow);
+    color: white;
+}
+
+tr td a {
+    color: white;
+}
+
+.fc-scroller {
+    overflow-y: hidden !important;
+ }
 
 /* FOOTER */
 
