@@ -34,13 +34,21 @@
         <!-- Esittelyteksti -->
         <div class="container">
             <div class="row">
-                <div class="twelve columns" style="margin-top: 25%">
+                <div class="twelve columns" id="intro">
                     <h4>Toivu-hyvinvointisovellus</h4>
                     <p>Tärkeä töissä jaksamiseen ja työtehoon vaikuttava tekijä on stressi ja siitä palautuminen. Stressi on kokemus, jonka kaikki tunnistaa, ja omaa palautumista voi arvioida tunteen mukaan, mutta mitä jos nämä kokemukset voisi muuttaa objektiivisiksi arvioiksi?</p>
                 </div>
             </div>
 
             <!-- Call-to-action-nappi rekisteröintiin -->
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns">
+                    <div id="calendar"></div>
+                </div>
+            </div>
         </div>
 
         <?php
