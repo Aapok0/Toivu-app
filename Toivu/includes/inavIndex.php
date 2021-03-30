@@ -7,8 +7,8 @@
     }
     else {
 ?>
-        <a id="user" href="logInUser.php">Kirjaudu sisään</a>
-        <a id="user" href="createAccount.php">Rekisteröinti</a>
+        <a class="user" href="logInUser.php">Kirjaudu sisään</a>
+        <a class="user" href="createAccount.php">Rekisteröinti</a>
 <?php
     }
 ?>

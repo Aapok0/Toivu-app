@@ -12,7 +12,7 @@
     </p>
     <p>
       Salasana *
-      <br><span id="desc">Väh. 8 merkkiä sekä väh. yksi numero, iso kirjain ja pieni kirjain</span>
+      <br><span class="desc">Väh. 8 merkkiä sekä väh. yksi numero, iso kirjain ja pieni kirjain</span>
       <br />
       <input type="password" name="givenPassword" placeholder="salasana, vähintään 8 merkkiä" maxlength="20"/>
     </p>
@@ -47,7 +47,7 @@
       <label for="other">Muu</label>
     </p>
     <br />
-    <p id="desc">
+    <p class="desc">
       * tarkoittaa pakollista tietoa
     </p>
     <p>
