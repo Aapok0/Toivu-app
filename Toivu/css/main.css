@@ -37,7 +37,7 @@ html {
     background-color: var(--cornsilk);
 }
 
-#page-container {
+.page-container {
     position: relative;
     min-height: 100vh;
 }
@@ -48,6 +48,12 @@ html {
     text-align: center;
 }
 
+.hero-text {
+    margin-top: 25%;
+    /* background-color: var(--old-rose);
+    color: white; */
+}
+
 /* NAVIGATION */
 
 nav {
@@ -55,43 +61,37 @@ nav {
     color: white;
 }
 
-#nav-bar {
+.nav-bar {
     padding-top: 50px;
 }
 
-#nav-bar #logo {
+.nav-bar #logo {
     height: 80px;
 }
 
-#nav-bar #logo img {
+.nav-bar #logo img {
     height: 60px;
     margin: 0 0 20px 0;
 }
 
-#nav {
+.navi {
     margin: 13px 0 0 0;
 }
 
-#nav ul li, #user {
+.navi ul li, .user {
     display: inline;
     margin: 0 20px 0 0;
     margin-bottom: 130px;
     color: white;
 }
 
-#nav a {
+.navi a {
     text-decoration: none;
     color: white;
 }
 
-#nav a:hover {
+.navi a:hover {
     text-decoration: underline;
-}
-
-/* INDEX SITE */
-
-#intro {
-    margin-top: 25%;
 }
 
 /* FORM */
@@ -110,7 +110,7 @@ label, input[type="radio"] {
     margin-bottom: 0;
 }
 
-#desc {
+.desc {
     font-style: italic;
     color: dimgray;
 }
@@ -140,4 +140,5 @@ footer {
     bottom: -200px;
     padding-top: 20px;
     background-color: var(--artichoke);
+    color: white;
 }
