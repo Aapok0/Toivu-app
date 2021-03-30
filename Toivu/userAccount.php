@@ -9,8 +9,10 @@
             <div class="container nav-bar">
 
                 <!-- Logo vasempaan ylälaitaan -->
-                <div class="six columns">
-                    <h1>Logo</h1>
+                <div id="logo" class="six columns">
+                    <a href="index.php">
+                    <img src="images/Toivu-logo_white-regular.png" alt="Toivu-logo">
+                    </a>
                 </div>
 
                 <div class="three columns navi">
