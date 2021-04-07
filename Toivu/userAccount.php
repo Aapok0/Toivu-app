@@ -41,6 +41,22 @@
                     ?>
                 </h1>
             </div>
+            <div class="twelve columns">
+                <h3>Testigraafi 1</h3>
+                <div id="graph1"></div>
+
+                <!-- Resources -->
+                <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+                <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+                <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+                
+                <script src="scripts/graph1.js"></script>
+            </div>
+            <div class="twelve columns">
+                <h3>Testigraafi 2</h3>
+                <div id="graph2"></div>
+                <script src="scripts/graph2.js"></script>
+            </div>
         </div>
 
 <?php
