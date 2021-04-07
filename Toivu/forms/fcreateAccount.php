@@ -34,7 +34,7 @@
     <p>
       Syntymäpäivä
       <br />
-      <input type="text" name="givenBday" placeholder="syntymäpäivä muodossa YYYY-MM-DD" maxlength="10"/>
+      <input type="text" name="givenBday" id="datepicker" placeholder="syntymäpäivä muodossa YYYY-MM-DD" maxlength="10"/>
     </p>
     <p>
       Sukupuoli

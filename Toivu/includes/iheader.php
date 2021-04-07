@@ -25,10 +25,14 @@ session_start();
     <link rel="stylesheet" href="css/main.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='fullcalendar/lib/main.css' rel='stylesheet' />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
 
     <!-- Scripts -->
     <script src='fullcalendar/lib/main.js'></script>
     <script src='fullcalendar/lib/locales/fi.js'></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
@@ -70,6 +74,16 @@ session_start();
         });
         calendar.render();
       });
+    </script>
+    <script>
+    $( function() {
+      $( "#datepicker" ).datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: "yy/mm/dd",
+        yearRange: "-100:+0",
+      });
+    } );
     </script>
 
     <!-- Sovelluksen logo -->
