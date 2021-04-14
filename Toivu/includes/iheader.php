@@ -29,6 +29,7 @@ session_start();
     <link rel="stylesheet" href="/resources/demos/style.css">
 
     <!-- Scripts -->
+    <!-- FullCalendar scripts -->
     <script src='fullcalendar/lib/main.js'></script>
     <script src='fullcalendar/lib/locales/fi.js'></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -43,6 +44,7 @@ session_start();
           selectable: true,
           selectHelper: true,
           eventLimit: true,
+          nowIndicator: true,
 
           headerToolbar: {
             left: 'dayGridMonth,timeGridWeek,timeGridDay',
@@ -86,7 +88,15 @@ session_start();
     } );
     </script>
 
-    <!-- Sovelluksen logo -->
-    <!-- <link rel="icon" type="image/png" href="images/"> -->
+    <!-- amGraph scripts -->
+    <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="js/ToivuTheme.js"></script>
+    <!-- Graphs -->
+    <script src="js/graph1.js"></script>
+    <script src="js/graph2.js"></script>
+
     </head>
     <body>
