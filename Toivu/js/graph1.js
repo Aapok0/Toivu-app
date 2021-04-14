@@ -4,11 +4,12 @@ am4core.ready(function() {
     am4core.useTheme(am4themes_animated);
     am4core.useTheme(ToivuTheme);
     // Themes end
-    
+
     // Create chart
     var chart = am4core.create("graph1", am4charts.XYChart);
     chart.paddingRight = 20;
     
+    // Get chart data
     chart.data = generateChartData();
 
     // Create axes
@@ -69,4 +70,4 @@ am4core.ready(function() {
         return chartData;
     }
     
-    }); // end am4core.ready()
+}); // end am4core.ready()
