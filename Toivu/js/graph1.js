@@ -2,6 +2,7 @@ am4core.ready(function() {
 
     // Themes begin
     am4core.useTheme(am4themes_animated);
+    am4core.useTheme(ToivuTheme);
     // Themes end
     
     // Create chart
@@ -10,6 +11,7 @@ am4core.ready(function() {
     
     chart.data = generateChartData();
 
+    // Create axes
     var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
     dateAxis.baseInterval = {
       "timeUnit": "minute",
@@ -21,18 +23,24 @@ am4core.ready(function() {
     valueAxis.tooltip.disabled = true;
     valueAxis.title.text = "HRV values";
     
+    // Create series
     var series = chart.series.push(new am4charts.LineSeries());
     series.dataFields.dateX = "date";
     series.dataFields.valueY = "HRV_value";
     series.tooltipText = "HRV: [bold]{valueY}[/]";
-    series.fillOpacity = 0.3;
+    series.fillOpacity = 0.6;
     
-    
+    // Create vertical scrollbar and place it before the value axis
+    chart.scrollbarY = new am4core.Scrollbar();
+    chart.scrollbarY.parent = chart.leftAxesContainer;
+    chart.scrollbarY.toBack();
+
+    // Create a horizontal scrollbar with previe and place it underneath the date axis
     chart.cursor = new am4charts.XYCursor();
     chart.cursor.lineY.opacity = 0;
     chart.scrollbarX = new am4charts.XYChartScrollbar();
     chart.scrollbarX.series.push(series);
-    
+    chart.scrollbarX.parent = chart.bottomAxesContainer;
     
     dateAxis.start = 0.0;
     dateAxis.keepSelection = true;
