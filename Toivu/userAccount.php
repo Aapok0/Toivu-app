@@ -40,7 +40,20 @@
                         echo($_SESSION['suserName'] . ":n oma sivu");
                     ?>
                 </h1>
+
+                <div>
+                    <?php
+                        include("includes/rmssd.php");
+
+                        $hrv_string = file_get_contents("HRV-demodata/good/good1.json");
+                        $hrv_arr = json_decode($hrv_string, true);
+                        //var_dump($hrv_arr["R-R"]);
+
+                        echo readiness($hrv_arr["R-R"]);
+                    ?>
+                </div>
             </div>
+
             <div class="twelve columns">
                 <h3>Testigraafi 1</h3>
                 <div id="graph1"></div>
@@ -52,10 +65,16 @@
                 
                 <script src="scripts/graph1.js"></script>
             </div>
+
             <div class="twelve columns">
                 <h3>Testigraafi 2</h3>
                 <div id="graph2"></div>
                 <script src="scripts/graph2.js"></script>
+            </div>
+
+            <div class="twelve columns">
+                <h3>Testikalenteri</h3>
+                <div id="calendar"></div>
             </div>
         </div>
 

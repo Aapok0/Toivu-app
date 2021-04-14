@@ -79,7 +79,7 @@
         }
         else if (empty($_POST['givenBday'])) {
           if (!strtotime($_POST['givenBday'])) {
-            $_SESSION['swarningInput'] = "Annettu päivämäärä väärässä muodossa, anna muodossa YYYY-MM-DD";
+            $_SESSION['swarningInput'] = "Annettu päivämäärä väärässä muodossa, valitse päivämäärä avautuvasta kalenterista";
           }
           else {
             include("includes/imoveToDB.php");

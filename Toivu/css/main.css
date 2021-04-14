@@ -101,7 +101,7 @@ fieldset {
 }
 
 input[type=text], input[type=password] {
-    width: 300px;
+    width: 350px;
 }
 
 label, input[type="radio"] {
@@ -119,7 +119,7 @@ label, input[type="radio"] {
 
 #calendar {
     background: #BB8588;
-    margin: 50px 0 50px 0;
+    margin: 0 0 50px 0;
     box-shadow: var(--shadow);
     color: white;
 }
