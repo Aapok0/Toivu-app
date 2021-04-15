@@ -33,8 +33,8 @@
         $N = count($RR);
 
         //Etsitään kaikki peräkkäiset sykevälit, jotka ovat yli 50ms
-        for ($n=0; $n <= $N-1; $n++) {
-            if (sqrt(pow(($RR[$n+1] - $RR[$n]), 2)) > 50) {
+        for ($n=0; $n <= $N-2; $n++) {
+            if ((sqrt(pow(($RR[$n+1] - $RR[$n]), 2)) > 50) && (sqrt(pow(($RR[$n+2] - $RR[$n+1]), 2)) > 50)) {
                 $NN50++;
             }
         }

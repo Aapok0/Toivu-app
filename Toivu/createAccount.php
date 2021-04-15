@@ -12,7 +12,7 @@
                     <!-- Logo vasempaan ylälaitaan -->
                     <div id="logo">
                         <a href="index.php">
-                            <img src="images/Toivu-logo_white-regular.png" alt="Toivu-logo">
+                            <img src="images/Toivu2.png" alt="Toivu-logo">
                         </a>
                     </div>
                 </div>
@@ -24,10 +24,16 @@
                         </button>
                         <ul class="nav__wrapper no-bullets">
                             <li class="nav__item">
-                                <a href="index.php">Koti</a>
+                                <a href="index.php">
+                                    <img class="nav-icon" src="images/iconfinder_home_1608930.png" alt="Home">
+                                    <span>Koti</span>
+                                </a>
                             </li>
                             <li class="nav__item">
-                                <a href="infoPage.php">Tietoa</a>
+                                <a href="infoPage.php">
+                                    <img class="nav-icon" src="images/iconfinder_ic_info_48px_352431.png" alt="Info">
+                                    <span>Tietoa</span>
+                                </a>
                             </li>
                             <!-- Käyttäjätunnistus -->
                             <!-- Kirjautumis- ja rekisteröintilinkki ja kirjautumisen jälkeen uloskirjaus- ja oma sivu -linkki -->
