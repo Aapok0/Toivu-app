@@ -1,7 +1,7 @@
 <?php
-include_once("config/chttps.php");
-include_once("config/cconfig.php");
-session_start();
+    session_start();
+    include_once("config/chttps.php");
+    include_once("config/cconfig.php");
 ?>
 
 <!DOCTYPE html>
@@ -43,10 +43,10 @@ session_start();
                     initialView: 'dayGridMonth',
                     editable: true,
                     selectable: true,
-                    selectHelper: true,
-                    eventLimit: true,
+                    //selectHelper: true,
+                    //eventLimit: true,
                     nowIndicator: true,
-                    events: 'getEvent.php',
+                    events: 'https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/getEvent.php',
 
                     headerToolbar: {
                         left: 'dayGridMonth,timeGridWeek,timeGridDay',
@@ -54,25 +54,28 @@ session_start();
                         right: 'today prev,next'
                     },
 
-                    select: function(start, end, allday) {
+                    select: function(arg) {
                         var title = prompt("Kirjoita lyhyesti merkittävistä hyvinvointiisi vaikuttaneista tapahtumista, positiivista ja negatiivistista.");
                         var mood = prompt("Arvioi vointisi antamalla numeroarvo 1-5: 1->karmea, 2->huono, 3->OK, 4->hyvä ja 5->loistava.");
                         if (title) {
-                            var start = $fullcalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
-                            var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+                            //var start = calendar.formatDate("YYYY-MM-DD");
+                            //var start = moment(start).format('YYYY-MM-DD');
+                            //var end = calendar.formatDate("YYYY-MM-DD");
+                            //var end = moment(end).format('YYYY-MM-DD');
                             $.ajax({
-                                url: "addEvent.php",
+                                url: "https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/addEvent.php",
                                 type: "POST",
                                 data: {
                                     title: title,
-                                    start: start,
-                                    end: end,
+                                    start: arg.start,
+                                    end: arg.end,
+                                    allDay: arg.allDay,
                                     extendedProps: {
                                         mood: mood
                                     }
                                 },
                                 success: function() {
-                                    calendar.fullCalendar('refetchEvents');
+                                    calendar.refetchEvents();
                                     alert("Tapahtuma lisätty onnistuneesti!");
                                 }
                             })
@@ -82,12 +85,12 @@ session_start();
                     editable: true,
 
                     eventResize: function(event) {
-                        var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
-                        var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+                        var start = FullCalendar.formatDate(event.start, "YYYY-MM-DD");
+                        var end = FullCalendar.formatDate(event.end, "YYYY-MM-DD");
                         var title = event.title;
                         var id = event.id;
                         $.ajax({
-                            url: "updateEvent.php",
+                            url: "https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/updateEvent.php",
                             type: "POST",
                             data: {
                                 title: title,
@@ -99,19 +102,19 @@ session_start();
                                 }
                             },
                             success: function() {
-                                calendar.fullCalendar('refetchEvents');
+                                calendar.refetchEvents();
                                 alert('Tapahtuma päivitetty!');
                             }
                         })
                     },
 
                     eventDrop: function(event) {
-                        var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
-                        var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+                        var start = FullCalendar.formatDate(event.start, "YYYY-MM-DD");
+                        var end = FullCalendar.formatDate(event.end, "YYYY-MM-DD");
                         var title = event.title;
                         var id = event.id;
                         $.ajax({
-                            url: "updateEvent.php",
+                            url: "https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/updateEvent.php",
                             type: "POST",
                             data: {
                                 title: title,
@@ -123,7 +126,7 @@ session_start();
                                 }
                             },
                             success: function() {
-                                calendar.fullCalendar('refetchEvents');
+                                calendar.refetchEvents();
                                 alert('Tapahtuma päivitetty!');
                             }
                         })
@@ -133,13 +136,13 @@ session_start();
                         if (confirm("Haluatko varmasti poistaa tapahtuman?")) {
                             var id = event.id;
                             $.ajax({
-                                url: "deleteEvent.php",
+                                url: "https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/deleteEvent.php",
                                 type: "POST",
                                 data: {
                                     id: id
                                 },
                                 success: function() {
-                                    calendar.fullCalendar('refetchEvents');
+                                    calendar.refetchEvents();
                                     alert("Tapahtuma poistettu!");
                                 }
                             })

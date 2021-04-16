@@ -1,35 +1,35 @@
 <fieldset><legend>Käyttäjätiedot</legend>
-    <form method="post">
+    <form name="reg_form" onsubmit="return validateForm()" method="post">
         <p>
-            Käyttäjänimi *
+            Käyttäjänimi <span class="big_font">*</span>
             <br />
-            <input type="text" name="givenUsername" placeholder="käyttäjänimi, vähintään 4 merkkiä" maxlength="15"/>
+            <input type="text" name="givenUsername" placeholder="käyttäjänimi, vähintään 4 merkkiä" minlength="4" maxlength="15" required/>
         </p>
         <p>
-            Sähköposti *
+            Sähköposti <span class="big_font">*</span>
             <br />
-            <input type="text" name="givenEmail" placeholder="voimassa oleva sähköposti" maxlength="40"/>
+            <input type="text" name="givenEmail" placeholder="voimassa oleva sähköposti" maxlength="40" required/>
         </p>
         <p>
-            Salasana *
+            Salasana <span class="big_font">*</span>
             <br><span class="desc">Väh. 8 merkkiä sekä väh. yksi numero, iso kirjain ja pieni kirjain</span>
             <br />
-            <input type="password" name="givenPassword" placeholder="salasana, vähintään 8 merkkiä" maxlength="20"/>
+            <input type="password" name="givenPassword" placeholder="salasana, vähintään 8 merkkiä" maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required/>
         </p>
         <p>
-            Salasanan vahvistus *
+            Salasanan vahvistus <span class="big_font">*</span>
             <br />
-            <input type="password" name="givenPasswordVerify" placeholder="salasana uudestaan" maxlength="20"/>
+            <input type="password" name="givenPasswordVerify" placeholder="salasana uudestaan" maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required/>
         </p>
         <p>
             Pituus
             <br />
-            <input type="text" name="givenHeight" placeholder="pituus senttimetreinä" maxlength="4"/>
+            <input type="number" name="givenHeight" placeholder="pituus senttimetreinä" min="50" max="300"/>
         </p>
         <p>
             Paino
             <br />
-            <input type="text" name="givenWeight" placeholder="paino kilogrammoina" maxlength="5"/>
+            <input type="number" name="givenWeight" placeholder="paino kilogrammoina" min="30" max="500"/>
         </p>
         <p>
             Syntymäpäivä
@@ -48,7 +48,7 @@
         </p>
         <br />
         <p class="desc">
-            * tarkoittaa pakollista tietoa
+        <span class="big_font">*</span> tarkoittaa pakollista tietoa
         </p>
         <p>
             <br />

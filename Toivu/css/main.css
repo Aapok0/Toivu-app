@@ -68,6 +68,10 @@ img.logo__banner {
     margin: 0 auto;
 }
 
+.big_font {
+    font-size: 2.5rem;
+}
+
 /* NAVIGATION */
 
 /* nav {
@@ -248,6 +252,12 @@ input[type=text], input[type=password] {
     width: 350px;
 }
 
+input[type=text]:focus, input[type=password]:focus {
+    outline: none !important;
+    border: 2px solid var(--old-rose);
+    box-shadow: 0 0 10px var(--tumbleweed);
+}
+
 label, input[type="radio"] {
     vertical-align: middle;
     display: inline;
@@ -257,6 +267,10 @@ label, input[type="radio"] {
 .desc {
     font-style: italic;
     color: dimgray;
+}
+
+.warning {
+    color: var(--old-rose);
 }
 
 /* CALENDAR */
@@ -274,7 +288,26 @@ tr td a {
 
 .fc-scroller {
     overflow-y: hidden !important;
- }
+}
+
+#script-warning {
+    display: none;
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+    padding: 0 10px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    color: red;
+}
+
+#loading {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
 
 /* GRAPHS */
 
@@ -311,4 +344,12 @@ footer {
     padding-top: 20px;
     background-color: var(--artichoke);
     color: black;
+}
+
+.footer-col {
+    background-color: var(--medium-champagne);
+    padding: 2rem;
+    height: 200px;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
 }
