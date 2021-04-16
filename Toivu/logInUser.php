@@ -83,6 +83,7 @@
                         $_SESSION['sloggedIn'] = "yes";
                         $_SESSION['suserName'] = $tulosOlio->userName;
                         $_SESSION['suserEmail'] = $tulosOlio->userEmail;
+                        $_SESSION['suserID'] = $tulosOlio->userID;
                         //header("Location: index.php"); //Palataan pääsivulle kirjautuneena
                         header("Location: userAccount.php"); //Vie omalle sivulle
                     }

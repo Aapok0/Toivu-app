@@ -46,18 +46,26 @@ html {
 
 /* GENERAL */
 
-#text-center {
+.text-center {
     text-align: center;
 }
 
 .hero-text {
-    margin-top: 25%;
+    margin-top: 150px;
+    border-right: 1px solid var(--medium-champagne);
+    border-left: 1px solid var(--medium-champagne);
+    padding-left: 20px;
     /* background-color: var(--old-rose);
     color: white; */
 }
 
 .no-bullets {
     list-style-type: none;
+}
+
+img.logo__banner {
+    display: block;
+    margin: 0 auto;
 }
 
 /* NAVIGATION */

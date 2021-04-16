@@ -31,6 +31,7 @@
     try {
         //***Email ei saa olla käytetty aiemmin
         $sql = "SELECT COUNT(*) FROM wsk21_toivu_user where userEmail =  " . "'".$_POST['givenEmail']."'"  ;
+        
         $kysely = $DBH->prepare($sql);
         $kysely -> execute();				
         $tulos = $kysely -> fetch();
