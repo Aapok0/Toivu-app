@@ -48,52 +48,25 @@
     //Alustetaan taulukko johon tallennetaan kaikki graafeihin tarvittavat tiedot JSON-tiedostoista.
     $data_array = array();
 
-    //Huonon viikon data
-    //Tarkastetaan kuinka monta tiedostoa kansiossa on
-    //$fi = new FilesystemIterator(__DIR__, FilesystemIterator::SKIP_DOTS);
-    //$N = iterator_count($fi));
-    $N = 5;
-    
-    //Käydään läpi kaikki tiedostot päivä kerrallaan
-    for ($i=1; $i <= $N; $i++) {
-        $hrv_string = file_get_contents("HRV-demodata/bad/bad" . $i . ".json");
-        $hrv_arr = json_decode($hrv_string, true);
+    //Tarkastetaan kuinka monta hrv-dataa on käyttäjällä
+    //Lopullisessa versiossa tarkistetaan WHERE ehdolla, että haetaan sisäänkirjautuneen käyttäjän dataa.
+    $query = $DBH -> prepare("SELECT COUNT(*) FROM wsk21_toivu_hrv");
+    $query -> execute();
+    $rows = $query -> fetch();
+    $N = $rows[0];
 
+    //Käydään datat läpi, suoritetaan niihin analyysit ja sijoitetaan datat taulukkoon.
+    //Lopullisessa versiossa tarkistetaan WHERE ehdolla, että haetaan sisäänkirjautuneen käyttäjän dataa.
+    $query = $DBH -> prepare("SELECT hrvData FROM wsk21_toivu_hrv");
+    $query -> execute();
+    $result = $query -> fetchAll(PDO::FETCH_ASSOC);
 
-        $data_array[$i-1] = array($hrv_arr["name"], $hrv_arr["timeStart"], $hrv_arr["timeEnd"], $hrv_arr["aveHR"], readiness($hrv_arr["R-R"]), pNN50($hrv_arr["R-R"]));
-    }
-    
-    //OK:n viikon data
-    //Tarkastetaan kuinka monta tiedostoa kansiossa on
-    //$fi = new FilesystemIterator(__DIR__, FilesystemIterator::SKIP_DOTS);
-    //$N = iterator_count($fi));
-    $N = 5;
-    
-    //Käydään läpi kaikki tiedostot päivä kerrallaan
-    for ($i=1; $i <= $N; $i++) {
-        $hrv_string = file_get_contents("HRV-demodata/ok/ok" . $i . ".json");
-        $hrv_arr = json_decode($hrv_string, true);
-
-        $data_array[$i-1 + $N] = array($hrv_arr["name"], $hrv_arr["timeStart"], $hrv_arr["timeEnd"], $hrv_arr["aveHR"], readiness($hrv_arr["R-R"]), pNN50($hrv_arr["R-R"]));
-    }            
-
-    //Hyvän viikon data
-    //Tarkastetaan kuinka monta tiedostoa kansiossa on
-    //$fi = new FilesystemIterator(__DIR__, FilesystemIterator::SKIP_DOTS);
-    //$N = iterator_count($fi));
-    $N = 5;
-    
-    //Käydään läpi kaikki tiedostot päivä kerrallaan
-    for ($i=1; $i <= $N; $i++) {
-        $hrv_string = file_get_contents("HRV-demodata/good/good" . $i . ".json");
-        $hrv_arr = json_decode($hrv_string, true);
-
-        $data_array[$i-1 + ($N*2)] = array($hrv_arr["name"], $hrv_arr["timeStart"], $hrv_arr["timeEnd"], $hrv_arr["aveHR"], readiness($hrv_arr["R-R"]), pNN50($hrv_arr["R-R"]));
+    for ($i=0; $i <= $N-1; $i++) {
+        $hrv_arr = json_decode($result[$i]["hrvData"], true);
+        $data_array[$i] = array($hrv_arr["name"], $hrv_arr["timeStart"], $hrv_arr["timeEnd"], $hrv_arr["aveHR"], readiness($hrv_arr["R-R"]), pNN50($hrv_arr["R-R"]));
     }
 
-    //var_dump($data_array);
-
-    $M = 15;
+    //HRV-datat taulukossa
     echo "<table id=\"analysis\">";
         echo "<tr>";
             echo "<th>Start time</th>";
@@ -103,7 +76,7 @@
             echo "<th>pNN50 (%)</th>";
         echo "</tr>";
 
-        for ($i=0; $i <= $M-1; $i++) {
+        for ($i=0; $i <= $N-1; $i++) {
             echo "<tr>";
                 echo "<th>" . $data_array[$i][1] . "</th>";
                 echo "<th>" . $data_array[$i][2] . "</th>";

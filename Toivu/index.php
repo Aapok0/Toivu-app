@@ -45,27 +45,19 @@
                     </div>        
                 </header>
             </div>
-        </div>   
+        </div>
 
         <!-- Esittelyteksti -->
         <div class="container">
             <div class="row">
                 <div class="twelve columns hero-text">
-                    <h4>Toivu-hyvinvointisovellus</h4>
+                    <img class="logo__banner" src="images/Toivu.png" alt="Toivu-logo">
+                    <h4 class="text-center">Toivu-hyvinvointisovellus</h4>
                     <p>Tärkeä töissä jaksamiseen ja työtehoon vaikuttava tekijä on stressi ja siitä palautuminen. Stressi on kokemus, jonka kaikki tunnistaa, ja omaa palautumista voi arvioida tunteen mukaan, mutta mitä jos nämä kokemukset voisi muuttaa objektiivisiksi arvioiksi?</p>
                 </div>
             </div>
 
             <!-- Call-to-action-nappi rekisteröintiin -->
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="twelve columns">
-                    <h4>Testikalenteri</h4>
-                    <div id="calendar"></div>
-                </div>
-            </div>
         </div>
 
         <script src="js/collapse-menu.js"></script>
