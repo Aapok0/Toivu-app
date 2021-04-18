@@ -48,15 +48,17 @@
     </div>
 
     <!-- Rekisteröintilomake -->
-    <div class="container">
+    <div class="container top_content">
         <div class="one-half column">
             <?php
                 include("forms/fcreateAccount.php");
             ?>
         </div>
-    </div>
 
-    <!-- JOKU HIGHLIGHT, MIKÄ SYÖTE MENI VIKAAN, JA OIKEIN MENNEET SYÖTTEET SAISI PYSYÄ LOMAKKEESSA SEKÄ VOISI SIIRTÄÄ VIESTIN PAIKAN EHKÄ YLÖS -->
+        <div class="one-half column">
+            <img src="images/Toivu.png" alt="Toivu-logo">
+        </div>
+    </div>
     
     <?php
         //Lomakkeen submit painettu?
@@ -82,30 +84,6 @@
             }
             else if ($_POST['givenPassword'] != $_POST['givenPasswordVerify']) {
             $_SESSION['swarningInput'] = "Annettu salasana ja vahvistus eivät ole samat";
-            }
-            else if (!empty($_POST['givenHeight'])) {
-                if (is_numeric($_POST['givenHeight'] != 1)) {
-                    $_SESSION['swarningInput'] = "Annettu pituus ei ole numero";
-                }
-                else {
-                    include("includes/imoveToDB.php");
-                }
-            }
-            else if (empty($_POST['givenWeight'])) {
-                if (is_numeric($_POST['givenWeight'] != 1)) {
-                    $_SESSION['swarningInput'] = "Annettu paino ei ole numero";
-                }
-                else {
-                    include("includes/imoveToDB.php");
-                }
-            }
-            else if (empty($_POST['givenBday'])) {
-                if (!strtotime($_POST['givenBday'])) {
-                    $_SESSION['swarningInput'] = "Annettu päivämäärä väärässä muodossa, valitse päivämäärä avautuvasta kalenterista";
-                }
-                else {
-                    include("includes/imoveToDB.php");
-                }
             }
             else {
                 include("includes/imoveToDB.php");

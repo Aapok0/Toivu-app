@@ -1,30 +1,30 @@
-<fieldset><legend>Käyttäjätiedot</legend>
+<fieldset><legend>Päivitä käyttäjätietoja</legend>
     <form name="reg_form" onsubmit="return validateForm()" method="post">
         <p>
             Käyttäjänimi <span class="big_font">*</span>
             <br />
             <span class="desc">4-15 merkkiä</span>
             <br />
-            <input type="text" name="givenUsername" placeholder="käyttäjänimi" minlength="4" maxlength="15" required/>
+            <input type="text" name="givenUsername" placeholder="käyttäjänimi" minlength="4" maxlength="15"/>
         </p>
         <p>
             Sähköposti <span class="big_font">*</span>
             <br />
-            <input type="email" name="givenEmail" placeholder="voimassa oleva sähköposti" maxlength="40" required/>
+            <input type="email" name="givenEmail" placeholder="voimassa oleva sähköposti" maxlength="40"/>
         </p>
         <p>
             Salasana <span class="big_font">*</span>
             <br />
             <span class="desc">Vähintään 8 merkkiä, käytä isoja ja pieniä kirjaimia sekä numeroita.</span>
             <br />
-            <input type="password" name="givenPassword" placeholder="salasana" maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required/>
+            <input type="password" name="givenPassword" placeholder="salasana" maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
         </p>
         <p>
             Salasanan vahvistus <span class="big_font">*</span>
             <br />
             <span class="desc">Sama salasana uudelleen</span>
             <br />
-            <input type="password" name="givenPasswordVerify" placeholder="salasana uudestaan" maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required/>
+            <input type="password" name="givenPasswordVerify" placeholder="salasana uudestaan" maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
         </p>
         <p>
             Pituus
@@ -58,9 +58,6 @@
             <label for="other">Muu</label>
         </p>
         <br />
-        <p class="desc">
-            <span class="big_font">*</span> tarkoittaa pakollista tietoa
-        </p>
         <p>
             <br />
             <input type="submit" name="submitUser" value="Lähetä"/>

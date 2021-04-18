@@ -173,7 +173,7 @@ input[type="button"] {
   display: inline-block;
   height: 38px;
   padding: 0 30px;
-  color: #555;
+  color: rgb(40, 40, 40);
   text-align: center;
   font-size: 11px;
   font-weight: 600;
@@ -182,9 +182,9 @@ input[type="button"] {
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  background-color: transparent;
+  background-color: #D6CE93;
   border-radius: 4px;
-  border: 1px solid #bbb;
+  border: 1px solid #A3A380;
   cursor: pointer;
   box-sizing: border-box; }
 .button:hover,
@@ -197,8 +197,8 @@ button:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
-  color: #333;
-  border-color: #888;
+  color: #EFEBCE;
+  border-color: #EFEBCE;
   outline: 0; }
 .button.button-primary,
 button.button-primary,
@@ -326,7 +326,7 @@ th,
 td {
   padding: 12px 15px;
   text-align: left;
-  border-bottom: 1px solid #E1E1E1; }
+  border-bottom: 1px solid #D8A48F; }
 th:first-child,
 td:first-child {
   padding-left: 0; }

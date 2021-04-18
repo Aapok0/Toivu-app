@@ -29,6 +29,7 @@
         <link rel="stylesheet" href="/resources/demos/style.css">
 
         <!-- Scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- FullCalendar scripts -->
         <script src='fullcalendar/lib/main.js'></script>
         <script src='fullcalendar/lib/locales/fi.js'></script>
@@ -43,10 +44,8 @@
                     initialView: 'dayGridMonth',
                     editable: true,
                     selectable: true,
-                    //selectHelper: true,
-                    //eventLimit: true,
                     nowIndicator: true,
-                    events: 'https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/getEvent.php',
+                    events: 'https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/igetEvent.php',
 
                     headerToolbar: {
                         left: 'dayGridMonth,timeGridWeek,timeGridDay',
@@ -63,7 +62,7 @@
                             //var end = calendar.formatDate("YYYY-MM-DD");
                             //var end = moment(end).format('YYYY-MM-DD');
                             $.ajax({
-                                url: "https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/addEvent.php",
+                                url: "https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/iaddEvent.php",
                                 type: "POST",
                                 data: {
                                     title: title,
@@ -90,8 +89,9 @@
                         var title = event.title;
                         var id = event.id;
                         $.ajax({
-                            url: "https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/updateEvent.php",
+                            url: "https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/iupdateEvent.php",
                             type: "POST",
+                            method: 'post',
                             data: {
                                 title: title,
                                 start: start,
@@ -114,8 +114,9 @@
                         var title = event.title;
                         var id = event.id;
                         $.ajax({
-                            url: "https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/updateEvent.php",
+                            url: "https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/iupdateEvent.php",
                             type: "POST",
+                            method: 'post',
                             data: {
                                 title: title,
                                 start: start,
@@ -136,8 +137,9 @@
                         if (confirm("Haluatko varmasti poistaa tapahtuman?")) {
                             var id = event.id;
                             $.ajax({
-                                url: "https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/deleteEvent.php",
+                                url: "https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/ideleteEvent.php",
                                 type: "POST",
+                                method: 'post',
                                 data: {
                                     id: id
                                 },

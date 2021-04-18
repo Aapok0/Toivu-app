@@ -19,11 +19,11 @@
 
                     <div class="site-header__end">
                         <nav class="nav">
-                            <button class="nav__toggle" aria-expanded="false" type="button">
+                            <button class="nav__toggle button-light" aria-expanded="false" type="button">
                                 Menu
                             </button>
                             <ul class="nav__wrapper no-bullets">
-                                <li class="nav__item active">
+                                <li class="nav__item">
                                     <a href="index.php">
                                         <img class="nav-icon" src="images/iconfinder_home_1608930.png" alt="Home">
                                         <span>Koti</span>
@@ -47,22 +47,24 @@
             </div>
         </div>
 
-        <!-- Esittelyteksti -->
-        <div class="container">
-            <div class="row">
-                <div class="twelve columns top_content">
-                    <h1 class="text-center">Toivu</h1>
-                    <h3 class="text-center">Hyvinvointisovellus</h3>
-                    <img class="logo__banner" src="images/Toivu.png" alt="Toivu-logo">
-                    <p>Tärkeä töissä jaksamiseen ja työtehoon vaikuttava tekijä on stressi ja siitä palautuminen. Stressi on kokemus, jonka kaikki tunnistaa, ja omaa palautumista voi arvioida tunteen mukaan, mutta mitä jos nämä kokemukset voisi muuttaa objektiivisiksi arvioiksi?</p>
+        <div class="container profile-page">
+            <h1 class="text-center">Viestit</h1>
+            <?php
+                include("includes/igetMessage.php")
+            ?>
+
+            <div id="message" class="messageBox">
+                <div class="messageContent">
+                    <span class="close">&times;</span>
+                    <h4 id="messTitle"></h4>
+                    <p id="messText"></p>
                 </div>
             </div>
-
-            <!-- Call-to-action-nappi rekisteröintiin -->
         </div>
 
         <script src="js/collapse-menu.js"></script>
-        
+        <script src="js/openMessage.js"></script>
+
 <?php
     include("includes/ifooter.php");
 ?>

@@ -68,7 +68,7 @@
 
     //HRV-datat taulukossa
     echo "<table id=\"analysis\">";
-        echo "<tr>";
+        echo "<tr class=\"bolder\">";
             echo "<th>Start time</th>";
             echo "<th>End time</th>";
             echo "<th>Average HR</th>";

@@ -47,11 +47,15 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container top-content">
         <div class="one-half column">
             <?php
                 include("forms/flogInUser.php");
             ?>
+        </div>
+
+        <div class="one-half column">
+            <img src="images/Toivu.png" alt="Toivu-logo">
         </div>
     </div>
 
@@ -68,7 +72,7 @@
             try {
                 //Tiedot kannasta, hakuehto
                 $data['email'] = $_POST['givenEmail'];
-                $STH = $DBH->prepare("SELECT userName, userPwd, userEmail FROM wsk21_toivu_user WHERE userEmail = :email;");
+                $STH = $DBH->prepare("SELECT userID, userName, userPwd, userEmail FROM wsk21_toivu_user WHERE userEmail = :email;");
                 $STH -> execute($data);
                 $STH -> setFetchMode(PDO::FETCH_OBJ);
                 $tulosOlio = $STH->fetch();
@@ -111,13 +115,16 @@
             header("Location: index.php");
         }
     ?>
-
-    <?php
-        //***Näytetäänkö lomakesyötteen aiheuttama varoitus?
-        if (isset($_SESSION['swarningInput'])) {
-            echo("<p class=\"warning\">Virheellinen syöte: ". $_SESSION['swarningInput']."</p>");
-        }
-    ?>
+    
+    <div class="container">
+        <?php
+            //***Näytetäänkö lomakesyötteen aiheuttama varoitus?
+            if (isset($_SESSION['swarningInput'])) {
+                echo("<p class=\"warning\">Virheellinen syöte: ". $_SESSION['swarningInput']."</p>");
+                unset($_SESSION['swarningInput']);
+            }
+        ?>
+    </div>
 
     <script src="js/collapse-menu.js"></script>
     <script src="js/form_validation.js"></script>
