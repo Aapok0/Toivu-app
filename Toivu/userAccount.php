@@ -19,7 +19,7 @@
 
                     <div class="site-header__end">
                         <nav class="nav">
-                            <button class="nav__toggle" aria-expanded="false" type="button">
+                            <button class="nav__toggle button-light" aria-expanded="false" type="button">
                                 Menu
                             </button>
                             <ul class="nav__wrapper no-bullets">
@@ -52,29 +52,29 @@
             <div class="twelve columns">
                 <h1>
                     <?php
-                        echo($_SESSION['suserName'] . ":n oma sivu");
+                        echo("<h1 class=\"text-center\">Tervetuloa takaisin " . $_SESSION['suserName'] . "!</h1>");
                     ?>
                 </h1>
             </div>
 
             <?php
-                include("includes/readiness.php");
+                include("includes/ireadiness.php");
             ?>
 
             <!-- Graafit -->
             <div class="twelve columns">
-                <h3>Testigraafi 1</h3>
+                <h2>Testigraafi 1</h2>
                 <div id="graph1"></div>
             </div>
 
             <div class="twelve columns">
-                <h3>Testigraafi 2</h3>
+                <h2>Testigraafi 2</h2>
                 <div id="graph2"></div>
             </div>
 
             <!-- Kalenteri -->
             <div class="twelve columns">
-                <h3>Testikalenteri</h3>
+                <h2>Testikalenteri</h2>
                 <div id="calendar"></div>
             </div>
         </div>
