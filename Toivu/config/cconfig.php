@@ -15,7 +15,7 @@
 		$DBH->exec("SET NAMES utf8;");
 		//echo "Yhteys OK."; //Kommentoi pois validoitavassa versiossa
 	} catch(PDOException $e) {
-		echo "Yhteysvirhe: " . $e->getMessage(); 
+		echo "Yhteysvirhe: " . $e->getMessage();
 		file_put_contents('log/DBErrors.txt', 'Connection: '.$e->getMessage()."\n", FILE_APPEND);
 	}//HUOM hakemistopolku!
 ?>

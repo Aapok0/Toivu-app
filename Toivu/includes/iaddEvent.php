@@ -1,4 +1,7 @@
 <?php
+    session_start();
+    include("../config/cconfig.php");
+
     if (isset($_POST["title"])) {
         $query = "INSERT INTO wsk21_toivu_calendar (userID, calEvent, calMood calStart, calEnd) VALUES (:user, :title, :mood, :start_event, :end_event)";
         $stmt = $DBH -> prepare($query);

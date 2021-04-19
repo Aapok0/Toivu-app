@@ -65,7 +65,7 @@
             <br />
             <input type="submit" name="submitUser" value="Lähetä"/>
             <input type="reset"  value="Tyhjennä"/>
-            <input type="submit" name="submitBack" value="Palaa takaisin"/>
+            <input type="button" onclick="location.href='index.php'" value="Palaa takaisin"/>
         </p>
     </form>
 </fieldset>

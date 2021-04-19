@@ -1,5 +1,14 @@
 <?php
+    session_start();
     include("includes/iheader.php");
+?>
+
+<?php
+    //***Luovutetaanko ja palataan takaisin pääsivulle alkutilanteeseen
+    //ilman  rekisteröintiä?
+    if (isset($_POST['submitBack'])) {
+        header("Location: userSettings.php");
+    }
 ?>
 
     <div class="page-container">
@@ -65,25 +74,25 @@
             if (isset($_POST['submitUser'])) {
                 //***Tarkistetaan syötteet myös palvelimella
                 if (strlen($_POST['givenUsername']) < 4) {
-                $_SESSION['swarningInput'] = "Puutteellinen käyttäjänimi (väh. 4 merkkiä)";
+                $_SESSION['swarningInputUpdate'] = "Puutteellinen käyttäjänimi (väh. 4 merkkiä)";
                 }
                 else if (!filter_var($_POST['givenEmail'], FILTER_VALIDATE_EMAIL)) {
-                $_SESSION['swarningInput'] = "Virheellinen sähköposti";
+                $_SESSION['swarningInputUpdate'] = "Virheellinen sähköposti";
                 }
                 else if (strlen($_POST['givenPassword']) < 8) {
-                $_SESSION['swarningInput'] = "Puutteellinen salasana (väh. 8 merkkiä)";
+                $_SESSION['swarningInputUpdate'] = "Puutteellinen salasana (väh. 8 merkkiä)";
                 }
                 else if (!preg_match("#[0-9]+#", $_POST['givenPassword'])) {
-                $_SESSION['swarningInput'] = "Puutteellinen salasana (väh. 1 numero)";
+                $_SESSION['swarningInputUpdate'] = "Puutteellinen salasana (väh. 1 numero)";
                 }
                 else if (!preg_match("#[A-Z]+#", $_POST['givenPassword'])) {
-                $_SESSION['swarningInput'] = "Puutteellinen salasana (väh. 1 iso kirjain)";
+                $_SESSION['swarningInputUpdate'] = "Puutteellinen salasana (väh. 1 iso kirjain)";
                 }
                 else if (!preg_match("#[a-z]+#", $_POST['givenPassword'])) {
-                $_SESSION['swarningInput'] = "Puutteellinen salasana (väh. 1 pieni kirjain)";
+                $_SESSION['swarningInputUpdate'] = "Puutteellinen salasana (väh. 1 pieni kirjain)";
                 }
                 else if ($_POST['givenPassword'] != $_POST['givenPasswordVerify']) {
-                $_SESSION['swarningInput'] = "Annettu salasana ja vahvistus eivät ole samat";
+                $_SESSION['swarningInputUpdate'] = "Annettu salasana ja vahvistus eivät ole samat";
                 }
                 else {
                     include("includes/iupdateDB.php");
@@ -91,21 +100,11 @@
             }
         ?>
 
-        <?php
-            //***Luovutetaanko ja palataan takaisin pääsivulle alkutilanteeseen
-            //ilman  rekisteröintiä?
-            if (isset($_POST['submitBack'])) {
-                session_unset();
-                session_destroy();
-                header("Location: userSettings.php");
-            }
-        ?>
-
         <div class="container">
             <?php
                 //***Näytetäänkö lomakesyötteen aiheuttama varoitus?
-                if (isset($_SESSION['swarningInput'])) {
-                    echo("<p class=\"warning\">Virheellinen syöte: ". $_SESSION['swarningInput']."</p>");
+                if (isset($_SESSION['swarningInputUpdate'])) {
+                    echo("<p class=\"warning\">Virheellinen syöte: ". $_SESSION['swarningInputUpdate']."</p>");
                 }
             ?>
         </div>

@@ -1,10 +1,14 @@
 <?php
+    session_start();
+    include("../config/cconfig.php");
+
+    $session_user = $_SESSION['suserID'];
     $data = array();
     $query = "SELECT * FROM wsk21_toivu_calendar WHERE userID = :suser ORDER BY calID";
     $stmt = $DBH -> prepare($query);
     $stmt -> bindParam(':suser', $session_user);
     $stmt -> execute();
-    $result = $stmt -> fetchAll(PDO::FETCH_ASSOC));
+    $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($result as $row) {
         $data[] = array(
@@ -15,5 +19,6 @@
             'end' => $row["calEnd"]
         );
     }
+    
     echo json_encode($data);
 ?>

@@ -1,4 +1,7 @@
 <?php
+    session_start();
+    include("config/cconfig.php");
+
     //Viestien hakeminen tietokannasta
     $data = array();
     $session_user = $_SESSION['suserID'];

@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include("includes/iheader.php");
 ?>
 
@@ -118,7 +119,7 @@
             if (isset($_POST['submitSupport'])) {
                 //***Tarkistetaan syötteet myös palvelimella
                 if (!filter_var($_POST['givenSuppEmail'], FILTER_VALIDATE_EMAIL)) {
-                    $_SESSION['swarningInput'] = "Virheellinen sähköposti";
+                    $_SESSION['swarningInputSettings'] = "Virheellinen sähköposti";
                 }
                 else {
                     include("includes/isendSupportTicket.php");
@@ -129,8 +130,8 @@
         <div class="container">
             <?php
                 //***Näytetäänkö lomakesyötteen aiheuttama varoitus?
-                if (isset($_SESSION['swarningInput'])) {
-                    echo("<p class=\"warning\">Virheellinen syöte: ". $_SESSION['swarningInput']."</p>");
+                if (isset($_SESSION['swarningInputSettings'])) {
+                    echo("<p class=\"warning\">Virheellinen syöte: ". $_SESSION['swarningInputSettings']."</p>");
                 }
             ?>
         </div>

@@ -1,11 +1,3 @@
-:root {
-  --artichoke: #A3A380;
-  --medium-champagne: #D6CE93;
-  --cornsilk: #EFEBCE;
-  --tumbleweed: #D8A48F;
-  --old-rose: #BB8588;
-}
-
 
 /* classes attached to <body> */
 
@@ -65,7 +57,7 @@
 .fc-theme-standard td,
   .fc-theme-standard th {
     border: 1px solid #ddd;
-    border: 1px solid var(--tumbleweed, #ddd);
+    border: 1px solid var(--fc-border-color, #ddd);
   }
 /* for FF, which doesn't expand a 100% div within a table cell. use absolute positioning */
 /* inner-wrappers are responsible for being absolute */
@@ -341,7 +333,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   }
 .fc-theme-standard .fc-scrollgrid {
     border: 1px solid #ddd;
-    border: 1px solid var(--tumbleweed, #ddd); /* bootstrap does this. match */
+    border: 1px solid var(--fc-border-color, #ddd); /* bootstrap does this. match */
   }
 .fc .fc-scrollgrid,
     .fc .fc-scrollgrid table { /* all tables (self included) */
