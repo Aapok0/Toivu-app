@@ -63,15 +63,11 @@
             ?>
 
             <!-- Graafit -->
-            <div class="twelve columns">
-                <h2>Testigraafi 1</h2>
-                <div id="graph1"></div>
-            </div>
-
-            <div class="twelve columns">
-                <h2>Testigraafi 2</h2>
-                <div id="graph2"></div>
-            </div>
+            <?php
+                include("includes/igraph1.php");
+                include("includes/igraph2.php");
+                include("includes/igraph3.php");
+            ?>
 
             <!-- Kalenteri -->
             <div class="twelve columns">

@@ -145,9 +145,6 @@
         <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
         <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
         <script src="js/ToivuTheme.js"></script>
-        <!-- Graphs -->
-        <script src="js/graph1.js"></script>
-        <script src="js/graph2.js"></script>
 
 </head>
 <body>
