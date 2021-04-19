@@ -5,4 +5,7 @@ function ToivuTheme(target) {
         am4core.color("#D8A48F")
       ];
     }
+    if (target instanceof am4core.InterfaceColorSet) {
+      target.setFor("background", am4core.color("#EFEBCE"));
+    }
   }

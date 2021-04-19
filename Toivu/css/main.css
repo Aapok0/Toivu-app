@@ -504,6 +504,13 @@ tr td a {
     box-shadow: var(--shadow);
 }
 
+#graph3 {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 50px;
+    box-shadow: var(--shadow);
+}
+
 table {
     margin-bottom: 50px;
 }

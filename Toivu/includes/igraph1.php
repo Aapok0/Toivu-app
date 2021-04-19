@@ -1,4 +1,23 @@
-am4core.ready(function() {
+<?php
+    //Graafin tulostus sivulle
+    echo "<div class=\"twelve columns\">";
+        echo "<h2>Testigraafi 1</h2>";
+        echo "<div id=\"graph1\"></div>";
+    echo "</div>";
+?>
+
+<script>
+    //Datan haku APIsta
+    //fetch('https://users.metropolia.fi/~ronihei/WSK12021/ToivuApp/Toivu/API/graph1API.php')
+    fetch('https://users.metropolia.fi/~aapokok/WSK12021/Toivu/API/graph1API.php')
+    
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {   
+    
+    //Graafin javascript
+    am4core.ready(function() {
 
     // Themes begin
     am4core.useTheme(am4themes_animated);
@@ -6,101 +25,11 @@ am4core.ready(function() {
     // Themes end
 
     // Create chart instance
-    var chart = am4core.create("graph2", am4charts.XYChart);
+    var chart = am4core.create("graph1", am4charts.XYChart);
 
     // Add data
-    chart.data = [{
-    "date": "2013-01-01",
-    "value": 60
-    }, {
-    "date": "2013-01-02",
-    "value": 67
-    }, {
-    "date": "2013-01-03",
-    "value": 64
-    }, {
-    "date": "2013-01-04",
-    "value": 66
-    }, {
-    "date": "2013-01-05",
-    "value": 60
-    }, {
-    "date": "2013-01-06",
-    "value": 63
-    }, {
-    "date": "2013-01-07",
-    "value": 61
-    }, {
-    "date": "2013-01-08",
-    "value": 60
-    }, {
-    "date": "2013-01-09",
-    "value": 65
-    }, {
-    "date": "2013-01-10",
-    "value": 75
-    }, {
-    "date": "2013-01-11",
-    "value": 77
-    }, {
-    "date": "2013-01-12",
-    "value": 78
-    }, {
-    "date": "2013-01-13",
-    "value": 70
-    }, {
-    "date": "2013-01-14",
-    "value": 70
-    }, {
-    "date": "2013-01-15",
-    "value": 73
-    }, {
-    "date": "2013-01-16",
-    "value": 71
-    }, {
-    "date": "2013-01-17",
-    "value": 74
-    }, {
-    "date": "2013-01-18",
-    "value": 78
-    }, {
-    "date": "2013-01-19",
-    "value": 85
-    }, {
-    "date": "2013-01-20",
-    "value": 82
-    }, {
-    "date": "2013-01-21",
-    "value": 83
-    }, {
-    "date": "2013-01-22",
-    "value": 88
-    }, {
-    "date": "2013-01-23",
-    "value": 85
-    }, {
-    "date": "2013-01-24",
-    "value": 85
-    }, {
-    "date": "2013-01-25",
-    "value": 80
-    }, {
-    "date": "2013-01-26",
-    "value": 87
-    }, {
-    "date": "2013-01-27",
-    "value": 84
-    }, {
-    "date": "2013-01-28",
-    "value": 83
-    }, {
-    "date": "2013-01-29",
-    "value": 84
-    }, {
-    "date": "2013-01-30",
-    "value": 81
-    }];
-    
+    chart.data = data;
+
     // Set input format for the dates
     chart.dateFormatter.inputDateFormat = "yyyy-MM-dd";
 
@@ -108,7 +37,7 @@ am4core.ready(function() {
     var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
     var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
     valueAxis.tooltip.disabled = true;
-    valueAxis.title.text = "Resting heart rate";
+    valueAxis.title.text = "Heart rate variability";
 
     // Create series
     var series = chart.series.push(new am4charts.LineSeries());
@@ -155,5 +84,6 @@ am4core.ready(function() {
     dateAxis.start = 0.00;
     dateAxis.keepSelection = true;
 
-
     }); // end am4core.ready()
+});
+</script>
