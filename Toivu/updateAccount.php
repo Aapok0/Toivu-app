@@ -100,6 +100,16 @@
             }
         ?>
 
+        <?php
+            //***Luovutetaanko ja palataan takaisin pääsivulle alkutilanteeseen
+            //ilman  rekisteröintiä?
+            if (isset($_POST['submitBack'])) {
+                session_unset();
+                session_destroy();
+                echo("<script>location.href = 'userSettings.php';</script>");
+            }
+        ?>
+
         <div class="container">
             <?php
                 //***Näytetäänkö lomakesyötteen aiheuttama varoitus?

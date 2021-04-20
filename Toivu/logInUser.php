@@ -89,8 +89,6 @@
                         $_SESSION['suserName'] = $tulosOlio->userName;
                         $_SESSION['suserEmail'] = $tulosOlio->userEmail;
                         $_SESSION['suserID'] = $tulosOlio->userID;
-                        header("Location: userAccount.php", true); //Vie omalle sivulle
-                        exit;
                     }
                     else {
                     $_SESSION['swarningInput'] = "Väärä salasana";

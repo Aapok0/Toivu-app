@@ -38,8 +38,7 @@
         if ($tulos[0] == 0) { //email ei ole käytössä
             $STH = $DBH->prepare("INSERT INTO wsk21_toivu_user (userID, userName, userPwd, userEmail, userHeight, userWeight, userBday, userSex) VALUES (default, :uname, :pwd, :email, :height, :uweight, :bday, :sex);");
             $STH -> execute($data);
-            header("Location: userAccount.php", true); //Vie omalle sivulle
-            exit;
+            echo("<script>location.href = 'userAccount.php';</script>");
         }
         else {
             $_SESSION['swarningInput'] = "Sähköposti on varattu";
