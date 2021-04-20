@@ -39,7 +39,8 @@
             $STH = $DBH->prepare("INSERT INTO wsk21_toivu_user (userID, userName, userPwd, userEmail, userHeight, userWeight, userBday, userSex) VALUES (default, :uname, :pwd, :email, :height, :uweight, :bday, :sex);");
             $STH -> execute($data);
             //header("Location: index.php"); //Palataan pääsivulle kirjautuneena
-            header("Location: userAccount.php"); //Vie omalle sivulle
+            //header("Location: userAccount.php"); //Vie omalle sivulle
+            echo("<script>location.href = 'userAccount.php';</script>");
         }
         else {
             $_SESSION['swarningInput'] = "Sähköposti on varattu";

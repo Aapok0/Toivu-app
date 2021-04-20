@@ -89,7 +89,8 @@
                         $_SESSION['suserEmail'] = $tulosOlio->userEmail;
                         $_SESSION['suserID'] = $tulosOlio->userID;
                         //header("Location: index.php"); //Palataan pääsivulle kirjautuneena
-                        header("Location: userAccount.php"); //Vie omalle sivulle
+                        //header("Location: userAccount.php"); //Vie omalle sivulle
+                        echo("<script>location.href = 'userAccount.php';</script>");
                     }
                     else {
                     $_SESSION['swarningInput'] = "Väärä salasana";
