@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include("includes/iheader.php");
 ?>
 
@@ -50,7 +51,7 @@
         <div class="container profile-page">
             <h1 class="text-center">Viestit</h1>
             <?php
-                include("includes/igetMessage.php")
+                include("includes/igetMessageBox.php")
             ?>
 
             <div id="message" class="messageBox">
@@ -64,6 +65,7 @@
 
         <script src="js/collapse-menu.js"></script>
         <script src="js/openMessage.js"></script>
+        <script src="js/removeMessage.js"></script>
 
 <?php
     include("includes/ifooter.php");

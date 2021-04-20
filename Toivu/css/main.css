@@ -100,11 +100,16 @@ body, html {
     text-align: center;
 }
 
+.first-heading {
+    margin-bottom: 50px;
+}
+
 .top_content {
     margin-top: 150px;
     border-right: 1px solid var(--medium-champagne);
     border-left: 1px solid var(--medium-champagne);
     padding-left: 20px;
+    color: rgb(0, 0, 0);
     /* background-color: var(--old-rose);
     color: white; */
 }
@@ -446,14 +451,71 @@ label, input[type="radio"] {
 /* CALENDAR */
 
 #calendar {
-    background: #BB8588;
+    background: var(--cornsilk);
     margin: 0 0 50px 0;
     box-shadow: var(--shadow);
-    color: white;
+    color: black;
 }
 
 tr td a {
-    color: white;
+    color: black;
+}
+
+.fc .fc-button-primary {
+    color: black;
+    color: var(--fc-button-text-color, black);
+    background-color: var(--tumbleweed);
+    background-color: var(--fc-button-bg-color, var(--tumbleweed));
+    border-color: var(--tumbleweed);
+    border-color: var(--fc-button-border-color, var(--tumbleweed));
+}
+
+.fc .fc-button-primary:hover {
+    color: black;
+    color: var(--fc-button-text-color, black);
+    background-color: var(--old-rose);
+    background-color: var(--fc-button-hover-bg-color, var(--old-rose));
+    border-color: var(--old-rose);
+    border-color: var(--fc-button-hover-border-color, var(--old-rose));
+}
+
+.fc .fc-button-primary:disabled { /* not DRY */
+    color: black;
+    color: var(--fc-button-text-color, black);
+    background-color: var(--tumbleweed);
+    background-color: var(--fc-button-bg-color, var(--tumbleweed));
+    border-color: var(--tumbleweed);
+    border-color: var(--fc-button-border-color, var(--tumbleweed)); /* overrides :hover */
+}
+
+.fc .fc-button-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(76, 91, 106, 0.5);
+}
+
+.fc .fc-button-primary:not(:disabled):active,
+  .fc .fc-button-primary:not(:disabled).fc-button-active {
+    color: black;
+    color: var(--fc-button-text-color, black);
+    background-color: var(--old-rose);
+    background-color: var(--fc-button-active-bg-color, var(--old-rose));
+    border-color: var(--old-rose);
+    border-color: var(--fc-button-active-border-color, var(--old-rose));
+}
+
+.fc .fc-button-primary:not(:disabled):active:focus,
+  .fc .fc-button-primary:not(:disabled).fc-button-active:focus {
+    box-shadow: 0 0 0 0.2rem rgba(76, 91, 106, 0.5);
+}
+
+.fc-theme-standard td,
+  .fc-theme-standard th {
+    border: 1px solid var(--medium-champagne);
+    border: 1px solid var(--fc-border-color, var(--medium-champagne));
+}
+
+.fc-theme-standard .fc-scrollgrid {
+    border: 1px solid var(--medium-champagne);
+    border: 1px solid var(--fc-border-color, var(--medium-champagne)); /* bootstrap does this. match */
 }
 
 .fc-scroller {

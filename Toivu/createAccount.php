@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include("includes/iheader.php");
 ?>
 
@@ -65,25 +66,25 @@
         if (isset($_POST['submitUser'])) {
             //***Tarkistetaan syötteet myös palvelimella
             if (strlen($_POST['givenUsername']) < 4) {
-            $_SESSION['swarningInput'] = "Puutteellinen käyttäjänimi (väh. 4 merkkiä)";
+            $_SESSION['swarningInputCreate'] = "Puutteellinen käyttäjänimi (väh. 4 merkkiä)";
             }
             else if (!filter_var($_POST['givenEmail'], FILTER_VALIDATE_EMAIL)) {
-            $_SESSION['swarningInput'] = "Virheellinen sähköposti";
+            $_SESSION['swarningInputCreate'] = "Virheellinen sähköposti";
             }
             else if (strlen($_POST['givenPassword']) < 8) {
-            $_SESSION['swarningInput'] = "Puutteellinen salasana (väh. 8 merkkiä)";
+            $_SESSION['swarningInputCreate'] = "Puutteellinen salasana (väh. 8 merkkiä)";
             }
             else if (!preg_match("#[0-9]+#", $_POST['givenPassword'])) {
-            $_SESSION['swarningInput'] = "Puutteellinen salasana (väh. 1 numero)";
+            $_SESSION['swarningInputCreate'] = "Puutteellinen salasana (väh. 1 numero)";
             }
             else if (!preg_match("#[A-Z]+#", $_POST['givenPassword'])) {
-            $_SESSION['swarningInput'] = "Puutteellinen salasana (väh. 1 iso kirjain)";
+            $_SESSION['swarningInputCreate'] = "Puutteellinen salasana (väh. 1 iso kirjain)";
             }
             else if (!preg_match("#[a-z]+#", $_POST['givenPassword'])) {
-            $_SESSION['swarningInput'] = "Puutteellinen salasana (väh. 1 pieni kirjain)";
+            $_SESSION['swarningInputCreate'] = "Puutteellinen salasana (väh. 1 pieni kirjain)";
             }
             else if ($_POST['givenPassword'] != $_POST['givenPasswordVerify']) {
-            $_SESSION['swarningInput'] = "Annettu salasana ja vahvistus eivät ole samat";
+            $_SESSION['swarningInputCreate'] = "Annettu salasana ja vahvistus eivät ole samat";
             }
             else {
                 include("includes/imoveToDB.php");
@@ -91,28 +92,18 @@
         }
     ?>
 
-    <?php
-        //***Luovutetaanko ja palataan takaisin pääsivulle alkutilanteeseen
-        //ilman  rekisteröintiä?
-        if (isset($_POST['submitBack'])) {
-            session_unset();
-            session_destroy();
-            header("Location: index.php");
-        }
-    ?>
-
     <div class="container">
         <?php
             //***Näytetäänkö lomakesyötteen aiheuttama varoitus?
-            if (isset($_SESSION['swarningInput'])) {
-                echo("<p class=\"warning\">Virheellinen syöte: ". $_SESSION['swarningInput']."</p>");
+            if (isset($_SESSION['swarningInputUpdate'])) {
+                echo("<p class=\"warning\">Virheellinen syöte: ". $_SESSION['swarningInputCreate']."</p>");
             }
         ?>
     </div>
 
     <script src="js/collapse-menu.js"></script>
     <script src="js/form_validation.js"></script>
-    
+
 <?php
     include("includes/ifooter.php");
 ?>

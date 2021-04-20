@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include("includes/iheader.php");
 ?>
 
@@ -47,7 +48,7 @@
         </div>
     </div>
 
-    <div class="container top-content">
+    <div class="container top_content">
         <div class="one-half column">
             <?php
                 include("forms/flogInUser.php");
@@ -88,9 +89,6 @@
                         $_SESSION['suserName'] = $tulosOlio->userName;
                         $_SESSION['suserEmail'] = $tulosOlio->userEmail;
                         $_SESSION['suserID'] = $tulosOlio->userID;
-                        //header("Location: index.php"); //Palataan pääsivulle kirjautuneena
-                        //header("Location: userAccount.php"); //Vie omalle sivulle
-                        echo("<script>location.href = 'userAccount.php';</script>");
                     }
                     else {
                     $_SESSION['swarningInput'] = "Väärä salasana";
@@ -104,16 +102,6 @@
                 file_put_contents('log/DBErrors.txt', 'logInUser.php: '.$e -> getMessage()."\n", FILE_APPEND);
                 $_SESSION['swarningInput'] = 'Ongelma tietokannassa';
             }
-        }
-    ?>
-
-    <?php
-        //***Luovutetaanko ja palataan takaisin pääsivulle alkutilanteeseen
-        //ilma  rekisteröintiä?
-        if (isset($_POST['submitBack'])) {
-            session_unset();
-            session_destroy();
-            header("Location: index.php");
         }
     ?>
     

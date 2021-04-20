@@ -1,7 +1,7 @@
 <?php
-    session_start();
     include_once("config/chttps.php");
     include_once("config/cconfig.php");
+    include_once("includes/iunreadMessages.php");
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +22,10 @@
         <!-- CSS -->
         <link rel="stylesheet" href="css/normalize.css"/>
         <link rel="stylesheet" href="css/skeleton.css"/>
-        <link rel="stylesheet" href="css/main.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href='fullcalendar/lib/main.css' rel='stylesheet' />
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="/resources/demos/style.css">
+        <link rel="stylesheet" href="css/main.css"/>
 
         <!-- Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -45,7 +44,30 @@
                     editable: true,
                     selectable: true,
                     nowIndicator: true,
-                    events: 'https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/igetEvent.php',
+                    eventSources: [
+                        {
+                            url: 'https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/igetEvent.php',
+                            display: 'auto',
+                            backgroundColor: '#D8A48F',
+                            borderColor: '#BB8588',
+                            textColor: 'black'
+                        },
+                        {
+                            id: '1',
+                            method: 'POST',
+                            url: 'https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/iaddEvent.php'
+                        },
+                        {
+                            id: '2',
+                            method: 'POST',
+                            url: 'https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/iupdateEvent.php'
+                        },
+                        {
+                            id: '3',
+                            method: 'POST',
+                            url: 'https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/ideleteEvent.php'
+                        }
+                    ],
 
                     headerToolbar: {
                         left: 'dayGridMonth,timeGridWeek,timeGridDay',
@@ -55,99 +77,50 @@
 
                     select: function(arg) {
                         var title = prompt("Kirjoita lyhyesti merkittävistä hyvinvointiisi vaikuttaneista tapahtumista, positiivista ja negatiivistista.");
-                        var mood = prompt("Arvioi vointisi antamalla numeroarvo 1-5: 1->karmea, 2->huono, 3->OK, 4->hyvä ja 5->loistava.");
+                        var mood = prompt("Arvioi vointisi antamalla numeroarvo 1-5:\n1->karmea,\n2->huono,\n3->OK,\n4->hyvä\n5->loistava.");
                         if (title) {
-                            //var start = calendar.formatDate("YYYY-MM-DD");
-                            //var start = moment(start).format('YYYY-MM-DD');
-                            //var end = calendar.formatDate("YYYY-MM-DD");
-                            //var end = moment(end).format('YYYY-MM-DD');
-                            $.ajax({
-                                url: "https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/iaddEvent.php",
-                                type: "POST",
-                                data: {
-                                    title: title,
-                                    start: arg.start,
-                                    end: arg.end,
-                                    allDay: arg.allDay,
-                                    extendedProps: {
-                                        mood: mood
-                                    }
-                                },
-                                success: function() {
-                                    calendar.refetchEvents();
-                                    alert("Tapahtuma lisätty onnistuneesti!");
-                                }
-                            })
+                            calendar.addEvent({
+                                title: title,
+                                mood: mood,
+                                start: arg.start,
+                                end: arg.end,
+                                display: 'auto',
+                                backgroundColor: '#D8A48F',
+                                borderColor: '#BB8588',
+                                textColor: 'black'
+                            }, '1')
+                        calendar.refetchEvents()
                         }
+                        calendar.unselect()
                     },
 
-                    editable: true,
-
-                    eventResize: function(event) {
-                        var start = FullCalendar.formatDate(event.start, "YYYY-MM-DD");
-                        var end = FullCalendar.formatDate(event.end, "YYYY-MM-DD");
-                        var title = event.title;
-                        var id = event.id;
-                        $.ajax({
-                            url: "https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/iupdateEvent.php",
-                            type: "POST",
-                            method: 'post',
-                            data: {
-                                title: title,
-                                start: start,
-                                end: end,
-                                id: id,
-                                extendedProps: {
-                                    mood: mood
-                                }
-                            },
-                            success: function() {
-                                calendar.refetchEvents();
-                                alert('Tapahtuma päivitetty!');
-                            }
-                        })
+                    eventResize: function(info) {
+                        var start = event.moveStart(info.startDelta)
+                        var end = event.moveEnd(info.endDelta)
+                        calendar.addEvent({
+                            start: start,
+                            end: end
+                        }, '2')
+                        calendar.refetchEvents()
                     },
 
-                    eventDrop: function(event) {
-                        var start = FullCalendar.formatDate(event.start, "YYYY-MM-DD");
-                        var end = FullCalendar.formatDate(event.end, "YYYY-MM-DD");
-                        var title = event.title;
-                        var id = event.id;
-                        $.ajax({
-                            url: "https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/iupdateEvent.php",
-                            type: "POST",
-                            method: 'post',
-                            data: {
-                                title: title,
-                                start: start,
-                                end: end,
-                                id: id,
-                                extendedProps: {
-                                    mood: mood
-                                }
-                            },
-                            success: function() {
-                                calendar.refetchEvents();
-                                alert('Tapahtuma päivitetty!');
-                            }
-                        })
+                    eventDrop: function(info) {
+                        var what_here = event.moveDates(info.delta)
+                        calendar.addEvent({
+                            start: start,
+                            end: end
+                        }, '2')
+                        calendar.refetchEvents()
                     },
 
-                    eventClick: function(event) {
+                    eventClick: function(info) {
                         if (confirm("Haluatko varmasti poistaa tapahtuman?")) {
-                            var id = event.id;
-                            $.ajax({
-                                url: "https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/ideleteEvent.php",
-                                type: "POST",
-                                method: 'post',
-                                data: {
-                                    id: id
-                                },
-                                success: function() {
-                                    calendar.refetchEvents();
-                                    alert("Tapahtuma poistettu!");
-                                }
-                            })
+                            var id = info.event.id;
+                            event.remove(info.event)
+                            calendar.addEvent({
+                                id: id
+                            }, '3')
+                            calendar.refetchEvents()
                         }
                     }
                 });

@@ -1,7 +1,8 @@
 <?php
     //Graafin tulostus sivulle
     echo "<div class=\"twelve columns\">";
-        echo "<h2>Testigraafi 1</h2>";
+        echo "<h2 class=\"text-center\">Keskimääräinen sykevälivaihtelu (ms)</h2>";
+        echo "<p>Graafissa voit nähdä kuinka paljon sykevälisi keskimäärin vaihtelee sykkeestä sykkeeseen kunkin mittauksen aikana. Arvot ovat millisekunneissa ja korkeampi arvo tarkoittaa, että olet ollut levollisempi ja palautuneempi.</p>";
         echo "<div id=\"graph1\"></div>";
     echo "</div>";
 ?>

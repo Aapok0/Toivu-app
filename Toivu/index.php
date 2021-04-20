@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include("includes/iheader.php");
 ?>
 
@@ -62,7 +63,7 @@
         </div>
 
         <script src="js/collapse-menu.js"></script>
-        
+
 <?php
     include("includes/ifooter.php");
 ?>

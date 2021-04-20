@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include("includes/iheader.php");
 ?>
 
@@ -52,14 +53,10 @@
             <div class="twelve columns">
                 <h1>
                     <?php
-                        echo("<h1 class=\"text-center\">Tervetuloa takaisin " . $_SESSION['suserName'] . "!</h1>");
+                        echo("<h1 class=\"text-center first-heading\">Tervetuloa takaisin " . $_SESSION['suserName'] . "!</h1>");
                     ?>
                 </h1>
             </div>
-
-            <?php
-                include("includes/ireadiness.php");
-            ?>
 
             <!-- Graafit -->
             <?php
@@ -70,9 +67,14 @@
 
             <!-- Kalenteri -->
             <div class="twelve columns">
-                <h2>Testikalenteri</h2>
+                <h2 class="text-center">Kalenteri</h2>
+                <p>Kalenteriin voi lisätä tapahtumia joko painamalla yksittäistä päivää tai ajankohtaa tai pitämällä pohjassa hiiren vasenta nappia ja vetämällä halutun päivien määrän tai aika-alueen. Sovellus kysyy tämän jälkeen tapahtuman selityksen ja arvion sen hetkisestä olosta asteikolla 1-5. Tapahtumia voi siirtää eri kohtaan pitämällä pohjassa tapahtumaa ja vetämällä haluttuun uuteen paikkaan sekä ne voi poistaa painamalla niitä kerran. Sovellus kysyy varmistukseksi haluatko varmasti poistaa kyseisen tapahtuman.</p>
                 <div id="calendar"></div>
             </div>
+
+            <?php
+                include("includes/ireadiness.php");
+            ?>
         </div>
 
         <script src="js/collapse-menu.js"></script>
