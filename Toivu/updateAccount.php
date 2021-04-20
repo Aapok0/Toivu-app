@@ -97,7 +97,8 @@
             if (isset($_POST['submitBack'])) {
                 session_unset();
                 session_destroy();
-                header("Location: userSettings.php");
+                //header("Location: userSettings.php");
+                echo("<script>location.href = 'userSettings.php';</script>");
             }
         ?>
 
