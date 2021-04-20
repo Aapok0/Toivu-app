@@ -100,6 +100,10 @@ body, html {
     text-align: center;
 }
 
+.first-heading {
+    margin-bottom: 50px;
+}
+
 .top_content {
     margin-top: 150px;
     border-right: 1px solid var(--medium-champagne);

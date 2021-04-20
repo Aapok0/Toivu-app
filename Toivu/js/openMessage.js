@@ -7,15 +7,18 @@ function openMessage($title, $message) {
 var modal = document.getElementById("message");
 
 //Haetaan modaalin avaava nappi
-var btn = document.getElementById("openMessage");
+//var btn = document.getElementById("openMessage");
+var btns = document.querySelectorAll('.openMessage');
 
 //Haetaan <span> -elementti, joka sulkee modaalin
 var span = document.getElementsByClassName("close")[0];
 
 //Kun käyttäjä painaa nappia, modaali-ikkuna aukeaa sivulla
-btn.onclick = function() {
-    modal.style.display = "block";
-}
+[].forEach.call(btns, function(el) {
+    el.onclick = function() {
+        modal.style.display = "block";
+    }
+})
 
 //Kun käyttäjä painaa <span> (x), modaali-ikkuna sulkeutuu
 span.onclick = function() {

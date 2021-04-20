@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("../config/cconfig.php");
+    include_once("../config/cconfig.php");
 
     if(isset($_POST["id"])) {
         $query = "DELETE from wsk21_toivu_calendar WHERE calID=:id, userID=:suser";

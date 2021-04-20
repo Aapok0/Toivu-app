@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("../config/cconfig.php");
+    include_once("../config/cconfig.php");
 
     if(isset($_POST["id"])) {
         $query = "UPDATE wsk21_toivu_calendar SET calEvent=:title, calMood=:mood, calStart=:start_event, calEnd=:end_event WHERE calID=:id, userID=:suser";

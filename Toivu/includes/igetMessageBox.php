@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("config/cconfig.php");
+    include_once("config/cconfig.php");
 
     //Viestien hakeminen tietokannasta
     $data = array();
@@ -19,11 +19,11 @@
 
     for ($i=0; $i <= $N-1; $i++) {
         $isread = "";
-        if ($result[$i][3] == "0") {
-            $isread = "✓";
+        if ($result[$i][3] == false) {
+            $isread = "X";
         }
         else {
-            $isread = "X";
+            $isread = "✓";
         }
 
         $data[$i] = array(
@@ -34,29 +34,25 @@
             $isread
         );
     }
-    
-    //Tarkastetaan kuinka monta lukematonta viestiä on
-    $unread = 0;
-    for ($i=0; $i <= $N-1; $i++) {
-        if ($data[$i][4] == "X") {
-            $unread++;
-        }
-    }
-    $_SESSION['unread'] = $unread;
 
     //Viestit taulukkoon
     echo "<table id=\"inbox\">";
         echo "<tr class=\"bolder\">";
-            echo "<th>Otsikko</th>";
+            echo "<th class=\"bolder\">Otsikko</th>";
             echo "<th class=\"text-center bolder\">Saapunut</th>";
             echo "<th class=\"text-center bolder\">Luettu</th>";
+            echo "<th class=\"bolder\">Poista viesti</th>";
         echo "<tr>";
 
         for ($i=0; $i <= $N-1; $i++) {
+            $title = $data[$i][1];
+            $message = $data[$i][2];
+            $event = "openMessage('$title','$message')";
             echo "<tr>";
-                echo "<th class=\"message_title\">" . $data[$i][1] . "<button id=\"openMessage\" onclick=\"openMessage(". $data[$i][1] ."". $data[$i][2] .")\">Avaa</button></th>";
+                echo "<th class=\"message_title\">" . $data[$i][1] . "<button class=\"openMessage\" onmousedown=\"$event\">Avaa</button></th>";
                 echo "<th class=\"text-center\">" . $data[$i][3] . "</th>";
                 echo "<th class=\"text-center\">" . $data[$i][4] . "</th>";
+                echo "<th class=\"remove_message\"><button onclick=\"removeMessage()\">Poista</button></th>";
             echo "<tr>";
         }
     echo "</table>";

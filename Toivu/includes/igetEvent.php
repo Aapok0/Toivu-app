@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("../config/cconfig.php");
+    include_once("../config/cconfig.php");
 
     $session_user = $_SESSION['suserID'];
     $data = array();

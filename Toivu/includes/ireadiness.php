@@ -67,6 +67,7 @@
     }
 
     //HRV-datat taulukossa
+    echo "<h2 class=\"text-center\">Yhteenveto sinun mittauksista ja analyyseista</h2>";
     echo "<table id=\"analysis\">";
         echo "<tr class=\"bolder\">";
             echo "<th>Start time</th>";

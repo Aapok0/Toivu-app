@@ -1,6 +1,7 @@
 <?php
     include_once("config/chttps.php");
     include_once("config/cconfig.php");
+    include_once("includes/iunreadMessages.php");
 ?>
 
 <!DOCTYPE html>
@@ -104,7 +105,7 @@
                     },
 
                     eventDrop: function(info) {
-                        var ? = event.moveDates(info.delta)
+                        var what_here = event.moveDates(info.delta)
                         calendar.addEvent({
                             start: start,
                             end: end

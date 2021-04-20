@@ -1,7 +1,8 @@
 <?php
     //Graafin tulostus sivulle
     echo "<div class=\"twelve columns\">";
-        echo "<h2>Testigraafi 3</h2>";
+        echo "<h2 class=\"text-center\">Levollisuusanalyysi</h2>";
+        echo "Analysoimme sinun levollisuutta ja palautumista kahdella eri tavalla ja pyrimme antamaan niiden yhdistelmällä mahdollisimman tarkan kuvan voinnistasi. Readiness arvioi leposykevälien vaihtelua kokonaisuudessaan ja pNN50 arvioi peräkkäisiä yli 50 milliseknnunin vaihteluita mittauksissasi.";
         echo "<div id=\"graph3\"></div>";
     echo "</div>";
 ?>
