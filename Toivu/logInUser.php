@@ -89,6 +89,7 @@
                         $_SESSION['suserName'] = $tulosOlio->userName;
                         $_SESSION['suserEmail'] = $tulosOlio->userEmail;
                         $_SESSION['suserID'] = $tulosOlio->userID;
+                        echo("<script>location.href = 'userAccount.php';</script>");
                     }
                     else {
                     $_SESSION['swarningInput'] = "Väärä salasana";

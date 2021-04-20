@@ -9,6 +9,8 @@
             $stmt = $DBH -> prepare($sql);
             $stmt = bindParam(':uname', $uname);
             $stmt -> execute();
+            $_SESSION['suserName'] = $_POST['givenUsername'];
+            echo("<script>location.href = 'userSettings.php';</script>");
         }
         catch (PDOException $e) {
             file_put_contents('log/DBErrors.txt', 'updateAccount.php: '.$e -> getMessage()."\n", FILE_APPEND);
@@ -30,6 +32,8 @@
                 $stmt = $DBH -> prepare($sql);
                 $stmt = bindParam(':email', $email);
                 $stmt -> execute();
+                $_SESSION['suserEmail'] = $_POST['givenEmail'];
+                echo("<script>location.href = 'userSettings.php';</script>");
             }
             catch (PDOException $e) {
                 file_put_contents('log/DBErrors.txt', 'updateAccount.php: '.$e -> getMessage()."\n", FILE_APPEND);
@@ -47,6 +51,7 @@
         $stmt = $DBH -> prepare($sql);
         $stmt = bindParam(':height', $height);
         $stmt -> execute();
+        echo("<script>location.href = 'userSettings.php';</script>");
         }
         catch (PDOException $e) {
             file_put_contents('log/DBErrors.txt', 'updateAccount.php: '.$e -> getMessage()."\n", FILE_APPEND);
@@ -60,6 +65,7 @@
             $stmt = $DBH -> prepare($sql);
             $stmt = bindParam(':uweight', $uweight);
             $stmt -> execute();
+            echo("<script>location.href = 'userSettings.php';</script>");
         }
         catch (PDOException $e) {
             file_put_contents('log/DBErrors.txt', 'updateAccount.php: '.$e -> getMessage()."\n", FILE_APPEND);
@@ -73,6 +79,7 @@
             $stmt = $DBH -> prepare($sql);
             $stmt = bindParam(':bday', $bday);
             $stmt -> execute();
+            echo("<script>location.href = 'userSettings.php';</script>");
         }
         catch (PDOException $e) {
             file_put_contents('log/DBErrors.txt', 'updateAccount.php: '.$e -> getMessage()."\n", FILE_APPEND);
@@ -86,6 +93,7 @@
             $stmt = $DBH -> prepare($sql);
             $stmt = bindParam(':sex', $sex);
             $stmt -> execute();
+            echo("<script>location.href = 'userSettings.php';</script>");
         }
         catch (PDOException $e) {
             file_put_contents('log/DBErrors.txt', 'updateAccount.php: '.$e -> getMessage()."\n", FILE_APPEND);
@@ -100,6 +108,7 @@
             $stmt = $DBH -> prepare($sql);
             $stmt = bindParam(':pwd', $pwd);
             $stmt -> execute();
+            echo("<script>location.href = 'userSettings.php';</script>");
         }
         catch (PDOException $e) {
             file_put_contents('log/DBErrors.txt', 'updateAccount.php: '.$e -> getMessage()."\n", FILE_APPEND);

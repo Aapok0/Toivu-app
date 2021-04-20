@@ -38,6 +38,14 @@
         if ($tulos[0] == 0) { //email ei ole käytössä
             $STH = $DBH->prepare("INSERT INTO wsk21_toivu_user (userID, userName, userPwd, userEmail, userHeight, userWeight, userBday, userSex) VALUES (default, :uname, :pwd, :email, :height, :uweight, :bday, :sex);");
             $STH -> execute($data);
+            
+            //Haetaan userID sessioon
+            $query = "SELECT userID FROM wsk21_toivu_user WHERE userEmail = :email";
+            $stmt = $DBH->prepare($query);
+            $stmt -> bindParam(':email', $_SESSION['suserEmail']);
+            $stmt -> execute();
+            $result = $stmt -> fetch();
+            $_SESSION['suserID'] = $result[0];
             echo("<script>location.href = 'userAccount.php';</script>");
         }
         else {
