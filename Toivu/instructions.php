@@ -67,23 +67,10 @@
         </div>
 
         <div class="container profile-page">
-            <h1 class="text-center">Viestit</h1>
-            <?php
-                include("includes/igetMessageBox.php")
-            ?>
-
-            <div id="message" class="messageBox">
-                <div class="messageContent">
-                    <span class="close">&times;</span>
-                    <h4 id="messTitle"></h4>
-                    <p id="messText"></p>
-                </div>
-            </div>
+            <h2 class="text-center">Ohjeita sovelluksen käyttöön</h2>
         </div>
 
         <script src="js/collapse-menu.js"></script>
-        <script src="js/openMessage.js"></script>
-        <script src="js/removeMessage.js"></script>
 
 <?php
     include("includes/ifooter.php");

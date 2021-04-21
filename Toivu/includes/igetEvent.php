@@ -2,6 +2,15 @@
     session_start();
     include_once("../config/cconfig.php");
 
+    function isTrue($bool) {
+        if ($bool == 1) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     $session_user = $_SESSION['suserID'];
     $data = array();
     $query = "SELECT * FROM wsk21_toivu_calendar WHERE userID = :suser ORDER BY calID";
@@ -16,7 +25,8 @@
             'title' => $row["calEvent"],
             'mood' => $row["calMood"],
             'start' => $row["calStart"],
-            'end' => $row["calEnd"]
+            'end' => $row["calEnd"],
+            'allday' => isTrue($row['allday'])
         );
     }
     

@@ -19,9 +19,9 @@
                     </div>
 
                     <div class="site-header__end">
-                        <nav class="nav">
-                            <button class="nav__toggle" aria-expanded="false" type="button">
-                                Menu
+                        <nav>
+                            <button class="nav__toggle button-light" aria-expanded="false" type="button">
+                                Päävalikko
                             </button>
                             <ul class="nav__wrapper no-bullets">
                                 <li class="nav__item">
@@ -45,6 +45,24 @@
                         </nav>
                     </div>        
                 </header>
+            </div>
+        </div>
+
+        <!-- profiilinavigaatio -->
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns profile-header profile-header__wrapper">
+                    <nav class="profile-header__end">
+                        <button class="pro-nav__toggle button-light" aria-expanded="false" type="button">
+                            Profiilivalikko
+                        </button>
+                        <ul class="pro-nav__wrapper no-bullets">
+                            <?php
+                                include("includes/inavProfile.php");
+                            ?>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
 

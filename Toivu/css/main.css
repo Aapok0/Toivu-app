@@ -59,7 +59,9 @@
         height: 252px;
     }
 
-
+    .table {
+        width: 80%;
+    }
 }
 
 /* Larger than Desktop HD */
@@ -207,16 +209,6 @@ li.nav__item {
     display: none; 
 }
 
-.inbox {
-    display: flex;
-    flex-direction: row;
-}
-
-.counter {
-    display: flex;
-    font-weight: bolder;
-}
-
 @media (min-width: 865px) {
     .nav__wrapper {
         display: flex;
@@ -276,9 +268,6 @@ li.nav__item {
         align-self: center;
         justify-self: flex-end;
         margin: 0;
-        /* position: absolute;
-        right: 1rem;
-        top: 1rem;  */
     }
 
     .nav__item a {
@@ -300,10 +289,169 @@ li.nav__item {
     }
 }
 
+/* PROFILE NAVIGATION */
+
+.profile-header {
+    position: relative;
+    background-color: var(--cornsilk);
+    margin-top: 50px;
+}
+
+.profile-header__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-header__end {
+    display: flex;
+    align-items: center;
+    background-color: var(--medium-champagne);
+    width: 100%;
+}
+
+.pro-nav__item {
+    width: calc(100% / 6);
+}
+
+.pro-nav__item a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pro-nav__item a:hover {
+    text-decoration: underline;
+    color: var(--cornsilk);
+}
+
+li.pro-nav__item {
+    margin-bottom: 0;
+}
+
+.pro-nav-icon {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+}
+
+.pro-nav__toggle {
+    display: none; 
+}
+
+.inbox {
+    display: flex;
+    flex-direction: row;
+}
+
+.counter {
+    display: flex;
+    font-weight: bolder;
+}
+
+@media (min-width: 865px) {
+    .pro-nav__wrapper {
+        display: flex;
+        height: fit-content;
+        margin-bottom: 0;
+        width: 100%;
+    }
+    
+    .pro-nav__item:first-child a {
+        border-left: 0;
+    }
+
+    .pro-nav__item:last-child a {
+        border-right: 0 !important;
+    }
+
+    .pro-nav__item a {
+        text-align: center;
+        box-shadow: var(--medium-champagne) 0px 7px 29px 0px;
+        border-right: 2px solid var(--artichoke);
+        border-left: 2px solid var(--artichoke);
+    }
+
+    .pro-nav__item.active a {
+        box-shadow: #5a5a47 0px 7px 29px 0px;
+        font-weight: bolder; 
+    }
+}
+
+@media (max-width: 864px) {
+    .pro-nav__wrapper {
+        position: absolute;
+        top: calc(100% + 35px);
+        right: 0;
+        z-index: 1;
+        width: 50%;
+        background-color: var(--medium-champagne);
+        border: 2px solid var(--artichoke);
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    }
+
+    .pro-nav__wrapper.active {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .profile-header__end {
+        display: flex;
+        justify-content: flex-end;
+        background-color: var(--cornsilk);
+    }
+
+    .pro-nav__toggle {
+        display: flex;
+        align-self: center;
+        justify-self: flex-end;
+        margin: 0;
+    }
+
+    .pro-nav__item {
+        width: 100%;
+        height: 64px;
+    }
+
+    .pro-nav__item a {
+        flex-direction: row;
+        justify-content: flex-start;
+        box-shadow: var(--medium-champagne) 0px 7px 29px 0px;
+        border: 2px solid var(--artichoke);
+        height: 64px;
+    }
+
+    .pro-nav__item.active a {
+        box-shadow: #5a5a47 0px 7px 29px 0px;
+        font-weight: bolder; 
+    }
+
+    .pro-nav-icon {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-right: 18px;
+        margin-left: 10px;
+    }
+}
+
 /* SITES */
 
-.profile-page {
-    margin-top: 150px;
+@media (min-width: 865px) {
+    .profile-page {
+        margin-top: 150px;
+    }
+}
+
+
+@media (max-width: 864px) {
+    .profile-page {
+        margin-top: 50px;
+    }
 }
 
 #inbox {
@@ -539,6 +687,14 @@ tr td a {
     position: absolute;
     top: 10px;
     right: 10px;
+}
+
+.fc-event-time, .fc-event-title {
+    white-space: normal;
+}
+    
+.fc-title {
+    white-space: normal;
 }
 
 /* GRAPHS */

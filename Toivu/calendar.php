@@ -67,23 +67,16 @@
         </div>
 
         <div class="container profile-page">
-            <h1 class="text-center">Viestit</h1>
-            <?php
-                include("includes/igetMessageBox.php")
-            ?>
-
-            <div id="message" class="messageBox">
-                <div class="messageContent">
-                    <span class="close">&times;</span>
-                    <h4 id="messTitle"></h4>
-                    <p id="messText"></p>
-                </div>
+            <!-- Kalenteri -->
+            <div class="twelve columns">
+                <h2 class="text-center">Kalenteri</h2>
+                <p>Kalenteriin voi lisätä tapahtumia joko painamalla yksittäistä päivää tai ajankohtaa tai pitämällä pohjassa hiiren vasenta nappia ja vetämällä halutun päivien määrän tai aika-alueen. Sovellus kysyy tämän jälkeen tapahtuman selityksen ja arvion sen hetkisestä olosta asteikolla 1-5. Tapahtumia voi siirtää eri kohtaan pitämällä pohjassa tapahtumaa ja vetämällä haluttuun uuteen paikkaan sekä ne voi poistaa painamalla niitä kerran. Sovellus kysyy varmistukseksi haluatko varmasti poistaa kyseisen tapahtuman.</p>
+                <div id="calendar"></div>
             </div>
         </div>
 
         <script src="js/collapse-menu.js"></script>
-        <script src="js/openMessage.js"></script>
-        <script src="js/removeMessage.js"></script>
+        <script src="js/fullcalendar.js"></script>
 
 <?php
     include("includes/ifooter.php");
