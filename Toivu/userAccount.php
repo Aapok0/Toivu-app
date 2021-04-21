@@ -19,9 +19,9 @@
                     </div>
 
                     <div class="site-header__end">
-                        <nav class="nav">
+                        <nav>
                             <button class="nav__toggle button-light" aria-expanded="false" type="button">
-                                Menu
+                                Päävalikko
                             </button>
                             <ul class="nav__wrapper no-bullets">
                                 <li class="nav__item">
@@ -48,6 +48,24 @@
             </div>
         </div>
 
+        <!-- profiilinavigaatio -->
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns profile-header profile-header__wrapper">
+                    <nav class="profile-header__end">
+                        <button class="pro-nav__toggle button-light" aria-expanded="false" type="button">
+                            Profiilivalikko
+                        </button>
+                        <ul class="pro-nav__wrapper no-bullets">
+                            <?php
+                                include("includes/inavProfile.php");
+                            ?>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
         <!-- Profiilisivun otsikko ja tervehdys -->
         <div class="container profile-page">
             <div class="twelve columns">
@@ -58,26 +76,13 @@
                 </h1>
             </div>
 
-            <!-- Graafit -->
-            <?php
-                include("includes/igraph1.php");
-                include("includes/igraph2.php");
-                include("includes/igraph3.php");
-            ?>
-
-            <!-- Kalenteri -->
-            <div class="twelve columns">
-                <h2 class="text-center">Kalenteri</h2>
-                <p>Kalenteriin voi lisätä tapahtumia joko painamalla yksittäistä päivää tai ajankohtaa tai pitämällä pohjassa hiiren vasenta nappia ja vetämällä halutun päivien määrän tai aika-alueen. Sovellus kysyy tämän jälkeen tapahtuman selityksen ja arvion sen hetkisestä olosta asteikolla 1-5. Tapahtumia voi siirtää eri kohtaan pitämällä pohjassa tapahtumaa ja vetämällä haluttuun uuteen paikkaan sekä ne voi poistaa painamalla niitä kerran. Sovellus kysyy varmistukseksi haluatko varmasti poistaa kyseisen tapahtuman.</p>
-                <div id="calendar"></div>
-            </div>
-
             <?php
                 include("includes/ireadiness.php");
             ?>
         </div>
 
         <script src="js/collapse-menu.js"></script>
+        <script src="js/navToggle.js"></script>
 
 <?php
     include("includes/ifooter.php");
