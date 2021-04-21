@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Toivu - Prototyyppi 0.1</title>
+        <title>Toivu - Alpha 0.8</title>
 
         <!-- MOBIILIMETA -->
         <meta name="viewport" content="width=device-width, initial-scale=1"/>

@@ -197,7 +197,6 @@ a {
 }
 
 .nav__item a:hover {
-    text-decoration: underline;
     color: var(--cornsilk);
 }
 
@@ -322,7 +321,6 @@ li.nav__item {
 }
 
 .pro-nav__item a:hover {
-    text-decoration: underline;
     color: var(--cornsilk);
 }
 

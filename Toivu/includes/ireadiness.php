@@ -21,7 +21,7 @@
         //Prosenttimäärä maksimiarvosta 6.5
         $readiness = $lnrmssd/6.5 * 100;
 
-        return $readiness;
+        return round($readiness, 2);
     }
 
     //pNN50-analyysi
@@ -42,7 +42,7 @@
         //Lasketaan prosenttimäärä sykevälien kokonaismäärästä
         $pNN50 = 1/($N-1) * $NN50 * 100;
 
-        return $pNN50;
+        return round($pNN50, 2);
     }
 
     //Alustetaan taulukko johon tallennetaan kaikki graafeihin tarvittavat tiedot JSON-tiedostoista.
@@ -63,7 +63,11 @@
 
     for ($i=0; $i <= $N-1; $i++) {
         $hrv_arr = json_decode($result[$i]["hrvData"], true);
-        $data_array[$i] = array($hrv_arr["name"], $hrv_arr["timeStart"], $hrv_arr["timeEnd"], $hrv_arr["aveHR"], readiness($hrv_arr["R-R"]), pNN50($hrv_arr["R-R"]));
+        $start = strtotime($hrv_arr["timeStart"]);
+        $start = date('Y-m-d H:i:s', $start);
+        $end = strtotime($hrv_arr["timeEnd"]);
+        $end = date('Y-m-d H:i:s', $end);
+        $data_array[$i] = array($hrv_arr["name"], $start, $end, round($hrv_arr["aveHR"], 1), readiness($hrv_arr["R-R"]), pNN50($hrv_arr["R-R"]));
     }
 
     //HRV-datat taulukossa

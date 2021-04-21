@@ -82,7 +82,6 @@
         </div>
 
         <script src="js/collapse-menu.js"></script>
-        <script src="js/navToggle.js"></script>
 
 <?php
     include("includes/ifooter.php");

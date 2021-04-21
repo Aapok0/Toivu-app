@@ -45,14 +45,16 @@
         echo "<tr>";
 
         for ($i=0; $i <= $N-1; $i++) {
+            $id = $data[$i][0];
             $title = $data[$i][1];
             $message = $data[$i][2];
-            $event = "openMessage('$title','$message')";
+            $event = "openMessage('$id','$title','$message')";
+            $event2 = "removeMessage('$id')";
             echo "<tr>";
                 echo "<th class=\"message_title\">" . $data[$i][1] . "<button class=\"openMessage\" onmousedown=\"$event\">Avaa</button></th>";
                 echo "<th class=\"text-center\">" . $data[$i][3] . "</th>";
                 echo "<th class=\"text-center\">" . $data[$i][4] . "</th>";
-                echo "<th class=\"remove_message\"><button onclick=\"removeMessage()\">Poista</button></th>";
+                echo "<th class=\"remove_message\"><button onclick=\"$event2\">Poista</button></th>";
             echo "<tr>";
         }
     echo "</table>";
