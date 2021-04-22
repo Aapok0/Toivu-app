@@ -77,6 +77,7 @@
 
         <script src="js/collapse-menu.js"></script>
         <script src="js/fullcalendar.js"></script>
+        <script src="js/form_validation.js"></script>
 
 <?php
     include("includes/ifooter.php");

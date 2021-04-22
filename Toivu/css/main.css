@@ -12,56 +12,68 @@
 
 /* MEDIA QUERIES */
 
-/* Larger than mobile */
-@media (min-width: 400px) {
+/* Mobile */
+@media (min-width: 250px) {
     header, footer {
         width: 100%;
     }
 
-    img.logo__banner {
+    img.logo__banner, img.form__banner {
         width: 85%;
+    }
+
+    input[type=text], input[type=password], input[type=email],input[type=number], textarea {
+        width: 220px;
+    }
+
+    .table {
+        width: 80%;
+    }
+
+    .footer_logo {
+        width: 70%;
+    }
+}
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+    input[type=text], input[type=password], input[type=email],input[type=number], textarea {
+        width: 280px;
     }
 }
 
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px) {
     footer {
-        bottom: -428px;
+        bottom: -800px;
     }
 
     .footer-col {
-        height: 376px;
+        height: 700px;
+    }
+
+    input[type=text], input[type=password], input[type=email],input[type=number], textarea {
+        width: 180px;
     }
 }
 
 /* Larger than tablet */
 @media (min-width: 750px) {
-    footer {
-        bottom: -330px;
-    }
-
-    .footer-col {
-        height: 278px;
-    }
-
     img.logo__banner {
         width: auto;
+    }
+
+    input[type=text], input[type=password], input[type=email],input[type=number], textarea {
+        width: 250px;
+    }
+
+    .footer_logo {
+        width: 65%;
     }
 }
 
 /* Larger than desktop */
 @media (min-width: 1000px) {
-    footer {
-        bottom: -304px;
-    }
-
-    .footer-col {
-        height: 252px;
-    }
-
-    .table {
-        width: 80%;
-    }
 }
 
 /* Larger than Desktop HD */
@@ -70,12 +82,20 @@
         max-width: 1140px;
     }
 
+    input[type=text], input[type=password], input[type=email],input[type=number], textarea {
+        width: 350px;
+    }
+
     footer {
-        bottom: -278px;
+        bottom: -700px;
     }
 
     .footer-col {
-        height: 222px;
+        height: 650px;
+    }
+
+    .footer_logo {
+        width: 50%;
     }
 }
 
@@ -107,7 +127,7 @@ body, html {
 }
 
 .top_content {
-    margin-top: 150px;
+    margin-top: 100px;
     border-right: 1px solid var(--medium-champagne);
     border-left: 1px solid var(--medium-champagne);
     padding-left: 20px;
@@ -151,11 +171,6 @@ a {
 
 #logo img {
     height: 120px;
-    /* margin: 20px 0 0 0; */
-    /* border-right: 3px solid #efebce65;
-    border-left: 3px solid #efebce65;
-    box-shadow: #efebce65 0px 7px 29px 0px; 
-    border-radius: 100%; */
 }
 
 .nav-icon {
@@ -202,6 +217,7 @@ a {
 
 li.nav__item {
     margin-bottom: 0;
+    min-width: 100px;
 }
 
 .nav__toggle {
@@ -293,7 +309,7 @@ li.nav__item {
 .profile-header {
     position: relative;
     background-color: var(--cornsilk);
-    margin-top: 50px;
+    margin-top: 2.5rem;
 }
 
 .profile-header__wrapper {
@@ -367,8 +383,8 @@ li.pro-nav__item {
     .pro-nav__item a {
         text-align: center;
         box-shadow: var(--medium-champagne) 0px 7px 29px 0px;
-        border-right: 2px solid var(--artichoke);
-        border-left: 2px solid var(--artichoke);
+        border-right: 2px solid var(--cornsilk);
+        border-left: 2px solid var(--cornsilk);
     }
 
     .pro-nav__item.active a {
@@ -441,7 +457,7 @@ li.pro-nav__item {
 
 @media (min-width: 865px) {
     .profile-page {
-        margin-top: 150px;
+        margin-top: 100px;
     }
 }
 
@@ -530,10 +546,6 @@ li.pro-nav__item {
 
 /* FORM */
 
-input[type=text], input[type=password], input[type=email],input[type=number] {
-    width: 350px;
-}
-
 input[type=text]:focus, input[type=password]:focus {
     outline: none !important;
     border: 2px solid var(--old-rose);
@@ -558,6 +570,7 @@ label, input[type="radio"] {
 .rating {
     float:left;
     width:300px;
+    margin-left: -140px;
 }
 
 .rating span { 
@@ -748,4 +761,29 @@ footer {
     padding: 2rem;
     /* border-radius: 5px; */
     box-shadow: #5a5a47 0px 7px 29px 0px;
+}
+
+.footer-link a:hover {
+    color: var(--cornsilk);
+}
+
+.footer_logo__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.socials {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}
+
+.social-item {
+    margin-right: 5px;
+}
+
+.copyright {
+    margin: 0;
 }

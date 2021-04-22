@@ -56,7 +56,7 @@
         </div>
 
         <div class="one-half column">
-            <img src="images/Toivu.png" alt="Toivu-logo">
+            <img class="form__banner" src="images/Toivu.png" alt="Toivu-logo">
         </div>
     </div>
 

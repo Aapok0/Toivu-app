@@ -38,7 +38,7 @@
     var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
     var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
     valueAxis.tooltip.disabled = true;
-    valueAxis.title.text = "Heart rate variability";
+    valueAxis.title.text = "Sykevälivaihtelu";
 
     // Create series
     var series = chart.series.push(new am4charts.LineSeries());

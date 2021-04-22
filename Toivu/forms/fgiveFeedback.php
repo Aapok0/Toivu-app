@@ -5,14 +5,14 @@
             <br />
             <span class="desc">Max. 30 merkkiä</span>
             <br />
-            <input type="text" name="givenFeedTitle" placeholder="otsikko" maxlength="30" required/>
+            <input type="text" name="givenTitle" placeholder="otsikko" maxlength="30" required/>
         </p>
         <p>
             Palaute <span class="big_font">*</span>
             <br />
             <span class="desc">Max. 1000 merkkiä</span>
             <br />
-            <textarea rows="5" cols="40" type="text" name="givenFeedMessage" placeholder="kirjoita tähän palautteesi" maxlength="1000" required></textarea>
+            <textarea rows="5" cols="40" type="text" name="givenMessage" placeholder="kirjoita tähän palautteesi" maxlength="1000" required></textarea>
         </p>
         <p>
             Arvio sovelluksesta 1-5:

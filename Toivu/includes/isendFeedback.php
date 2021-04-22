@@ -1,8 +1,8 @@
 <?php
     //Tiedot kantaan
     $data['userID'] = $_SESSION['suserID'];
-    $data['title'] = $_POST['givenFeedTitle'];
-    $data['fmessage'] = $_POST['givenFeedMessage'];
+    $data['title'] = $_POST['givenTitle'];
+    $data['fmessage'] = $_POST['givenMessage'];
     $data['rating'] = $_POST['givenRating'];
 
     try {

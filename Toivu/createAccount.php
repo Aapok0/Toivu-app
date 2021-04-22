@@ -57,7 +57,7 @@
         </div>
 
         <div class="one-half column">
-            <img src="images/Toivu.png" alt="Toivu-logo">
+            <img class="form__banner" src="images/Toivu.png" alt="Toivu-logo">
         </div>
     </div>
     
@@ -103,6 +103,7 @@
 
     <script src="js/collapse-menu.js"></script>
     <script src="js/form_validation.js"></script>
+    <script src="js/datepicker.js"></script>
 
 <?php
     include("includes/ifooter.php");
