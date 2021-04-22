@@ -19,12 +19,12 @@
                     </div>
 
                     <div class="site-header__end">
-                        <nav>
-                            <button class="nav__toggle button-light" aria-expanded="false" type="button">
-                                Päävalikko
+                        <nav class="nav">
+                            <button class="nav__toggle" aria-expanded="false" type="button">
+                                Menu
                             </button>
                             <ul class="nav__wrapper no-bullets">
-                                <li class="nav__item">
+                                <li class="nav__item active">
                                     <a href="index.php">
                                         <img class="nav-icon" src="images/iconfinder_home_1608930.png" alt="Home">
                                         <span>Koti</span>
@@ -48,42 +48,15 @@
             </div>
         </div>
 
-        <!-- profiilinavigaatio -->
+        <!-- Henkilötietojen kerääminen -->
         <div class="container">
             <div class="row">
-                <div class="twelve columns profile-header profile-header__wrapper">
-                    <nav class="profile-header__end">
-                        <button class="pro-nav__toggle button-light" aria-expanded="false" type="button">
-                            Profiilivalikko
-                        </button>
-                        <ul class="pro-nav__wrapper no-bullets">
-                            <?php
-                                include("includes/inavProfile.php");
-                            ?>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-
-        <div class="container profile-page">
-            <h1 class="text-center">Viestit</h1>
-            <?php
-                include("includes/igetMessageBox.php")
-            ?>
-
-            <div id="message" class="messageBox">
-                <div class="messageContent">
-                    <span class="close">&times;</span>
-                    <h4 id="messTitle"></h4>
-                    <p id="messText"></p>
+                <div class="twelve columns top_content">
                 </div>
             </div>
         </div>
 
         <script src="js/collapse-menu.js"></script>
-        <script src="js/openMessage.js"></script>
-        <script src="js/removeMessage.js"></script>
 
 <?php
     include("includes/ifooter.php");

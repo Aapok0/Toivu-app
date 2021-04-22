@@ -73,22 +73,26 @@
     //HRV-datat taulukossa
     echo "<h2 class=\"text-center\">Yhteenveto sinun mittauksista ja analyyseista</h2>";
     echo "<table id=\"analysis\">";
-        echo "<tr class=\"bolder\">";
-            echo "<th>Start time</th>";
-            echo "<th>End time</th>";
-            echo "<th>Average HR</th>";
-            echo "<th>Readiness (0-100)</th>";
-            echo "<th>pNN50 (%)</th>";
-        echo "</tr>";
+        echo "<thead>";
+            echo "<tr class=\"bolder\">";
+                echo "<th>Aloitus</th>";
+                echo "<th>Lopetus</th>";
+                echo "<th>Keskisyke</th>";
+                echo "<th>Readiness (%)</th>";
+                echo "<th>pNN50 (%)</th>";
+            echo "</tr>";
+        echo "</thead>";
 
+        echo "<tbody>";
         for ($i=0; $i <= $N-1; $i++) {
             echo "<tr>";
-                echo "<th>" . $data_array[$i][1] . "</th>";
-                echo "<th>" . $data_array[$i][2] . "</th>";
-                echo "<th>" . $data_array[$i][3] . "</th>";
-                echo "<th>" . $data_array[$i][4] . "</th>";
-                echo "<th>" . $data_array[$i][5] . "</th>";
+                echo "<td class=\"analysis_td\">" . $data_array[$i][1] . "</td>";
+                echo "<td class=\"analysis_td\">" . $data_array[$i][2] . "</td>";
+                echo "<td class=\"analysis_td\">" . $data_array[$i][3] . "</td>";
+                echo "<td class=\"analysis_td\">" . $data_array[$i][4] . "</td>";
+                echo "<td class=\"analysis_td\">" . $data_array[$i][5] . "</td>";
             echo "<tr>";
         }
+        echo "</tbody>";
     echo "</table>";
 ?>

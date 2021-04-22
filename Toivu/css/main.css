@@ -12,6 +12,86 @@
 
 /* MEDIA QUERIES */
 
+/* Responsive table */
+@media (max-width: 675px) {
+    #analysis table, #analysis thead, #analysis tbody,
+    #analysis th, #analysis td, #analysis tr,
+    #inbox table, #inbox thead, #inbox tbody, #inbox th,
+    #inbox td, #inbox tr { 
+		display: block; 
+	}
+
+    #analysis thead tr, #inbox thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+    #analysis tr, #inbox tr { 
+        border: 2px solid var(--old-rose);
+    }
+
+    #analysis td, #inbox td {
+		border: none;
+		border-bottom: 2px solid var(--old-rose); 
+		position: relative;
+		padding-left: 50%; 
+	}
+
+    #analysis td:before, #inbox td:before { 
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+
+    .analysis_td:nth-of-type(1):before { content: "Aloitus: "; font-weight: bolder; }
+	.analysis_td:nth-of-type(2):before { content: "Lopetus: "; font-weight: bolder; }
+	.analysis_td:nth-of-type(3):before { content: "Keskisyke: "; font-weight: bolder; }
+	.analysis_td:nth-of-type(4):before { content: "Readiness (%): "; font-weight: bolder; }
+	.analysis_td:nth-of-type(5):before { content: "pNN50 (%): "; font-weight: bolder; }
+    .analysis_td, .analysis_td:after {
+        text-align: start !important;
+    }
+
+    .inbox_td:nth-of-type(1):before { content: "Otsikko: "; font-weight: bolder; }
+    .inbox_td:nth-of-type(2):before { content: "Viestit: "; font-weight: bolder; }
+	.inbox_td:nth-of-type(3):before { content: "Saapunut: "; font-weight: bolder; }
+	.inbox_td:nth-of-type(4):before { content: "Luettu: "; font-weight: bolder; }
+	.inbox_td:nth-of-type(5):before { content: "Poista viesti: "; font-weight: bolder; }
+    .inbox_td, .inbox_td::after {
+        text-align: start !important;
+    }
+}
+
+@media (min-width: 676px) {
+    #analysis table, #inbox table {
+        width: 80%;
+        border-collapse: collapse;
+        margin-bottom: 50px;
+    }
+
+    #analysis tr:nth-of-type(4n+3), #inbox tr:nth-of-type(4n+3) {
+        background-color: var(--medium-champagne);
+    }
+
+    #analysis tr, #inbox tr {
+        border-bottom: 2px solid var(--old-rose);
+    }
+
+    #analysis th, #analysis td, #inbox th, #inbox td {
+        text-align: start;
+        border: 0;
+    }
+
+    #analysis th:first-child, #analysis td:first-child,
+    #inbox th:first-child, #ainbox td:first-child {
+        padding-left: 15px;
+    }
+}
+
 /* Mobile */
 @media (min-width: 250px) {
     header, footer {
@@ -26,12 +106,8 @@
         width: 220px;
     }
 
-    .table {
-        width: 80%;
-    }
-
     .footer_logo {
-        width: 70%;
+        width: 80%;
     }
 }
 
@@ -45,15 +121,19 @@
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px) {
     footer {
-        bottom: -800px;
+        bottom: -950px;
     }
 
     .footer-col {
-        height: 700px;
+        height: 850px;
     }
 
     input[type=text], input[type=password], input[type=email],input[type=number], textarea {
         width: 180px;
+    }
+
+    .social-item a img {
+        width: 40px;
     }
 }
 
@@ -66,14 +146,13 @@
     input[type=text], input[type=password], input[type=email],input[type=number], textarea {
         width: 250px;
     }
-
-    .footer_logo {
-        width: 65%;
-    }
 }
 
 /* Larger than desktop */
 @media (min-width: 1000px) {
+    .fc-scroller {
+        overflow-y: hidden !important;
+    }
 }
 
 /* Larger than Desktop HD */
@@ -86,16 +165,8 @@
         width: 350px;
     }
 
-    footer {
-        bottom: -700px;
-    }
-
-    .footer-col {
-        height: 650px;
-    }
-
-    .footer_logo {
-        width: 50%;
+    .social-item a img {
+        width: auto;
     }
 }
 
@@ -473,10 +544,6 @@ li.pro-nav__item {
     box-shadow: var(--shadow);
 }
 
-#inbox tr th {
-    padding: 12px 15px 12px 15px;
-}
-
 .img_wrapper {
     display: flex;
     justify-content: center;
@@ -501,6 +568,10 @@ li.pro-nav__item {
 .message_title {
     display: flex;
     justify-content: space-between;
+}
+
+.openMessage {
+    margin-bottom: 0;
 }
 
 /* MODAL */
@@ -677,10 +748,6 @@ tr td a {
     border: 1px solid var(--fc-border-color, var(--medium-champagne)); /* bootstrap does this. match */
 }
 
-.fc-scroller {
-    overflow-y: hidden !important;
-}
-
 #script-warning {
     display: none;
     background: #eee;
@@ -715,10 +782,6 @@ tr td a {
     box-shadow: var(--shadow);
 }
 
-#analysis tr th {
-    text-align: center;
-}
-
 #graph1 {
     width: 100%;
     height: 500px;
@@ -738,10 +801,6 @@ tr td a {
     height: 500px;
     margin-bottom: 50px;
     box-shadow: var(--shadow);
-}
-
-table {
-    margin-bottom: 50px;
 }
 
 /* FOOTER */
@@ -785,5 +844,8 @@ footer {
 }
 
 .copyright {
-    margin: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 5px;
 }

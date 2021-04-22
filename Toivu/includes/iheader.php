@@ -32,6 +32,9 @@
         <link rel="stylesheet" href="css/main.css"/>
 
         <!-- SCRIPTS -->
+        <!-- Toivu scripts -->
+        <script src="js/form_validation.js"></script>
+        <script src="js/formAlert.js"></script>
         <!-- FullCalendar scripts -->
         <script src='fullcalendar/lib/main.min.js'></script>
         <script src='fullcalendar/lib/locales/fi.js'></script>

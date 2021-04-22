@@ -16,4 +16,8 @@
         file_put_contents('log/DBErrors.txt', 'userSettings.php: '.$e -> getMessage()."\n", FILE_APPEND);
         $_SESSION['swarningInput'] = 'Ongelma tietokannassa';
     }
+
+    $thankYou="Kiitos! Tukipyyntösi on lähetetty.";
+
+    echo("<script>location.href = '../userAccount.php';formAlert('$thankyou');</script>");
 ?>

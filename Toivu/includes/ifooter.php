@@ -5,17 +5,17 @@
                         <h5>Resursseja</h5>
                         <ul class="no-bullets">
                             <li class="footer-link">
-                                <a href="#">
+                                <a href="infoPage.php">
                                     Meidän yritys
                                 </a>
                             </li>
                             <li class="footer-link">
-                                <a href="#">
+                                <a href="privacyPolicy.php">
                                     Henkilötietojen kerääminen
                                 </a>
                             </li>
                             <li class="footer-link">
-                                <a href="#">
+                                <a href="termsConditions.php">
                                     Käyttöehdot
                                 </a>
                             </li>

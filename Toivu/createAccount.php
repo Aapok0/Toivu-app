@@ -102,7 +102,6 @@
     </div>
 
     <script src="js/collapse-menu.js"></script>
-    <script src="js/form_validation.js"></script>
     <script src="js/datepicker.js"></script>
 
 <?php
