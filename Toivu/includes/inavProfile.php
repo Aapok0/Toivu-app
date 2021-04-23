@@ -1,4 +1,6 @@
 <?php
+    //Tarkistetaan, onko käyttäjä kirjautunut, ja millä sivulla käyttäjä on ja esitetään se navigaatiossa
+
     //Käyttäjän tila
     if($_SESSION['sloggedIn']=="yes"){
         //echo("<li>Käyttäjä: " .$_SESSION['suserName'] . "<br>");

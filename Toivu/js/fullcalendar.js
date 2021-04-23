@@ -1,3 +1,4 @@
+//Tällä alustetaan kalenteri ja asetetaan sille tietyt asetukset ja ominaisuudet
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         displayEventTime: false,
 
+        //Tapahtumat lisätään valikoimalla päiviä kalenterista tai painamalla yksittäistä päivää. Tietojen siirto tietokantaan tehdään ajaxilla.
         select: function(arg) {
             var title = prompt("Kirjoita lyhyesti merkittävistä hyvinvointiisi vaikuttaneista tapahtumista, positiivista ja negatiivistista.");
             if (confirm("Haluatko merkitä olotilasi?")) {
@@ -94,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
             calendar.refetchEvents()
         },
 
+        //Tapahtumia voi siirtää hiirellä
         editable: true,
         eventDrop: function(info) {
             var start = FullCalendar.formatDate(info.event.start, {
@@ -135,6 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
             calendar.refetchEvents()
         },
 
+        //Tapahtumien poisto tehdään klikkaamalla tapahtumaa. Tästä kysytään varmistusta.
         eventClick: function(info) {
             if (confirm("Haluatko varmasti poistaa tapahtuman?")) {
                 var id = info.event.id;

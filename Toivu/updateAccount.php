@@ -21,6 +21,7 @@
 
                     <div class="site-header__end">
                         <nav class="nav">
+                            <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
                             <button class="nav__toggle" aria-expanded="false" type="button">
                                 Menu
                             </button>
@@ -51,14 +52,16 @@
 
         <!-- Päivityslomake -->
         <div class="container top_content">
-            <div class="one-half column">
-                <?php
-                    include("forms/fupdateAccount.php");
-                ?>
-            </div>
+            <div class="row">
+                <div class="one-half column">
+                    <?php
+                        include("forms/fupdateAccount.php");
+                    ?>
+                </div>
 
-            <div class="one-half column">
-                <img src="images/Toivu.png" alt="Toivu-logo">
+                <div class="one-half column">
+                    <img src="images/Toivu.png" alt="Toivu-logo">
+                </div>
             </div>
         </div>
 

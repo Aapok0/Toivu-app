@@ -20,6 +20,7 @@
 
                     <div class="site-header__end">
                         <nav class="nav">
+                            <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
                             <button class="nav__toggle" aria-expanded="false" type="button">
                                 Menu
                             </button>
@@ -37,7 +38,7 @@
                                     </a>
                                 </li>
                                 <!-- Käyttäjätunnistus -->
-                                <!-- Kirjautumis- ja rekisteröintilinkki ja kirjautumisen jälkeen uloskirjaus- ja oma sivu -linkki -->
+                                <!-- Kirjautumis- ja rekisteröintilinkki ja kirjautumisen jälkeen uloskirjaus- ja oma sivu -linkki sekä profiilinavigaatio -->
                                 <?php
                                     include("includes/inavIndex.php");
                                 ?>
@@ -54,10 +55,11 @@
                 <div class="twelve columns top_content">
                     <h1 class="text-center">Toivu</h1>
                     <h3 class="text-center">Hyvinvointisovellus</h3>
+                    <p class="text-center">Tärkeä töissä jaksamiseen ja työtehoon vaikuttava tekijä on stressi ja siitä palautuminen. Stressi on kokemus, jonka kaikki tunnistaa, ja omaa palautumista voi arvioida tunteen mukaan, mutta mitä jos nämä kokemukset voisi muuttaa objektiivisiksi arvioiksi?</p>
                     <img class="logo__banner" src="images/Toivu.png" alt="Toivu-logo">
-                    <p>Tärkeä töissä jaksamiseen ja työtehoon vaikuttava tekijä on stressi ja siitä palautuminen. Stressi on kokemus, jonka kaikki tunnistaa, ja omaa palautumista voi arvioida tunteen mukaan, mutta mitä jos nämä kokemukset voisi muuttaa objektiivisiksi arvioiksi?</p>
                     <h3 class="text-center">Sovelluksen käyttötarkoitus</h3>
-                    <p>Sovelluksen käyttötarkoitus on stressin seuranta ja siitä palautuminen, se luokitellaan siis hyvinvointisovellukseksi. Sovellusta ei ole tarkoitettu diagnosoimaan mitään stressistä mahdollisesti aiheutuvia sairauksia, mutta sen keräämistä tiedoista ja analyyseistä saattaa olla hyötyä lääkärille diagnoosia tehtäessä. Stressiarvojen mittaaminen ja näiden mittausten analysointi ja esittely graafeissa vaatii ulkoisen sykevälivaihteluarvoa mittaavan laitteen. Sovelluksen muut ominaisuudet toimivat ilman ulkoisia laitteita. Sovelluksesta löytyy analyysien ja graafien lisäksi myös kalenteri hyvinvoinnin seurantaa varten, sekä yleistä tietoa stressistä, sen vaikutuksista ihmiseen ja yleiseen hyvinvointiin, sekä keinoja siitä palautumiseen. Lisätietoa sovelluksen ominaisuuksista löytyy "Tietoa" välilehdeltä.<p>
+                    <p>Sovelluksen käyttötarkoitus on stressin seuranta ja siitä palautuminen, se luokitellaan siis hyvinvointisovellukseksi. Sovellusta ei ole tarkoitettu diagnosoimaan mitään stressistä mahdollisesti aiheutuvia sairauksia, mutta sen keräämistä tiedoista ja analyyseistä saattaa olla hyötyä lääkärille diagnoosia tehtäessä.</p>
+                    <p>Stressiarvojen mittaaminen ja näiden mittausten analysointi ja esittely graafeissa vaatii ulkoisen sykevälivaihteluarvoa mittaavan laitteen. Sovelluksen muut ominaisuudet toimivat ilman ulkoisia laitteita. Sovelluksesta löytyy analyysien ja graafien lisäksi myös kalenteri hyvinvoinnin seurantaa varten, sekä yleistä tietoa stressistä, sen vaikutuksista ihmiseen ja yleiseen hyvinvointiin, sekä keinoja siitä palautumiseen. Lisätietoa sovelluksen ominaisuuksista löytyy "Tietoa" välilehdeltä.<p>
                 </div>
             </div>
 

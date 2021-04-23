@@ -20,6 +20,7 @@
 
                     <div class="site-header__end">
                         <nav class="nav">
+                            <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
                             <button class="nav__toggle" aria-expanded="false" type="button">
                                 Menu
                             </button>
@@ -48,10 +49,12 @@
             </div>
         </div>
 
-        <!-- Henkilötietojen kerääminen -->
+        <!-- Tietosuojaseloste upotettuna suoraan PDF-tiedostona -->
         <div class="container">
             <div class="row">
                 <div class="twelve columns top_content">
+                    <h1 class="text-center">Tietosuojaseloste</h1>
+                    <iframe src="images/Tietosuojaseloste.pdf" width="100%" height="1000px"></iframe>
                 </div>
             </div>
         </div>

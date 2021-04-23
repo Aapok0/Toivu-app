@@ -1,3 +1,4 @@
+//1-5 arvio, jonka voi valita hiirellä
 $(document).ready(function() {
     $(".rating input:radio").attr("checked", false);
 

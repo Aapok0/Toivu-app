@@ -20,6 +20,7 @@
 
                     <div class="site-header__end">
                         <nav>
+                            <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
                             <button class="nav__toggle button-light" aria-expanded="false" type="button">
                                 Päävalikko
                             </button>
@@ -48,11 +49,12 @@
             </div>
         </div>
 
-        <!-- profiilinavigaatio -->
+        <!-- Profiilinavigaatio, joka näkyy vain kirjautuneille -->
         <div class="container">
             <div class="row">
                 <div class="twelve columns profile-header profile-header__wrapper">
                     <nav class="profile-header__end">
+                        <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
                         <button class="pro-nav__toggle button-light" aria-expanded="false" type="button">
                             Profiilivalikko
                         </button>
@@ -66,17 +68,22 @@
             </div>
         </div>
 
+        <!-- Viesteille saapuneet-laatikko, josta avataan viestit modaali-ikkunaan -->
         <div class="container profile-page">
-            <h1 class="text-center">Viestit</h1>
-            <?php
-                include("includes/igetMessageBox.php")
-            ?>
+            <div class="row">
+                <div class="twelve columns">
+                    <h1 class="text-center">Viestit</h1>
+                    <?php
+                        include("includes/igetMessageBox.php")
+                    ?>
 
-            <div id="message" class="messageBox">
-                <div class="messageContent">
-                    <span class="close">&times;</span>
-                    <h4 id="messTitle"></h4>
-                    <p id="messText"></p>
+                    <div id="message" class="messageBox">
+                        <div class="messageContent">
+                            <span class="close">&times;</span>
+                            <h4 id="messTitle"></h4>
+                            <p id="messText"></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 <?php
     unset($_SESSION['swarningInput']);
 
+    //Jos näitä tietoja ei ole syötetty, laitetaan tietokantaan nollaa tai tyhjää
     if (empty($_POST['givenHeight'])) {
         $_POST['givenHeight'] = "0";
     }

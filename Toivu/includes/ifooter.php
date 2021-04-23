@@ -11,7 +11,7 @@
                             </li>
                             <li class="footer-link">
                                 <a href="privacyPolicy.php">
-                                    Henkilötietojen kerääminen
+                                    Tietosuojaseloste
                                 </a>
                             </li>
                             <li class="footer-link">
@@ -48,6 +48,7 @@
                         </div>
                         <span class="copyright">© Toivu 2021</span>
                     </div>
+                    <!-- Yhteydenottolomake, joka lähettää sähköpostia kehittäille -->
                     <div class="one-half column footer-col">
                         <h5>Ota meihin yhteyttä!</h5>
                         <p>puh. +358 99 123 1231</p>

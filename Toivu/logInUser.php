@@ -20,6 +20,7 @@
 
                 <div class="site-header__end">
                     <nav class="nav">
+                        <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
                         <button class="nav__toggle" aria-expanded="false" type="button">
                             Menu
                         </button>
@@ -48,15 +49,18 @@
         </div>
     </div>
 
+    <!-- Lomake, jolla kirjaudutaan sisään -->
     <div class="container top_content">
-        <div class="one-half column">
-            <?php
-                include("forms/flogInUser.php");
-            ?>
-        </div>
+        <div class="row">
+            <div class="one-half column">
+                <?php
+                    include("forms/flogInUser.php");
+                ?>
+            </div>
 
-        <div class="one-half column">
-            <img class="form__banner" src="images/Toivu.png" alt="Toivu-logo">
+            <div class="one-half column">
+                <img class="form__banner" src="images/Toivu.png" alt="Toivu-logo">
+            </div>
         </div>
     </div>
 

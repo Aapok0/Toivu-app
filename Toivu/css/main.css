@@ -87,7 +87,7 @@
     }
 
     #analysis th:first-child, #analysis td:first-child,
-    #inbox th:first-child, #ainbox td:first-child {
+    #inbox th:first-child, #inbox td:first-child {
         padding-left: 15px;
     }
 }

@@ -1,3 +1,4 @@
+//Avataan tai suljetaan hampurilaismenu
 let navToggle = document.querySelector(".nav__toggle");
 let navWrapper = document.querySelector(".nav__wrapper");
 let pro_navToggle = document.querySelector(".pro-nav__toggle");

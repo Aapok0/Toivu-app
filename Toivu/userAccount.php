@@ -20,6 +20,7 @@
 
                     <div class="site-header__end">
                         <nav>
+                            <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
                             <button class="nav__toggle button-light" aria-expanded="false" type="button">
                                 Päävalikko
                             </button>
@@ -48,11 +49,12 @@
             </div>
         </div>
 
-        <!-- profiilinavigaatio -->
+        <!-- Profiilinavigaatio, joka näkyy vain kirjautuneille -->
         <div class="container">
             <div class="row">
                 <div class="twelve columns profile-header profile-header__wrapper">
                     <nav class="profile-header__end">
+                        <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
                         <button class="pro-nav__toggle button-light" aria-expanded="false" type="button">
                             Profiilivalikko
                         </button>
@@ -68,17 +70,37 @@
 
         <!-- Profiilisivun otsikko ja tervehdys -->
         <div class="container profile-page">
-            <div class="twelve columns">
-                <h1>
-                    <?php
-                        echo("<h1 class=\"text-center first-heading\">Tervetuloa takaisin " . $_SESSION['suserName'] . "!</h1>");
-                    ?>
-                </h1>
+            <div class="row">
+                <div class="twelve columns">
+                    <h1>
+                        <?php
+                            echo("<h1 class=\"text-center first-heading\">Tervetuloa takaisin " . $_SESSION['suserName'] . "!</h1>");
+                        ?>
+                    </h1>
+                </div>
             </div>
 
-            <?php
-                include("includes/ireadiness.php");
-            ?>
+            <!-- Ehdotuksia ja neuvoja palautumiseen. Optimi tilanteessa reagoisi käyttäjän mittauksiin ja esim. kalenteri-tageihin. -->
+            <div class="row">
+                <h3 class="text-center">Apua palautumiseen ja stressinhallintaan</h3>
+                <div class="one-half column">
+                    <h4 class="text-center">Hengitysharjoitukset</h4>
+                    <h4 class="text-center">Apua nukahtamiseen</h4>
+                </div>
+                <div class="five columns">
+                    <h4 class="text-center">Lähde liikkeelle!</h4>
+                    <h4 class="text-center">Miten tauottaa työpäivää?</h4>
+                </div>
+            </div>
+
+            <!-- HRV-analyysit ja tiedot taulukkoon -->
+            <div class="row">
+                <div class="twelve columns">
+                    <?php
+                        include("includes/ireadiness.php");
+                    ?>
+                </div>
+            </div>
         </div>
 
         <script src="js/collapse-menu.js"></script>

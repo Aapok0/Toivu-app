@@ -50,14 +50,16 @@
 
     <!-- Rekisteröintilomake -->
     <div class="container top_content">
-        <div class="one-half column">
-            <?php
-                include("forms/fcreateAccount.php");
-            ?>
-        </div>
+        <div class="row">
+            <div class="one-half column">
+                <?php
+                    include("forms/fcreateAccount.php");
+                ?>
+            </div>
 
-        <div class="one-half column">
-            <img class="form__banner" src="images/Toivu.png" alt="Toivu-logo">
+            <div class="one-half column">
+                <img class="form__banner" src="images/Toivu.png" alt="Toivu-logo">
+            </div>
         </div>
     </div>
     

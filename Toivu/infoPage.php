@@ -20,6 +20,7 @@
 
                     <div class="site-header__end">
                         <nav class="nav">
+                            <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
                             <button class="nav__toggle" aria-expanded="false" type="button">
                                 Menu
                             </button>
@@ -37,7 +38,7 @@
                                     </a>
                                 </li>
                                 <!-- Käyttäjätunnistus -->
-                                <!-- Kirjautumis- ja rekisteröintilinkki ja kirjautumisen jälkeen uloskirjaus- ja oma sivu -linkki -->
+                                <!-- Kirjautumis- ja rekisteröintilinkki ja kirjautumisen jälkeen uloskirjaus- ja oma sivu -linkki sekä profiilinavigaatio -->
                                 <?php
                                     include("includes/inavIndex.php");
                                 ?>
@@ -53,11 +54,14 @@
             <div class="row">
                 <div class="twelve columns top_content">
                     <h1 class="text-center">Tietoa Toivu-sovelluksesta</h1>
-                    <h3 class="text-center">Mitä hyötyä voit saada itsellesi, työntekijöillesi?</h3>
+                    <h3 class="text-center">...ja sen kehitystiimistä</h3>
                     <img class="logo__banner" src="images/Toivu.png" alt="Toivu-logo">
+                    <h3 class="text-center">Mitä hyötyä voit saada itsellesi, työntekijöillesi?</h3>
                     <p>Kyky saada tarkkaa tietoa stressistä ja palautumisesta on arvokas työkalu sekä työnantajalle että yksittäiselle työntekijälle. Sekä stressiä, että palautumista on mahdollista mitata sykevälivaihtelulla, jonka mittaamiseen on tarjolla monia hyvinvointilaitteita. Tämä mittaus tapahtuu siten, että sensorit mittaavat sykkeiden välistä aikaa ja tämä data tuodaan sovellukseen käsiteltäväksi. Sovelluksen ideana on kehittää työterveyttä ja ehkäistä ongelmia hyödyntämällä tätä mittausta.</p>
                     <p>Sovelluksen tarkoitus on antaa käyttäjälle tietoa hänen stressistään työpäivän aikana ja antaa heille työkaluja stressistä selviämiseen ja sen vähentämiseen. Sovelluksen toimintaperiaate on kerätä kannettavalla Bluetooth-laitteella sykevälivaihteludataa ja tallentaa se sovelluksen tietokantaan Kubios-sovelluksen kautta. Sovellus laskee mitatusta sykevälivaihteludatasta käyttäjän stressin määrän, jonka jälkeen tarjotaan keinoja sen ehkäisyyn ja vähentämiseen. Käyttäjä voi myös nähdä sekä sykevälivaihteludatan, että stressiarvot graafien avulla.</p>
                     <p>Sovelluksen keskeisiä ominaisuuksia ovat stressiarvojen mittaus, tauottamisen suunnittelu, ohjeet stressistä toipumiseen ja stressin vähentämiseen sekä työterveyteen ohjaus, mikäli arvot eivät parane. Sovelluksen käyttö tapahtuu verkkoselaimessa älypuhelimella tai tietokoneella.</p>
+                    <h3 class="text-center">Keitä me olemme?</h3>
+                    <p>Toivu on Metropoliasta lähtöisin oleva startup ja sen kehtitystiimi kyseisen korkeakoulun opiskelijoita.</p>
                 </div>
             </div>
         </div>

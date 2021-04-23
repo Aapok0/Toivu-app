@@ -17,6 +17,7 @@
     $rows = $query2 -> fetch();
     $N = $rows[0];
 
+    //Annetaan lukustatukselle symbolit ja laitetaan käyttäjän viestit array:hin
     for ($i=0; $i <= $N-1; $i++) {
         $isread = "";
         if ($result[$i][3] == false) {
@@ -52,8 +53,8 @@
             $id = $data[$i][0];
             $title = $data[$i][1];
             $message = $data[$i][2];
-            $event = "openMessage('$id','$title','$message')";
-            $event2 = "removeMessage('$id')";
+            $event = "openMessage('$id','$title','$message')"; //Johtaa scriptiin ja sieltä php-tiedostoon, jotka muuttavat lukustatuksen tietokannassa
+            $event2 = "removeMessage('$id')"; //Johtaa scriptiin ja sieltä php-tiedostoon, jotka poistaa viestin tietokannasta
             echo "<tr>";
                 echo "<td class=\"message_title inbox_td\">" . $data[$i][1] . "</td>";
                 echo "<td class=\"inbox_td\"><button class=\"openMessage\" onmousedown=\"$event\">Avaa</button></td>";
