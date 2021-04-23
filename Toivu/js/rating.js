@@ -9,6 +9,6 @@ $(document).ready(function() {
     $('input:radio').change(
         function() {
             var userRating = this.value;
-            alert(userRating);
-    }); 
+            console.log(userRating);
+    });
 });

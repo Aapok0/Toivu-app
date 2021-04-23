@@ -9,9 +9,7 @@
         $mailBody="Nimi: $sender\nEmail: $senderEmail\n\n$message";
 
         mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>");
-
-        $thankYou="Kiitos! Viestisi on lähetetty.";
         
-        echo("<script>location.href = '../index.php';formAlert('$thankyou');</script>");
+        echo("<script>location.href = 'index.php';");
     }
 ?>

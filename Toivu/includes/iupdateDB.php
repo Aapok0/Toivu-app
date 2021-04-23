@@ -1,14 +1,20 @@
 <?php
+    session_start();
+    include_once("config/cconfig.php");
+
     unset($_SESSION['swarningInput']);
 
     //Päivitetään tiedot, jotka on täytetty lomakkeeseen
     if (isset($_POST['givenUsername'])) {
         try {
             $uname = $_POST['givenUsername'];
-            $sql = "UPDATE wsk21_toivu_user SET userName = :uname"
+            $suser = $_SESSION['suserID'];
+            $sql = "UPDATE wsk21_toivu_user SET userName = :uname WHERE userID = :suser";
             $stmt = $DBH -> prepare($sql);
-            $stmt = bindParam(':uname', $uname);
-            $stmt -> execute();
+            $stmt -> execute(array(
+                ':uname' => $uname,
+                ':suser' => $suser
+            ));
             $_SESSION['suserName'] = $_POST['givenUsername'];
             echo("<script>location.href = 'userSettings.php';</script>");
         }
@@ -21,17 +27,20 @@
         //***Email ei saa olla käytetty aiemmin
         $sql = "SELECT COUNT(*) FROM wsk21_toivu_user where userEmail =  " . "'".$_POST['givenEmail']."'"  ;
         
-        $kysely = $DBH->prepare($sql);
+        $kysely = $DBH -> prepare($sql);
         $kysely -> execute();				
         $tulos = $kysely -> fetch();
 
         if ($tulos[0] == 0) { //email ei ole käytössä
             try {
                 $email = $_POST['givenEmail'];
-                $sql = "UPDATE wsk21_toivu_user SET userEmail = :email"
+                $suser = $_SESSION['suserID'];
+                $sql = "UPDATE wsk21_toivu_user SET userEmail = :email WHERE userID = :suser";
                 $stmt = $DBH -> prepare($sql);
-                $stmt = bindParam(':email', $email);
-                $stmt -> execute();
+                $stmt -> execute(array(
+                    ':email' => $email,
+                    ':suser' => $suser
+                ));
                 $_SESSION['suserEmail'] = $_POST['givenEmail'];
                 echo("<script>location.href = 'userSettings.php';</script>");
             }
@@ -47,11 +56,14 @@
     else if (isset($_POST['givenHeight'])) {
         try {
             $height = $_POST['givenHeight'];
-        $sql = "UPDATE wsk21_toivu_user SET userHeight = :height"
-        $stmt = $DBH -> prepare($sql);
-        $stmt = bindParam(':height', $height);
-        $stmt -> execute();
-        echo("<script>location.href = 'userSettings.php';</script>");
+            $suser = $_SESSION['suserID'];
+            $sql = "UPDATE wsk21_toivu_user SET userHeight = :height WHERE userID = :suser";
+            $stmt = $DBH -> prepare($sql);
+            $stmt -> execute(array(
+                ':height' => $height,
+                ':suser' => $suser
+            ));
+            echo("<script>location.href = 'userSettings.php';</script>");
         }
         catch (PDOException $e) {
             file_put_contents('log/DBErrors.txt', 'updateAccount.php: '.$e -> getMessage()."\n", FILE_APPEND);
@@ -61,10 +73,13 @@
     else if (isset($_POST['givenWeight'])) {
         try {
             $uweight = $_POST['givenWeight'];
-            $sql = "UPDATE wsk21_toivu_user SET userWeight = :uweight"
+            $suser = $_SESSION['suserID'];
+            $sql = "UPDATE wsk21_toivu_user SET userWeight = :uweight WHERE userID = :suser";
             $stmt = $DBH -> prepare($sql);
-            $stmt = bindParam(':uweight', $uweight);
-            $stmt -> execute();
+            $stmt -> execute(array(
+                ':uweight' => $uweight,
+                ':suser' => $suser
+            ));
             echo("<script>location.href = 'userSettings.php';</script>");
         }
         catch (PDOException $e) {
@@ -75,10 +90,13 @@
     else if (isset($_POST['givenBday'])) {
         try {
             $bday = $_POST['givenBday'];
-            $sql = "UPDATE wsk21_toivu_user SET userWeight = :bday"
+            $suser = $_SESSION['suserID'];
+            $sql = "UPDATE wsk21_toivu_user SET userBday = :bday WHERE userID = :suser";
             $stmt = $DBH -> prepare($sql);
-            $stmt = bindParam(':bday', $bday);
-            $stmt -> execute();
+            $stmt -> execute(array(
+                ':bday' => $bday,
+                ':suser' => $suser
+            ));
             echo("<script>location.href = 'userSettings.php';</script>");
         }
         catch (PDOException $e) {
@@ -89,10 +107,13 @@
     else if (isset($_POST['givenSex'])) {
         try {
             $sex = $_POST['givenSex'];
-            $sql = "UPDATE wsk21_toivu_user SET userSex = :sex"
+            $suser = $_SESSION['suserID'];
+            $sql = "UPDATE wsk21_toivu_user SET userSex = :sex WHERE userID = :suser";
             $stmt = $DBH -> prepare($sql);
-            $stmt = bindParam(':sex', $sex);
-            $stmt -> execute();
+            $stmt -> execute(array(
+                ':sex' => $sex,
+                ':suser' => $suser
+            ));
             echo("<script>location.href = 'userSettings.php';</script>");
         }
         catch (PDOException $e) {
@@ -104,10 +125,13 @@
         try {
             //suolataan annettua salasanaa
             $pwd = password_hash($_POST['givenPassword'].$added, PASSWORD_BCRYPT);
-            $sql = "UPDATE wsk21_toivu_user SET userPwd = :pwd"
+            $suser = $_SESSION['suserID'];
+            $sql = "UPDATE wsk21_toivu_user SET userPwd = :pwd WHERE userID = :suser";
             $stmt = $DBH -> prepare($sql);
-            $stmt = bindParam(':pwd', $pwd);
-            $stmt -> execute();
+            $stmt -> execute(array(
+                ':pwd' => $pwd,
+                ':suser' => $suser
+            ));
             echo("<script>location.href = 'userSettings.php';</script>");
         }
         catch (PDOException $e) {

@@ -136,7 +136,7 @@
             //Lomakkeen submit painettu?
             if (isset($_POST['submitSupport'])) {
                 //***Tarkistetaan syötteet myös palvelimella
-                if (!filter_var($_POST['givenSuppEmail'], FILTER_VALIDATE_EMAIL)) {
+                if (!filter_var($_POST['givenEmail'], FILTER_VALIDATE_EMAIL)) {
                     $_SESSION['swarningInputSettings'] = "Virheellinen sähköposti";
                 }
                 else {
