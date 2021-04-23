@@ -20,6 +20,7 @@
 
                     <div class="site-header__end">
                         <nav>
+                            <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
                             <button class="nav__toggle button-light" aria-expanded="false" type="button">
                                 Päävalikko
                             </button>
@@ -48,11 +49,12 @@
             </div>
         </div>
 
-        <!-- profiilinavigaatio -->
+        <!-- Profiilinavigaatio, joka näkyy vain kirjautuneille -->
         <div class="container">
             <div class="row">
                 <div class="twelve columns profile-header profile-header__wrapper">
                     <nav class="profile-header__end">
+                        <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
                         <button class="pro-nav__toggle button-light" aria-expanded="false" type="button">
                             Profiilivalikko
                         </button>
@@ -66,8 +68,13 @@
             </div>
         </div>
 
+        <!-- Ohjeita ja neuvoja siihen miten sovellusta käytetään ja tulkitaan -->
         <div class="container profile-page">
-            <h2 class="text-center">Ohjeita sovelluksen käyttöön</h2>
+            <div class="row">
+                <div class="twelve columns">
+                    <h2 class="text-center">Ohjeita sovelluksen käyttöön</h2>
+                </div>
+            </div>
         </div>
 
         <script src="js/collapse-menu.js"></script>

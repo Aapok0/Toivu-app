@@ -2,6 +2,7 @@
     session_start();
     include_once("../config/cconfig.php");
 
+    //Muutetaan boolean binääriksi
     function isTrue($bool) {
         if ($bool == 1) {
             return true;
@@ -11,6 +12,7 @@
         }
     }
 
+    //Haetaan kaikki kalenteritiedot, jotka liittyvät käyttäjään
     $session_user = $_SESSION['suserID'];
     $data = array();
     $query = "SELECT * FROM wsk21_toivu_calendar WHERE userID = :suser ORDER BY calID";

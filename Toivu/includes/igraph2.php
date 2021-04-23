@@ -38,7 +38,7 @@
     var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
     var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
     valueAxis.tooltip.disabled = true;
-    valueAxis.title.text = "Average heart rate";
+    valueAxis.title.text = "Keskimääräinen syke";
 
     // Create series
     var series = chart.series.push(new am4charts.LineSeries());

@@ -1,3 +1,4 @@
+//1-5 arvio, jonka voi valita hiirellä
 $(document).ready(function() {
     $(".rating input:radio").attr("checked", false);
 
@@ -9,6 +10,6 @@ $(document).ready(function() {
     $('input:radio').change(
         function() {
             var userRating = this.value;
-            alert(userRating);
-    }); 
+            console.log(userRating);
+    });
 });

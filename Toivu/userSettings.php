@@ -20,6 +20,7 @@
 
                     <div class="site-header__end">
                         <nav>
+                            <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
                             <button class="nav__toggle button-light" aria-expanded="false" type="button">
                                 Päävalikko
                             </button>
@@ -37,7 +38,7 @@
                                     </a>
                                 </li>
                                 <!-- Käyttäjätunnistus -->
-                                <!-- Kirjautumis- ja rekisteröintilinkki ja kirjautumisen jälkeen uloskirjaus- ja oma sivu -linkki -->
+                                <!-- Kirjautumis- ja rekisteröintilinkki ja kirjautumisen jälkeen uloskirjaus- ja oma sivu -linkki sekä profiilinavigaatio -->
                                 <?php
                                     include("includes/inavIndex.php");
                                 ?>
@@ -48,12 +49,13 @@
             </div>
         </div>
 
-        <!-- profiilinavigaatio -->
+        <!-- Profiilinavigaatio, joka näkyy vain kirjautuneille -->
         <div class="container">
             <div class="row">
                 <div class="twelve columns profile-header profile-header__wrapper">
                     <nav class="profile-header__end">
-                        <button class="pro-nav__toggle button-light" aria-expanded="false" type="button">
+                        <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
+                        <button class="pro-nav__toggle button-light" aria-expanded="false" type="button"> 
                             Profiilivalikko
                         </button>
                         <ul class="pro-nav__wrapper no-bullets">
@@ -110,7 +112,8 @@
                     <h3 class="setting_rem">Tilinpoisto</h3>
                     <input class="setting_par" type="button" onclick="removeUser()" value="Poista tili">
                 </div>
-
+                
+                <!-- Mahdollisuus antaa palautetta ja pyytää tukea -->
                 <div class="one-half column">
                     <h3 class="setting_head">Palaute</h3>
                     <?php
@@ -136,7 +139,7 @@
             //Lomakkeen submit painettu?
             if (isset($_POST['submitSupport'])) {
                 //***Tarkistetaan syötteet myös palvelimella
-                if (!filter_var($_POST['givenSuppEmail'], FILTER_VALIDATE_EMAIL)) {
+                if (!filter_var($_POST['givenEmail'], FILTER_VALIDATE_EMAIL)) {
                     $_SESSION['swarningInputSettings'] = "Virheellinen sähköposti";
                 }
                 else {

@@ -50,14 +50,16 @@
 
     <!-- Rekisteröintilomake -->
     <div class="container top_content">
-        <div class="one-half column">
-            <?php
-                include("forms/fcreateAccount.php");
-            ?>
-        </div>
+        <div class="row">
+            <div class="one-half column">
+                <?php
+                    include("forms/fcreateAccount.php");
+                ?>
+            </div>
 
-        <div class="one-half column">
-            <img src="images/Toivu.png" alt="Toivu-logo">
+            <div class="one-half column">
+                <img class="form__banner" src="images/Toivu.png" alt="Toivu-logo">
+            </div>
         </div>
     </div>
     
@@ -97,12 +99,13 @@
             //***Näytetäänkö lomakesyötteen aiheuttama varoitus?
             if (isset($_SESSION['swarningInputUpdate'])) {
                 echo("<p class=\"warning\">Virheellinen syöte: ". $_SESSION['swarningInputCreate']."</p>");
+                unset($_SESSION['swarningInputCreate']);
             }
         ?>
     </div>
 
     <script src="js/collapse-menu.js"></script>
-    <script src="js/form_validation.js"></script>
+    <script src="js/datepicker.js"></script>
 
 <?php
     include("includes/ifooter.php");

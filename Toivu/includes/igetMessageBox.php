@@ -17,6 +17,7 @@
     $rows = $query2 -> fetch();
     $N = $rows[0];
 
+    //Annetaan lukustatukselle symbolit ja laitetaan käyttäjän viestit array:hin
     for ($i=0; $i <= $N-1; $i++) {
         $isread = "";
         if ($result[$i][3] == false) {
@@ -37,23 +38,31 @@
 
     //Viestit taulukkoon
     echo "<table id=\"inbox\">";
-        echo "<tr class=\"bolder\">";
-            echo "<th class=\"bolder\">Otsikko</th>";
-            echo "<th class=\"text-center bolder\">Saapunut</th>";
-            echo "<th class=\"text-center bolder\">Luettu</th>";
-            echo "<th class=\"bolder\">Poista viesti</th>";
-        echo "<tr>";
+        echo "<thead>";
+            echo "<tr class=\"bolder\">";
+                echo "<th class=\"bolder\">Otsikko</th>";
+                echo "<th class=\"bolder\">Viesti</th>";
+                echo "<th class=\"bolder\">Saapunut</th>";
+                echo "<th class=\"bolder\">Luettu</th>";
+                echo "<th class=\"bolder\">Poista viesti</th>";
+            echo "<tr>";
+        echo "</thead>";
 
+        echo "<tbody>";
         for ($i=0; $i <= $N-1; $i++) {
+            $id = $data[$i][0];
             $title = $data[$i][1];
             $message = $data[$i][2];
-            $event = "openMessage('$title','$message')";
+            $event = "openMessage('$id','$title','$message')"; //Johtaa scriptiin ja sieltä php-tiedostoon, jotka muuttavat lukustatuksen tietokannassa
+            $event2 = "removeMessage('$id')"; //Johtaa scriptiin ja sieltä php-tiedostoon, jotka poistaa viestin tietokannasta
             echo "<tr>";
-                echo "<th class=\"message_title\">" . $data[$i][1] . "<button class=\"openMessage\" onmousedown=\"$event\">Avaa</button></th>";
-                echo "<th class=\"text-center\">" . $data[$i][3] . "</th>";
-                echo "<th class=\"text-center\">" . $data[$i][4] . "</th>";
-                echo "<th class=\"remove_message\"><button onclick=\"removeMessage()\">Poista</button></th>";
+                echo "<td class=\"message_title inbox_td\">" . $data[$i][1] . "</td>";
+                echo "<td class=\"inbox_td\"><button class=\"openMessage\" onmousedown=\"$event\">Avaa</button></td>";
+                echo "<td class=\"inbox_td\">" . $data[$i][3] . "</td>";
+                echo "<td class=\"inbox_td\">" . $data[$i][4] . "</td>";
+                echo "<td class=\"remove_message inbox_td\"><button onclick=\"$event2\">Poista</button></td>";
             echo "<tr>";
         }
+        echo "</tbody>";
     echo "</table>";
 ?>

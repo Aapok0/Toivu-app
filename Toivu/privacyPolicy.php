@@ -19,13 +19,13 @@
                     </div>
 
                     <div class="site-header__end">
-                        <nav>
+                        <nav class="nav">
                             <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
-                            <button class="nav__toggle button-light" aria-expanded="false" type="button">
-                                Päävalikko
+                            <button class="nav__toggle" aria-expanded="false" type="button">
+                                Menu
                             </button>
                             <ul class="nav__wrapper no-bullets">
-                                <li class="nav__item">
+                                <li class="nav__item active">
                                     <a href="index.php">
                                         <img class="nav-icon" src="images/iconfinder_home_1608930.png" alt="Home">
                                         <span>Koti</span>
@@ -49,48 +49,17 @@
             </div>
         </div>
 
-        <!-- Profiilinavigaatio, joka näkyy vain kirjautuneille -->
+        <!-- Tietosuojaseloste upotettuna suoraan PDF-tiedostona -->
         <div class="container">
             <div class="row">
-                <div class="twelve columns profile-header profile-header__wrapper">
-                    <nav class="profile-header__end">
-                        <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
-                        <button class="pro-nav__toggle button-light" aria-expanded="false" type="button">
-                            Profiilivalikko
-                        </button>
-                        <ul class="pro-nav__wrapper no-bullets">
-                            <?php
-                                include("includes/inavProfile.php");
-                            ?>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-
-        <!-- Viesteille saapuneet-laatikko, josta avataan viestit modaali-ikkunaan -->
-        <div class="container profile-page">
-            <div class="row">
-                <div class="twelve columns">
-                    <h1 class="text-center">Viestit</h1>
-                    <?php
-                        include("includes/igetMessageBox.php")
-                    ?>
-
-                    <div id="message" class="messageBox">
-                        <div class="messageContent">
-                            <span class="close">&times;</span>
-                            <h4 id="messTitle"></h4>
-                            <p id="messText"></p>
-                        </div>
-                    </div>
+                <div class="twelve columns top_content">
+                    <h1 class="text-center">Tietosuojaseloste</h1>
+                    <iframe src="images/Tietosuojaseloste.pdf" width="100%" height="1000px"></iframe>
                 </div>
             </div>
         </div>
 
         <script src="js/collapse-menu.js"></script>
-        <script src="js/openMessage.js"></script>
-        <script src="js/removeMessage.js"></script>
 
 <?php
     include("includes/ifooter.php");

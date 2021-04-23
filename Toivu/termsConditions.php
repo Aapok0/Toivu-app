@@ -19,13 +19,13 @@
                     </div>
 
                     <div class="site-header__end">
-                        <nav>
+                        <nav class="nav">
                             <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
-                            <button class="nav__toggle button-light" aria-expanded="false" type="button">
-                                Päävalikko
+                            <button class="nav__toggle" aria-expanded="false" type="button">
+                                Menu
                             </button>
                             <ul class="nav__wrapper no-bullets">
-                                <li class="nav__item">
+                                <li class="nav__item active">
                                     <a href="index.php">
                                         <img class="nav-icon" src="images/iconfinder_home_1608930.png" alt="Home">
                                         <span>Koti</span>
@@ -49,48 +49,27 @@
             </div>
         </div>
 
-        <!-- Profiilinavigaatio, joka näkyy vain kirjautuneille -->
+        <!-- Suurinpiirtein hahmoteltuna, mitä käyttöehdoissa voisi hypoteettisesti olla. Ei keskitytä liikaa tähän. -->
         <div class="container">
             <div class="row">
-                <div class="twelve columns profile-header profile-header__wrapper">
-                    <nav class="profile-header__end">
-                        <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
-                        <button class="pro-nav__toggle button-light" aria-expanded="false" type="button">
-                            Profiilivalikko
-                        </button>
-                        <ul class="pro-nav__wrapper no-bullets">
-                            <?php
-                                include("includes/inavProfile.php");
-                            ?>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-
-        <!-- Viesteille saapuneet-laatikko, josta avataan viestit modaali-ikkunaan -->
-        <div class="container profile-page">
-            <div class="row">
-                <div class="twelve columns">
-                    <h1 class="text-center">Viestit</h1>
-                    <?php
-                        include("includes/igetMessageBox.php")
-                    ?>
-
-                    <div id="message" class="messageBox">
-                        <div class="messageContent">
-                            <span class="close">&times;</span>
-                            <h4 id="messTitle"></h4>
-                            <p id="messText"></p>
-                        </div>
-                    </div>
+                <div class="twelve columns top_content">
+                    <h1 class="text-center">Käyttöehdot</h1>
+                    <p>Tämä on vain hahmotelma mahdollisista käyttöehdoista tälle proof of concept tuotteelle.</p>
+                    <h3>1. Yleistä palvelun käytöstä</h3>
+                    <h3>2. Käyttöoikeus ja käyttäjätiedot</h3>
+                    <h3>3. Palvelun tietosuoja</h3>
+                    <h3>4. Palvelun toimittaminen</h3>
+                    <h3>5. Palvelun sisältö, immateriaalioikeudet ja ylläpito</h3>
+                    <h3>6. Käyttöehtojen voimassolo sekä muutokset palvelussa</h3>
+                    <h3>7. Henkilötietojen käsittely</h3>
+                    <h3>8. Muut ehdot</h3>
+                    <h3>9. Sovellettava laki ja riidanratkaisu</h3>
+                    <h3>10. Yhteystiedot</h3>
                 </div>
             </div>
         </div>
 
         <script src="js/collapse-menu.js"></script>
-        <script src="js/openMessage.js"></script>
-        <script src="js/removeMessage.js"></script>
 
 <?php
     include("includes/ifooter.php");

@@ -21,7 +21,7 @@
         //Prosenttimäärä maksimiarvosta 6.5
         $readiness = $lnrmssd/6.5 * 100;
 
-        return $readiness;
+        return round($readiness, 2);
     }
 
     //pNN50-analyysi
@@ -42,7 +42,7 @@
         //Lasketaan prosenttimäärä sykevälien kokonaismäärästä
         $pNN50 = 1/($N-1) * $NN50 * 100;
 
-        return $pNN50;
+        return round($pNN50, 2);
     }
 
     //Alustetaan taulukko johon tallennetaan kaikki graafeihin tarvittavat tiedot JSON-tiedostoista.
@@ -63,28 +63,36 @@
 
     for ($i=0; $i <= $N-1; $i++) {
         $hrv_arr = json_decode($result[$i]["hrvData"], true);
-        $data_array[$i] = array($hrv_arr["name"], $hrv_arr["timeStart"], $hrv_arr["timeEnd"], $hrv_arr["aveHR"], readiness($hrv_arr["R-R"]), pNN50($hrv_arr["R-R"]));
+        $start = strtotime($hrv_arr["timeStart"]);
+        $start = date('Y-m-d H:i:s', $start);
+        $end = strtotime($hrv_arr["timeEnd"]);
+        $end = date('Y-m-d H:i:s', $end);
+        $data_array[$i] = array($hrv_arr["name"], $start, $end, round($hrv_arr["aveHR"], 1), readiness($hrv_arr["R-R"]), pNN50($hrv_arr["R-R"]));
     }
 
     //HRV-datat taulukossa
     echo "<h2 class=\"text-center\">Yhteenveto sinun mittauksista ja analyyseista</h2>";
     echo "<table id=\"analysis\">";
-        echo "<tr class=\"bolder\">";
-            echo "<th>Start time</th>";
-            echo "<th>End time</th>";
-            echo "<th>Average HR</th>";
-            echo "<th>Readiness (0-100)</th>";
-            echo "<th>pNN50 (%)</th>";
-        echo "</tr>";
+        echo "<thead>";
+            echo "<tr class=\"bolder\">";
+                echo "<th>Aloitus</th>";
+                echo "<th>Lopetus</th>";
+                echo "<th>Keskisyke</th>";
+                echo "<th>Readiness (%)</th>";
+                echo "<th>pNN50 (%)</th>";
+            echo "</tr>";
+        echo "</thead>";
 
+        echo "<tbody>";
         for ($i=0; $i <= $N-1; $i++) {
             echo "<tr>";
-                echo "<th>" . $data_array[$i][1] . "</th>";
-                echo "<th>" . $data_array[$i][2] . "</th>";
-                echo "<th>" . $data_array[$i][3] . "</th>";
-                echo "<th>" . $data_array[$i][4] . "</th>";
-                echo "<th>" . $data_array[$i][5] . "</th>";
+                echo "<td class=\"analysis_td\">" . $data_array[$i][1] . "</td>";
+                echo "<td class=\"analysis_td\">" . $data_array[$i][2] . "</td>";
+                echo "<td class=\"analysis_td\">" . $data_array[$i][3] . "</td>";
+                echo "<td class=\"analysis_td\">" . $data_array[$i][4] . "</td>";
+                echo "<td class=\"analysis_td\">" . $data_array[$i][5] . "</td>";
             echo "<tr>";
         }
+        echo "</tbody>";
     echo "</table>";
 ?>

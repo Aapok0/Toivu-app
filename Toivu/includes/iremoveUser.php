@@ -1,4 +1,5 @@
 <?php
+    //Poistetaan käyttäjän tiedot jokaisesta tietokannan taulusta
     $query1 = "DELETE * FROM wsk21_toivu_user WHERE userID = :suser";
     $stmt1 = $DBH -> prepare($query1);
     $stmt1 -> bindParam(':suser', $_SESSION['suserID']);
@@ -26,5 +27,5 @@
 
     session_unset();
     session_destroy();
-    header("Location: index.php");
+    echo("<script>location.href = 'index.php';</script>");
 ?>

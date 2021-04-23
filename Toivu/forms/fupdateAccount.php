@@ -1,5 +1,5 @@
 <fieldset><legend>Päivitä käyttäjätietoja</legend>
-    <form name="reg_form" onsubmit="return validateForm()" method="post">
+    <form name="updateform" onsubmit="return validateForm()" method="post">
         <p>
             Käyttäjänimi <span class="big_font">*</span>
             <br />
