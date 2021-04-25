@@ -5,6 +5,7 @@
     unset($_SESSION['swarningInput']);
 
     //Päivitetään tiedot, jotka on täytetty lomakkeeseen
+    //Käyttäjänimen muuttaminen
     if (isset($_POST['givenUsername'])) {
         try {
             $uname = $_POST['givenUsername'];
@@ -23,6 +24,8 @@
             $_SESSION['swarningInput'] = 'Ongelma tietokannassa';
         }
     }
+
+    //Sähköpostin muuttaminen
     else if (isset($_POST['givenEmail'])) {
         //***Email ei saa olla käytetty aiemmin
         $sql = "SELECT COUNT(*) FROM wsk21_toivu_user where userEmail =  " . "'".$_POST['givenEmail']."'"  ;
@@ -53,6 +56,8 @@
             $_SESSION['swarningInput'] = "Sähköposti on varattu";
         }
     }
+
+    //Pituuden muuttaminen
     else if (isset($_POST['givenHeight'])) {
         try {
             $height = $_POST['givenHeight'];
@@ -70,6 +75,8 @@
             $_SESSION['swarningInput'] = 'Ongelma tietokannassa';
         }
     }
+
+    //Painon muuttaminen
     else if (isset($_POST['givenWeight'])) {
         try {
             $uweight = $_POST['givenWeight'];
@@ -87,6 +94,8 @@
             $_SESSION['swarningInput'] = 'Ongelma tietokannassa';
         }
     }
+
+    //Syntymäpäivän muuttaminen
     else if (isset($_POST['givenBday'])) {
         try {
             $bday = $_POST['givenBday'];
@@ -104,6 +113,8 @@
             $_SESSION['swarningInput'] = 'Ongelma tietokannassa';
         }
     }
+
+    //Sukupuolen muuttaminen
     else if (isset($_POST['givenSex'])) {
         try {
             $sex = $_POST['givenSex'];
@@ -121,7 +132,9 @@
             $_SESSION['swarningInput'] = 'Ongelma tietokannassa';
         }
     }
-    if (isset($_POST['givenPassword'])) {
+
+    //Salasanan muuttaminen
+    else if (isset($_POST['givenPassword'])) {
         try {
             //suolataan annettua salasanaa
             $pwd = password_hash($_POST['givenPassword'].$added, PASSWORD_BCRYPT);
