@@ -3,7 +3,7 @@ function openMessage($id, $title, $message) {
     document.getElementById("messTitle").innerHTML = $title;
     document.getElementById("messText").innerHTML = $message;
 
-    createCookie("readID", $id, "1");
+    createCookie("readID", $id, "5");
     window.location.href = "includes/ireadMessage.php";
 }
 

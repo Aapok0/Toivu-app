@@ -706,6 +706,10 @@ label, input[type="radio"] {
     color:#FFF;
 }
 
+.form_link {
+    text-decoration: underline;
+}
+
 /* CALENDAR */
 
 #calendar {

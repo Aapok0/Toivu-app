@@ -27,6 +27,8 @@
     $data['uweight'] = $_POST['givenWeight'];
     $data['bday'] = $_POST['givenBday'];
     $data['sex'] = $_POST['givenSex'];
+    $data['perm'] = $_POST['givenPerm'];
+    $data['terms'] = $_POST['givenTerms'];
     //suolataan annettua salasanaa
     $data['pwd'] = password_hash($_POST['givenPassword'].$added, PASSWORD_BCRYPT);
     try {
@@ -37,7 +39,7 @@
         $kysely -> execute();				
         $tulos = $kysely -> fetch();
         if ($tulos[0] == 0) { //email ei ole käytössä
-            $STH = $DBH->prepare("INSERT INTO wsk21_toivu_user (userID, userName, userPwd, userEmail, userHeight, userWeight, userBday, userSex) VALUES (default, :uname, :pwd, :email, :height, :uweight, :bday, :sex);");
+            $STH = $DBH->prepare("INSERT INTO wsk21_toivu_user (userID, userName, userPwd, userEmail, userHeight, userWeight, userBday, userSex, userPrivacy, userTerms) VALUES (default, :uname, :pwd, :email, :height, :uweight, :bday, :sex, :perm, :terms);");
             $STH -> execute($data);
             
             //Haetaan userID sessioon
