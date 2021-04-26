@@ -21,10 +21,11 @@
     //Annetaan lukustatukselle symbolit ja laitetaan käyttäjän viestit array:hin
     for ($i=0; $i <= $N-1; $i++) {
         $isread = "";
-        if ($result[$i][3] == false) {
+        $status = boolval($result[$i]['notRead']);
+        if ($status == false) {
             $isread = "X";
         }
-        else {
+        else if ($status == true) {
             $isread = "✓";
         }
 

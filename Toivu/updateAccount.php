@@ -1,7 +1,6 @@
 <?php
     session_start();
     include("includes/iheader.php");
-    unset($_POST);
 ?>
 
     <div class="page-container">

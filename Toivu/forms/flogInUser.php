@@ -3,7 +3,7 @@
         <p>
             Sähköposti 
             <br />
-            <input type="text" name="givenEmail" placeholder="voimassa oleva sähköposti" maxlength="40" required/>
+            <input type="email" name="givenEmail" placeholder="voimassa oleva sähköposti" maxlength="40" required/>
         </p>
         <p>
             Salasana

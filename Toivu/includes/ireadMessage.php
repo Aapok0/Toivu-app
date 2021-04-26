@@ -5,13 +5,13 @@
     //Luettu-statuksen päivittäminen tietokantaan
     $session_user = $_SESSION['suserID'];
     $read = true;
+    $array = array(
+        'nread' => $read,
+        'suser' => $session_user,
+        'ID' => $_POST['id']
+    );
+    
     $query = "UPDATE wsk21_toivu_notifications SET notRead = :nread WHERE userID = :suser AND notID = :ID";
     $stmt = $DBH -> prepare($query);
-    $stmt -> execute(
-        array(
-            ':nread' => $read,
-            ':user' => $session_user,
-            'ID' => $_COOKIE['readID']
-        )
-    );
+    $stmt -> execute($array);
 ?>

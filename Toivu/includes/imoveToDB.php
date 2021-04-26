@@ -1,6 +1,4 @@
 <?php
-    unset($_SESSION['swarningInput']);
-
     //Jos näitä tietoja ei ole syötetty, laitetaan tietokantaan nollaa tai tyhjää
     if (empty($_POST['givenHeight'])) {
         $_POST['givenHeight'] = "0";
@@ -52,11 +50,11 @@
             echo("<script>location.href = 'userAccount.php';</script>");
         }
         else {
-            $_SESSION['swarningInput'] = "Sähköposti on varattu";
+            $_SESSION['swarningInputCreate'] = "Sähköposti on varattu";
         }
     } 
     catch (PDOException $e) {
         file_put_contents('log/DBErrors.txt', 'createAccount.php: '.$e -> getMessage()."\n", FILE_APPEND);
-        $_SESSION['swarningInput'] = 'Ongelma tietokannassa';
+        $_SESSION['swarningInputCreate'] = 'Ongelma tietokannassa';
     }
 ?>

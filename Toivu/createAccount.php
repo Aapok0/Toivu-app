@@ -103,7 +103,7 @@
     <div class="container">
         <?php
             //***Näytetäänkö lomakesyötteen aiheuttama varoitus?
-            if (isset($_SESSION['swarningInputUpdate'])) {
+            if (isset($_SESSION['swarningInputCreate'])) {
                 echo("<p class=\"warning\">Virheellinen syöte: ". $_SESSION['swarningInputCreate']."</p>");
                 unset($_SESSION['swarningInputCreate']);
             }

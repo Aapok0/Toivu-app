@@ -663,7 +663,12 @@ label, input[type="radio"] {
 }
 
 .warning {
-    color: var(--old-rose);
+    width: fit-content;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-weight: bolder;
+    color: #b33f45;
+    border-bottom: 3px solid #b33f45;
 }
 
 .rating {

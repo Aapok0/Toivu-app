@@ -1,5 +1,5 @@
 <fieldset><legend>Päivitä käyttäjätietoja</legend>
-    <form name="update_name_form" onsubmit="return validateForm()" method="post">
+    <form name="update_name_form" method="post">
         <p>
             Käyttäjänimi
             <br />
@@ -52,7 +52,7 @@
         </p>
     </form>
 
-    <form name="update_height_form" onsubmit="return validateForm()" method="post">
+    <form name="update_height_form" method="post">
         <p>
             Pituus
             <br />
@@ -68,7 +68,7 @@
         </p>
     </form>
 
-    <form name="update_weight_form" onsubmit="return validateForm()" method="post">
+    <form name="update_weight_form" method="post">
         <p>
             Paino
             <br />
@@ -84,7 +84,7 @@
         </p>
     </form>
 
-    <form name="update_bday_form" onsubmit="return validateForm()" method="post">
+    <form name="update_bday_form" method="post">
         <p>
             Syntymäpäivä
             <br />
@@ -100,7 +100,7 @@
         </p>
     </form>
 
-    <form name="update_sex_form" onsubmit="return validateForm()" method="post">
+    <form name="update_sex_form" method="post">
         <p>
             Sukupuoli
             <br />

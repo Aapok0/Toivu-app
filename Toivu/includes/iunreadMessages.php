@@ -20,7 +20,7 @@
     //Tarkastetaan kuinka monta lukematonta viestiä on
     $unread = 0;
     for ($i=0; $i <= $N-1; $i++) {
-        if ($result[$i][3] == false) {
+        if ($result[$i]['notRead'] == false) {
             $unread++;
         }
     }

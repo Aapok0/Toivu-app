@@ -19,7 +19,7 @@ function validateForm() {
         return false;
     }
 
-    //Kirjautumisen sähköpostin validointi
+    //Päivityksen sähköpostin validointi
     var upemail = document.forms["update_email_form"]["givenEmail"].value;
     var atposition = upemail.indexOf("@");  
     var dotposition = upemail.lastIndexOf(".");  
@@ -38,7 +38,7 @@ function validateForm() {
         return false;
     }
 
-    //Täsmääkö rekisteröinnin salasanat?
+    //Täsmääkö päivityksen salasanat?
     var uppass = document.forms["update_password_form"]["givenPassword"].value;
     var uppass_ver = document.forms["reg_form"]["givenPasswordVerify"].value;
     if (uppass != uppass_ver) {
