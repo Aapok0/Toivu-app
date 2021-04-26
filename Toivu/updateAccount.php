@@ -1,7 +1,6 @@
 <?php
     session_start();
     include("includes/iheader.php");
-    unset($_POST);
 ?>
 
     <div class="page-container">
@@ -67,38 +66,54 @@
 
         <?php
             //Lomakkeen submit painettu?
-            if (isset($_POST['submitUser'])) {
-                //***Tarkistetaan syötteet myös palvelimella
-                if (isset($_POST['givenUsername'])) {
-                    if (strlen($_POST['givenUsername']) < 4) {
-                        $_SESSION['swarningInputUpdate'] = "Puutteellinen käyttäjänimi (väh. 4 merkkiä)";
-                    }
-                }
-                else if (isset($_POST['givenEmail'])) {
-                    if (!filter_var($_POST['givenEmail'], FILTER_VALIDATE_EMAIL)) {
-                        $_SESSION['swarningInputUpdate'] = "Virheellinen sähköposti";
-                    }
-                }
-                else if (isset($_POST['givenPassword'])) {
-                    if (strlen($_POST['givenPassword']) < 8) {
-                        $_SESSION['swarningInputUpdate'] = "Puutteellinen salasana (väh. 8 merkkiä)";
-                    }
-                    else if (!preg_match("#[0-9]+#", $_POST['givenPassword'])) {
-                        $_SESSION['swarningInputUpdate'] = "Puutteellinen salasana (väh. 1 numero)";
-                    }
-                    else if (!preg_match("#[A-Z]+#", $_POST['givenPassword'])) {
-                        $_SESSION['swarningInputUpdate'] = "Puutteellinen salasana (väh. 1 iso kirjain)";
-                    }
-                    else if (!preg_match("#[a-z]+#", $_POST['givenPassword'])) {
-                        $_SESSION['swarningInputUpdate'] = "Puutteellinen salasana (väh. 1 pieni kirjain)";
-                    }
-                    else if ($_POST['givenPassword'] != $_POST['givenPasswordVerify']) {
-                        $_SESSION['swarningInputUpdate'] = "Annettu salasana ja vahvistus eivät ole samat";
-                    }
+            //***Tarkistetaan syötteet myös palvelimella
+            if (isset($_POST['submitName'])) {
+                if (strlen($_POST['givenUsername']) < 4) {
+                    $_SESSION['swarningInputUpdate'] = "Puutteellinen käyttäjänimi (väh. 4 merkkiä)";
                 }
                 else {
                     include("includes/iupdateDB.php");
                 }
+            }
+            else if (isset($_POST['submitEmail'])) {
+                if (!filter_var($_POST['givenEmail'], FILTER_VALIDATE_EMAIL)) {
+                    $_SESSION['swarningInputUpdate'] = "Virheellinen sähköposti";
+                }
+                else {
+                    include("includes/iupdateDB.php");
+                }
+            }
+            else if (isset($_POST['submitPass'])) {
+                if (strlen($_POST['givenPassword']) < 8) {
+                    $_SESSION['swarningInputUpdate'] = "Puutteellinen salasana (väh. 8 merkkiä)";
+                }
+                else if (!preg_match("#[0-9]+#", $_POST['givenPassword'])) {
+                    $_SESSION['swarningInputUpdate'] = "Puutteellinen salasana (väh. 1 numero)";
+                }
+                else if (!preg_match("#[A-Z]+#", $_POST['givenPassword'])) {
+                    $_SESSION['swarningInputUpdate'] = "Puutteellinen salasana (väh. 1 iso kirjain)";
+                }
+                else if (!preg_match("#[a-z]+#", $_POST['givenPassword'])) {
+                    $_SESSION['swarningInputUpdate'] = "Puutteellinen salasana (väh. 1 pieni kirjain)";
+                }
+                else if ($_POST['givenPassword'] != $_POST['givenPasswordVerify']) {
+                    $_SESSION['swarningInputUpdate'] = "Annettu salasana ja vahvistus eivät ole samat";
+                }
+                else {
+                    include("includes/iupdateDB.php");
+                }
+            }
+            else if (isset($_POST['submitHeight'])) {
+                include("includes/iupdateDB.php");
+            }
+            else if (isset($_POST['submitWeight'])) {
+                include("includes/iupdateDB.php");
+            }
+            else if (isset($_POST['submitBday'])) {
+                include("includes/iupdateDB.php");
+            }
+            else if (isset($_POST['submitSex'])) {
+                include("includes/iupdateDB.php");
             }
         ?>
 

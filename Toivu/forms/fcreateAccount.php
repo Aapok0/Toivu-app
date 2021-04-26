@@ -57,13 +57,24 @@
             <input type="radio" id="other" name="givenSex" value="other">
             <label for="other">Muu</label>
         </p>
+        <p>
+            Lupa henkilötietojen keräämiseen <span class="big_font">*</span>
+            <br>
+            <input type="checkbox" name="givenPerm" value="1" required>
+            <a class="form_link" href="privacyPolicy.php" target="_blank" rel="noopener noreferrer">Lue tästä tiesuojaseloste</a>
+            <br>
+            Hyväksy sovelluksen käyttöehdot <span class="big_font">*</span>
+            <br>
+            <input type="checkbox" name="givenTerms" value="1" required>
+            <a class="form_link" href="termsConditions.php" target="_blank" rel="noopener noreferrer">Lue tästä käyttöehdot</a>
+        </p>
         <br />
         <p class="desc">
             <span class="big_font">*</span> tarkoittaa pakollista tietoa
         </p>
         <p>
             <br />
-            <input type="submit" name="submitUser" value="Lähetä"/>
+            <input type="submit" name="submitUser" value="Rekisteröidy"/>
             <input type="reset"  value="Tyhjennä"/>
             <input type="button" onclick="location.href='index.php'" value="Palaa takaisin"/>
         </p>

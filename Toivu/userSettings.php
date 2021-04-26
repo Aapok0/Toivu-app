@@ -82,9 +82,16 @@
                         $result = $stmt -> fetch();
                         
                         //Lasketaan ikä
-                        $today = date("Y-m-d");
-                        $diff = date_diff(date_create($result[6]), date_create($today));
-                        $age = $diff -> format('%y');
+                        if ($result[6] != "0000-00-00") {
+                            $today = date("Y-m-d");
+                            $diff = date_diff(date_create($result[6]), date_create($today));
+                            $age = $diff -> format('%y');
+                            $age = round($age, PHP_ROUND_HALF_DOWN);
+                        }
+                        else {
+                            $age = "";
+                        }
+                        
 
                         //Suomennetaan sukupuoli
                         $sex = "";

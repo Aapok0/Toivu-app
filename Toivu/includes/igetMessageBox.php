@@ -12,7 +12,8 @@
     $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
     //Kuinka monta viestiä käyttäjällä on?
-    $query2 = $DBH -> prepare("SELECT COUNT(*) FROM wsk21_toivu_notifications");
+    $query2 = $DBH -> prepare("SELECT COUNT(*) FROM wsk21_toivu_notifications WHERE userID = :suser");
+    $query2 -> bindParam(':suser', $session_user);
     $query2 -> execute();
     $rows = $query2 -> fetch();
     $N = $rows[0];
@@ -20,10 +21,11 @@
     //Annetaan lukustatukselle symbolit ja laitetaan käyttäjän viestit array:hin
     for ($i=0; $i <= $N-1; $i++) {
         $isread = "";
-        if ($result[$i][3] == false) {
+        $status = boolval($result[$i]['notRead']);
+        if ($status == false) {
             $isread = "X";
         }
-        else {
+        else if ($status == true) {
             $isread = "✓";
         }
 

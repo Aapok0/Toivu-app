@@ -84,12 +84,36 @@
             <div class="row">
                 <h3 class="text-center">Apua palautumiseen ja stressinhallintaan</h3>
                 <div class="one-half column">
-                    <h4 class="text-center">Hengitysharjoitukset</h4>
-                    <h4 class="text-center">Apua nukahtamiseen</h4>
+                    <div class="advice-column">
+                        <h4 class="text-center">Hengitysharjoitukset</h4>
+                        <img class="front-img" src="images/nose-breathing2.jpg" alt="Nenähengitys">
+                        <p class="advice">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, aperiam! Nisi facilis inventore nulla, obcaecati mollitia optio asperiores, voluptatum quo, distinctio unde eius quaerat deserunt autem corrupti explicabo voluptatibus error.
+                        Nobis at repudiandae expedita tempore laborum impedit, eligendi accusantium ut, sit temporibus quibusdam earum dolorum iusto! Optio cupiditate ut neque veniam nam, ipsam aliquid nisi, est ipsum itaque soluta harum.
+                        Fugiat incidunt, voluptates sit iste dignissimos quibusdam, dolores molestias deserunt fugit facilis repellat. Accusantium quis, explicabo fuga, reiciendis autem expedita eaque rerum laboriosam architecto animi ad fugiat officia exercitationem repudiandae.</p>
+                    </div>
+                    <div class="advice-column">
+                        <h4 class="text-center">Apua nukahtamiseen</h4>
+                        <img class="front-img" src="images/sleep-problems.jpg" alt="Uniongelmat">
+                        <p class="advice">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, aperiam! Nisi facilis inventore nulla, obcaecati mollitia optio asperiores, voluptatum quo, distinctio unde eius quaerat deserunt autem corrupti explicabo voluptatibus error.
+                        Nobis at repudiandae expedita tempore laborum impedit, eligendi accusantium ut, sit temporibus quibusdam earum dolorum iusto! Optio cupiditate ut neque veniam nam, ipsam aliquid nisi, est ipsum itaque soluta harum.
+                        Fugiat incidunt, voluptates sit iste dignissimos quibusdam, dolores molestias deserunt fugit facilis repellat. Accusantium quis, explicabo fuga, reiciendis autem expedita eaque rerum laboriosam architecto animi ad fugiat officia exercitationem repudiandae.</p>
+                    </div>
                 </div>
-                <div class="five columns">
-                    <h4 class="text-center">Lähde liikkeelle!</h4>
-                    <h4 class="text-center">Miten tauottaa työpäivää?</h4>
+                <div class="six columns no-margin">
+                    <div class="advice-column">
+                        <h4 class="text-center">Lähde liikkeelle!</h4>
+                        <img class="front-img" src="images/people-walking-dog-.jpg" alt="Ulkona kävely">
+                        <p class="advice">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, aperiam! Nisi facilis inventore nulla, obcaecati mollitia optio asperiores, voluptatum quo, distinctio unde eius quaerat deserunt autem corrupti explicabo voluptatibus error.
+                        Nobis at repudiandae expedita tempore laborum impedit, eligendi accusantium ut, sit temporibus quibusdam earum dolorum iusto! Optio cupiditate ut neque veniam nam, ipsam aliquid nisi, est ipsum itaque soluta harum.
+                        Fugiat incidunt, voluptates sit iste dignissimos quibusdam, dolores molestias deserunt fugit facilis repellat. Accusantium quis, explicabo fuga, reiciendis autem expedita eaque rerum laboriosam architecto animi ad fugiat officia exercitationem repudiandae.</p>
+                    </div>
+                    <div class="advice-column">
+                        <h4 class="text-center">Miten tauottaa työpäivää?</h4>
+                        <img class="front-img" src="images/hammock-break.jpg" alt="Tauko">
+                        <p class="advice">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, aperiam! Nisi facilis inventore nulla, obcaecati mollitia optio asperiores, voluptatum quo, distinctio unde eius quaerat deserunt autem corrupti explicabo voluptatibus error.
+                        Nobis at repudiandae expedita tempore laborum impedit, eligendi accusantium ut, sit temporibus quibusdam earum dolorum iusto! Optio cupiditate ut neque veniam nam, ipsam aliquid nisi, est ipsum itaque soluta harum.
+                        Fugiat incidunt, voluptates sit iste dignissimos quibusdam, dolores molestias deserunt fugit facilis repellat. Accusantium quis, explicabo fuga, reiciendis autem expedita eaque rerum laboriosam architecto animi ad fugiat officia exercitationem repudiandae.</p>
+                    </div>
                 </div>
             </div>
 

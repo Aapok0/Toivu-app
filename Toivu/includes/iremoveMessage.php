@@ -4,12 +4,11 @@
 
     //Viesti poistetaan tietokannasta
     $session_user = $_SESSION['suserID'];
+    $array = array(
+        'suser' => $session_user,
+        'ID' => $_POST['id']
+    );
     $query = "DELETE * FROM wsk21_toivu_notifications WHERE userID = :suser AND notID = :ID";
     $stmt = $DBH -> prepare($query);
-    $stmt -> execute(
-        array(
-            ':user' => $session_user,
-            'ID' => $_COOKIE['removeID']
-        )
-    );
+    $stmt -> execute($array);
 ?>

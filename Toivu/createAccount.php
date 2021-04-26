@@ -68,25 +68,31 @@
         if (isset($_POST['submitUser'])) {
             //***Tarkistetaan syötteet myös palvelimella
             if (strlen($_POST['givenUsername']) < 4) {
-            $_SESSION['swarningInputCreate'] = "Puutteellinen käyttäjänimi (väh. 4 merkkiä)";
+                $_SESSION['swarningInputCreate'] = "Puutteellinen käyttäjänimi (väh. 4 merkkiä)";
             }
             else if (!filter_var($_POST['givenEmail'], FILTER_VALIDATE_EMAIL)) {
-            $_SESSION['swarningInputCreate'] = "Virheellinen sähköposti";
+                $_SESSION['swarningInputCreate'] = "Virheellinen sähköposti";
             }
             else if (strlen($_POST['givenPassword']) < 8) {
-            $_SESSION['swarningInputCreate'] = "Puutteellinen salasana (väh. 8 merkkiä)";
+                $_SESSION['swarningInputCreate'] = "Puutteellinen salasana (väh. 8 merkkiä)";
             }
             else if (!preg_match("#[0-9]+#", $_POST['givenPassword'])) {
-            $_SESSION['swarningInputCreate'] = "Puutteellinen salasana (väh. 1 numero)";
+                $_SESSION['swarningInputCreate'] = "Puutteellinen salasana (väh. 1 numero)";
             }
             else if (!preg_match("#[A-Z]+#", $_POST['givenPassword'])) {
-            $_SESSION['swarningInputCreate'] = "Puutteellinen salasana (väh. 1 iso kirjain)";
+                $_SESSION['swarningInputCreate'] = "Puutteellinen salasana (väh. 1 iso kirjain)";
             }
             else if (!preg_match("#[a-z]+#", $_POST['givenPassword'])) {
-            $_SESSION['swarningInputCreate'] = "Puutteellinen salasana (väh. 1 pieni kirjain)";
+                $_SESSION['swarningInputCreate'] = "Puutteellinen salasana (väh. 1 pieni kirjain)";
             }
             else if ($_POST['givenPassword'] != $_POST['givenPasswordVerify']) {
-            $_SESSION['swarningInputCreate'] = "Annettu salasana ja vahvistus eivät ole samat";
+                $_SESSION['swarningInputCreate'] = "Annettu salasana ja vahvistus eivät ole samat";
+            }
+            else if (!isset($_POST['givenPerm'])) {
+                $_SESSION['swarningInputCreate'] = "Henkilötietojen keräämiselle tulee antaa lupa, jotta sovellusta voi käyttää.";
+            }
+            else if (!isset($_POST['givenTerms'])) {
+                $_SESSION['swarningInputCreate'] = "Rekisteröityminen vaatii käyttöehtojen hyväksymisen.";
             }
             else {
                 include("includes/imoveToDB.php");
@@ -97,7 +103,7 @@
     <div class="container">
         <?php
             //***Näytetäänkö lomakesyötteen aiheuttama varoitus?
-            if (isset($_SESSION['swarningInputUpdate'])) {
+            if (isset($_SESSION['swarningInputCreate'])) {
                 echo("<p class=\"warning\">Virheellinen syöte: ". $_SESSION['swarningInputCreate']."</p>");
                 unset($_SESSION['swarningInputCreate']);
             }

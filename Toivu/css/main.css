@@ -187,6 +187,10 @@ body, html {
     min-height: 100vh;
 }
 
+.no-margin {
+    margin: 0;
+}
+
 /* GENERAL */
 
 .text-center {
@@ -222,6 +226,30 @@ img.logo__banner {
 
 .bolder, .bolder tr th {
     font-weight: bolder !important;
+}
+
+.front-img {
+    width: 90%;
+    box-shadow: var(--shadow);
+    margin: 0 auto;
+}
+
+.img-text {
+    margin-top: 50px;
+    font-style: italic;
+    color: dimgray;
+}
+
+.advice-column {
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow);
+    padding: 1rem;
+    margin-bottom: 50px;
+}
+
+.advice {
+    margin-top: 2rem;
 }
 
 /* NEW NAVIGATION */
@@ -635,7 +663,12 @@ label, input[type="radio"] {
 }
 
 .warning {
-    color: var(--old-rose);
+    width: fit-content;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-weight: bolder;
+    color: #b33f45;
+    border-bottom: 3px solid #b33f45;
 }
 
 .rating {
@@ -676,6 +709,10 @@ label, input[type="radio"] {
 .rating span.checked ~ span label {
     background: var(--old-rose);
     color:#FFF;
+}
+
+.form_link {
+    text-decoration: underline;
 }
 
 /* CALENDAR */

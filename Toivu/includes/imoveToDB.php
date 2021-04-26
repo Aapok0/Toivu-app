@@ -1,6 +1,4 @@
 <?php
-    unset($_SESSION['swarningInput']);
-
     //Jos näitä tietoja ei ole syötetty, laitetaan tietokantaan nollaa tai tyhjää
     if (empty($_POST['givenHeight'])) {
         $_POST['givenHeight'] = "0";
@@ -27,6 +25,8 @@
     $data['uweight'] = $_POST['givenWeight'];
     $data['bday'] = $_POST['givenBday'];
     $data['sex'] = $_POST['givenSex'];
+    $data['perm'] = $_POST['givenPerm'];
+    $data['terms'] = $_POST['givenTerms'];
     //suolataan annettua salasanaa
     $data['pwd'] = password_hash($_POST['givenPassword'].$added, PASSWORD_BCRYPT);
     try {
@@ -37,7 +37,7 @@
         $kysely -> execute();				
         $tulos = $kysely -> fetch();
         if ($tulos[0] == 0) { //email ei ole käytössä
-            $STH = $DBH->prepare("INSERT INTO wsk21_toivu_user (userID, userName, userPwd, userEmail, userHeight, userWeight, userBday, userSex) VALUES (default, :uname, :pwd, :email, :height, :uweight, :bday, :sex);");
+            $STH = $DBH->prepare("INSERT INTO wsk21_toivu_user (userID, userName, userPwd, userEmail, userHeight, userWeight, userBday, userSex, userPrivacy, userTerms) VALUES (default, :uname, :pwd, :email, :height, :uweight, :bday, :sex, :perm, :terms);");
             $STH -> execute($data);
             
             //Haetaan userID sessioon
@@ -50,11 +50,11 @@
             echo("<script>location.href = 'userAccount.php';</script>");
         }
         else {
-            $_SESSION['swarningInput'] = "Sähköposti on varattu";
+            $_SESSION['swarningInputCreate'] = "Sähköposti on varattu";
         }
     } 
     catch (PDOException $e) {
         file_put_contents('log/DBErrors.txt', 'createAccount.php: '.$e -> getMessage()."\n", FILE_APPEND);
-        $_SESSION['swarningInput'] = 'Ongelma tietokannassa';
+        $_SESSION['swarningInputCreate'] = 'Ongelma tietokannassa';
     }
 ?>

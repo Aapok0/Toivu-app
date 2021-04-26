@@ -63,7 +63,16 @@
                 </div>
             </div>
 
-            <!-- Call-to-action-nappi rekisteröintiin -->
+            <div class="row">
+                <div class="one-half column">
+                    <p class="img-text">Sovellus tekee sykevälimittausarvoista analyyseja ja antaa tietoa sinun stressistä ja siitä palautumisesta.</p>
+                    <img class="front-img" src="images/example1.png" alt="Analyysi">
+                </div>
+                <div class="one-half column">
+                    <p class="img-text">Mittaamisen ohella voi seurata omaa oloa kalenteriin tehtävillä muistiinpanoilla ja vertailla omissa tuloksissa tapahtuvia muutoksia niihin.</p>
+                    <img class="front-img" src="images/example2.png" alt="Kalenteri">
+                </div>
+            </div>
         </div>
 
         <script src="js/collapse-menu.js"></script>

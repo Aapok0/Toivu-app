@@ -3,7 +3,7 @@
         <p>
             Sähköposti 
             <br />
-            <input type="text" name="givenEmail" placeholder="voimassa oleva sähköposti" maxlength="40" required/>
+            <input type="email" name="givenEmail" placeholder="voimassa oleva sähköposti" maxlength="40" required/>
         </p>
         <p>
             Salasana
@@ -12,7 +12,7 @@
         </p>
         <p>
             <br />
-            <input type="submit" name="submitUser" value="Lähetä"/>
+            <input type="submit" name="submitUser" value="Kirjaudu"/>
             <input type="reset"  value="Tyhjennä"/>
             <input type="button" onclick="location.href='index.php'" value="Palaa takaisin"/>
         </p>
