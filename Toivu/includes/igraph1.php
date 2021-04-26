@@ -44,7 +44,7 @@
     var series = chart.series.push(new am4charts.LineSeries());
     series.dataFields.valueY = "value";
     series.dataFields.dateX = "date";
-    series.tooltipText = "{value}"
+    series.tooltipText = "[bold]{value}"
     series.strokeWidth = 2;
     series.minBulletDistance = 15;
 
@@ -64,7 +64,7 @@
     bullet.circle.fill = am4core.color("#fff");
 
     var bullethover = bullet.states.create("hover");
-    bullethover.properties.scale = 1.3;
+    bullethover.properties.scale = 1.5;
 
     // Make a panning cursor
     chart.cursor = new am4charts.XYCursor();
