@@ -1,5 +1,5 @@
 <fieldset><legend>Yhteyslomake</legend>
-    <form name="contactForm" action="includes/icontactUs.php" onsubmit="return validateForm()" method="post">
+    <form name="contactForm" action="includes/icontactUs.php" method="post">
         <p>
             Nimi <span class="big_font">*</span>
             <br />

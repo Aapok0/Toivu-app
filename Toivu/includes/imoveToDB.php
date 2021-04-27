@@ -30,28 +30,17 @@
     //suolataan annettua salasanaa
     $data['pwd'] = password_hash($_POST['givenPassword'].$added, PASSWORD_BCRYPT);
     try {
-        //***Email ei saa olla käytetty aiemmin
-        $sql = "SELECT COUNT(*) FROM wsk21_toivu_user where userEmail =  " . "'".$_POST['givenEmail']."'"  ;
-        
-        $kysely = $DBH->prepare($sql);
-        $kysely -> execute();				
-        $tulos = $kysely -> fetch();
-        if ($tulos[0] == 0) { //email ei ole käytössä
-            $STH = $DBH->prepare("INSERT INTO wsk21_toivu_user (userID, userName, userPwd, userEmail, userHeight, userWeight, userBday, userSex, userPrivacy, userTerms) VALUES (default, :uname, :pwd, :email, :height, :uweight, :bday, :sex, :perm, :terms);");
-            $STH -> execute($data);
+        $STH = $DBH->prepare("INSERT INTO wsk21_toivu_user (userID, userName, userPwd, userEmail, userHeight, userWeight, userBday, userSex, userPrivacy, userTerms) VALUES (default, :uname, :pwd, :email, :height, :uweight, :bday, :sex, :perm, :terms);");
+        $STH -> execute($data);
             
-            //Haetaan userID sessioon
-            $query = "SELECT userID FROM wsk21_toivu_user WHERE userEmail = :email";
-            $stmt = $DBH->prepare($query);
-            $stmt -> bindParam(':email', $_SESSION['suserEmail']);
-            $stmt -> execute();
-            $result = $stmt -> fetch();
-            $_SESSION['suserID'] = $result[0];
-            echo("<script>location.href = 'userAccount.php';</script>");
-        }
-        else {
-            $_SESSION['swarningInputCreate'] = "Sähköposti on varattu";
-        }
+        //Haetaan userID sessioon
+        $query = "SELECT userID FROM wsk21_toivu_user WHERE userEmail = :email";
+        $stmt = $DBH->prepare($query);
+        $stmt -> bindParam(':email', $_SESSION['suserEmail']);
+        $stmt -> execute();
+        $result = $stmt -> fetch();
+        $_SESSION['suserID'] = $result[0];
+        echo("<script>location.href = 'userAccount.php';</script>");
     } 
     catch (PDOException $e) {
         file_put_contents('log/DBErrors.txt', 'createAccount.php: '.$e -> getMessage()."\n", FILE_APPEND);

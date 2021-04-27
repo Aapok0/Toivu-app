@@ -28,6 +28,9 @@
     // Create chart instance
     var chart = am4core.create("graph2", am4charts.XYChart);
 
+    // Choose chart language
+    chart.language.locale = am4lang_fi_FI;
+
     // Add data
     chart.data = data;
 

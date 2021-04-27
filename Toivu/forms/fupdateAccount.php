@@ -15,7 +15,7 @@
         </p>
     </form>
 
-    <form name="update_email_form" onsubmit="return validateForm()" method="post">
+    <form name="update_email_form" method="post">
         <p>
             Sähköposti
             <br />
@@ -29,7 +29,7 @@
         </p>
     </form>
 
-    <form name="update_password_form" onsubmit="return validateForm()" method="post">
+    <form name="update_password_form" method="post">
         <p>
             Salasana
             <br />

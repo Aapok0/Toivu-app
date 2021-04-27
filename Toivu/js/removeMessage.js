@@ -1,4 +1,4 @@
-function removeMessage($id) {
+function removeMessage(id) {
     var remove = confirm("Haluatko varmasti poistaa viestin pysyvästi?");
     if (remove == true) {
         $.ajax({

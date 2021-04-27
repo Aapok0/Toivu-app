@@ -42,9 +42,10 @@
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
         <!-- amGraph scripts -->
-        <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-        <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
-        <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+        <script src="amcharts4/core.js"></script>
+        <script src="amcharts4/charts.js"></script>
+        <script src="amcharts4/animated.js"></script>
+        <script src="amcharts4/fi_FI.js"></script>
         <script src="js/ToivuTheme.js"></script>
 
 </head>

@@ -28,6 +28,9 @@
     // Create chart instance
     var chart = am4core.create("graph3", am4charts.XYChart);
 
+    // Choose chart language
+    chart.language.locale = am4lang_fi_FI;
+
     // Increase contrast by taking evey second color
     chart.colors.step = 2;
 
