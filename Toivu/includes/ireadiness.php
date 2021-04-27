@@ -1,5 +1,5 @@
 <?php
-    //Readiness-analyysi (Lähteet: doi: 10.3389/fpubh.2017.00258, https://www.kubios.com/hrv-analysis-methods/)
+    //Readiness-analyysi (Lähteet: doi: 10.3389/fpubh.2017.00258, https://www.kubios.com/hrv-analysis-methods/, https://www.duodecimlehti.fi/duo50084)
     function readiness($RR) {
         //Alustetaan ensin muuttuja
         $rmssd = 0;
@@ -24,7 +24,7 @@
         return round($readiness, 2);
     }
 
-    //pNN50-analyysi (Lähteet: doi: 10.3389/fpubh.2017.00258, https://www.kubios.com/hrv-analysis-methods/)
+    //pNN50-analyysi (Lähteet: doi: 10.3389/fpubh.2017.00258, https://www.kubios.com/hrv-analysis-methods/, https://www.duodecimlehti.fi/duo50084)
     function pNN50($RR) {
         //Alustetaan ensin muuttuja
         $NN50 = 0;

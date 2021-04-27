@@ -2,7 +2,10 @@
     //Graafin tulostus sivulle
     echo "<div class=\"twelve columns\">";
         echo "<h2 class=\"text-center\">Levollisuusanalyysi</h2>";
-        echo "Analysoimme sinun levollisuutta ja palautumista kahdella eri tavalla ja pyrimme antamaan niiden yhdistelmällä mahdollisimman tarkan kuvan voinnistasi. Readiness arvioi leposykevälien vaihtelua kokonaisuudessaan ja pNN50 arvioi peräkkäisiä yli 50 milliseknnunin vaihteluita mittauksissasi.";
+        echo "Analysoimme sinun levollisuutta ja palautumista kahdella eri tavalla ja pyrimme antamaan niiden yhdistelmällä mahdollisimman tarkan kuvan voinnistasi. Readiness arvioi leposykevälien keskimääräistä vaihtelua kokonaisuudessaan ja pNN50 laskee peräkkäisiä yli 50 milliseknnunin vaihteluita mittauksissasi. Lisää näistä analyyseista ja niiden teoreettisesta pohjasta voi lukea alla olevista linkeistä.";
+        echo "<br><a class=\"form_link\" href=\"https://www.duodecimlehti.fi/duo50084\" target=\"_blank\" rel=\"noopener noreferrer\">Duodecim: Sydämen sykevaihtelun mittaaminen ja merkitys</a>";
+        echo "<br><a class=\"form_link\" href=\"https://www.kubios.com/hrv-analysis-methods/\" target=\"_blank\" rel=\"noopener noreferrer\">Kubios: HRV ANALYSIS METHODS</a>";
+        echo "<br><a class=\"form_link\" href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5624990/#:~:text=used%20in%20biofeedback.-,RMSSD,of%20the%20total%20is%20obtained.\" target=\"_blank\" rel=\"noopener noreferrer\">Frontiers in Public Health: An Overview of Heart Rate Variability Metrics and Norms</a>";
         echo "<div id=\"graph3\"></div>";
     echo "</div>";
 ?>
