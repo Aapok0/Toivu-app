@@ -16,9 +16,6 @@ function openMessage(id, title, message) {
             console.error(xhr);
         }
     });
-
-    //fetch("https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/ireadMessage.php?id=" + id);
-    //window.location.href = "https://users.metropolia.fi/~aapokok/WSK12021/Toivu/includes/ireadMessage.php?id=" + id;
 }
 
 //Haetaan modaali
