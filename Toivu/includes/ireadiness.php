@@ -85,6 +85,7 @@
         echo "</thead>";
 
         echo "<tbody>";
+        //Käydään läpi juuri tehty data-array rivi kerrallaan ja asetetaan tiedot taulukkoon
         for ($i=0; $i <= $N-1; $i++) {
             echo "<tr>";
                 echo "<td class=\"analysis_td\">" . $data_array[$i][1] . "</td>";

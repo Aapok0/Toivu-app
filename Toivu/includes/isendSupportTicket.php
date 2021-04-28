@@ -5,8 +5,8 @@
     unset($_SESSION['swarningInput']);
 
     //Tiedot kantaan
-    $data['userID'] = $_SESSION['toivu_userID'];
-    $data['email'] = $_POST['givenEmail'];
+    $data['userID'] = $_SESSION['toivu_userID']; //varmistetaan käyttäjä
+    $data['email'] = $_POST['givenEmail']; //sähköposti, jolla ollaan yhteydessä käyttäjään
     $data['title'] = $_POST['givenTitle'];
     $data['smessage'] = $_POST['givenMessage'];
         

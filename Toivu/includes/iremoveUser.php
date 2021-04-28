@@ -28,6 +28,7 @@
     $stmt5 -> bindParam(':suser', $_SESSION['toivu_userID']);
     $stmt5 -> execute();
 
+    //Lopetetaan ja tuhotaan sessio ja palataan kotisivulle
     session_unset();
     session_destroy();
     echo("<script>location.href = '../index.php';</script>");

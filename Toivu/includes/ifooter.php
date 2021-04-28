@@ -1,7 +1,9 @@
-            <!-- Footer, jossa voisi olla mm. kontaktit -->
+            <!-- Footer alkaa -->
             <footer>
                 <div class="container">
+                    <!-- Ensimmäinen kolumni alkaa -->
                     <div class="one-half column footer-col">
+                        <!-- Lisätietolinkkejä Toivu-sovellukseen liittyen -->
                         <h5>Resursseja</h5>
                         <ul class="no-bullets">
                             <li class="footer-link">
@@ -20,6 +22,8 @@
                                 </a>
                             </li>
                         </ul>
+
+                        <!-- Sosiaalisen median linkit -->
                         <h5>Sosiaalinen media</h5>
                         <ul class="socials no-bullets">
                             <li class="social-item">
@@ -43,22 +47,33 @@
                                 </a>
                             </li>
                         </ul>
+
+                        <!-- Logo ensimmäisen kolumnin lopussa -->
                         <div class="footer_logo__wrapper">
                             <img class="footer_logo" src="images/Toivu3.png" alt="Toivu-logo">
                         </div>
+
+                        <!-- Toivu copyright -->
                         <span class="copyright">© Toivu 2021</span>
                     </div>
-                    <!-- Yhteydenottolomake, joka lähettää sähköpostia kehittäille -->
+                    <!-- Ensimmäinen kolumni loppuu -->
+
+                    <!-- Toinen kolumni alkaa -->
                     <div class="one-half column footer-col">
+                        <!-- Perusyhteystiedot -->
                         <h5>Ota meihin yhteyttä!</h5>
                         <p>puh. +358 99 123 1231</p>
                         <p>contact@toivu.fi</p>
+                        <!-- Yhteydenottolomake, joka lähettää sähköpostia kehittäille -->
                         <?php
                             include("forms/fcontactForm.php");
                         ?>
                     </div>
+                    <!-- Toinen kolumni loppuu -->
                 </div>
             </footer>
+            <!-- Footer loppuu -->
         </div>
+        <!-- Sivun säiliö loppuu -->
     </body>
 </html>

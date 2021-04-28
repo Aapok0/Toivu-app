@@ -10,6 +10,6 @@
 
         mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>"); //Lähetetään syötteiden mukaan
         
-        echo("<script>location.href = 'index.php';");
+        echo("<script>location.href = 'index.php';"); //Palataan sovellukseen
     }
 ?>

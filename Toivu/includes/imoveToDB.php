@@ -48,7 +48,7 @@
         //Lähetetään tervetuloa-viesti
         include("includes/iwelcomeMessage.php");
 
-        echo("<script>location.href = 'userAccount.php';</script>");
+        echo("<script>location.href = 'userAccount.php';</script>"); //ohjataan profiilisivulle
     } 
     catch (PDOException $e) {
         file_put_contents('log/DBErrors.txt', 'createAccount.php: '.$e -> getMessage()."\n", FILE_APPEND);

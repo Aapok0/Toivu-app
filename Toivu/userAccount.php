@@ -3,9 +3,10 @@
     include("includes/iheader.php");
 ?>
 
+    <!-- Sivun säiliö alkaa -->
     <div class="page-container">
 
-        <!-- Uusi päänavigaatio -->
+        <!-- Uusi päänavigaatio alkaa -->
         <div class="header-background">
             <div class="container">
                 <header class="site-header site-header__wrapper">
@@ -18,12 +19,14 @@
                         </div>
                     </div>
 
+                    <!-- Navigaation oikea laita alkaa -->
                     <div class="site-header__end">
                         <nav>
                             <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
                             <button class="nav__toggle button-light" aria-expanded="false" type="button">
                                 Päävalikko
                             </button>
+                            <!-- Navigaatiolinkit alkaa -->
                             <ul class="nav__wrapper no-bullets">
                                 <li class="nav__item">
                                     <a href="index.php">
@@ -43,13 +46,17 @@
                                     include("includes/inavIndex.php");
                                 ?>
                             </ul>
+                            <!-- Navigaatiolinkit loppuu -->
                         </nav>
-                    </div>        
+                    </div>
+                    <!-- Navigaation oikea laita loppuu -->
                 </header>
             </div>
         </div>
+        <!-- Uusi päänavigaatio loppuu -->
 
-        <!-- Profiilinavigaatio, joka näkyy vain kirjautuneille -->
+        <!-- Profiilinavigaatio alkaa -->
+        <!-- Näkyy vain kirjautuneille -->
         <div class="container">
             <div class="row">
                 <div class="twelve columns profile-header profile-header__wrapper">
@@ -67,6 +74,7 @@
                 </div>
             </div>
         </div>
+        <!-- Profiilinavigaatio loppuu -->
 
         <!-- Profiilisivun otsikko ja tervehdys -->
         <div class="container profile-page">
@@ -80,8 +88,10 @@
                 </div>
             </div>
 
+            <!-- Kolumnit alkaa -->
             <!-- Ehdotuksia ja neuvoja palautumiseen. Optimi tilanteessa reagoisi käyttäjän mittauksiin ja esim. kalenteri-tageihin. -->
             <div class="row">
+                <!-- Ensimmäinen kolumni alkaa -->
                 <h3 class="text-center">Apua palautumiseen ja stressinhallintaan</h3>
                 <div class="one-half column">
                     <div class="advice-column">
@@ -91,6 +101,7 @@
                         Nobis at repudiandae expedita tempore laborum impedit, eligendi accusantium ut, sit temporibus quibusdam earum dolorum iusto! Optio cupiditate ut neque veniam nam, ipsam aliquid nisi, est ipsum itaque soluta harum.
                         Fugiat incidunt, voluptates sit iste dignissimos quibusdam, dolores molestias deserunt fugit facilis repellat. Accusantium quis, explicabo fuga, reiciendis autem expedita eaque rerum laboriosam architecto animi ad fugiat officia exercitationem repudiandae.</p>
                     </div>
+
                     <div class="advice-column">
                         <h4 class="text-center">Apua nukahtamiseen</h4>
                         <img class="front-img" src="images/sleep-problems.jpg" alt="Uniongelmat">
@@ -99,6 +110,9 @@
                         Fugiat incidunt, voluptates sit iste dignissimos quibusdam, dolores molestias deserunt fugit facilis repellat. Accusantium quis, explicabo fuga, reiciendis autem expedita eaque rerum laboriosam architecto animi ad fugiat officia exercitationem repudiandae.</p>
                     </div>
                 </div>
+                <!-- Ensimmäinen kolumni loppuu -->
+
+                <!-- Toinen kolumni alkaa -->
                 <div class="six columns no-margin">
                     <div class="advice-column">
                         <h4 class="text-center">Lähde liikkeelle!</h4>
@@ -107,6 +121,7 @@
                         Nobis at repudiandae expedita tempore laborum impedit, eligendi accusantium ut, sit temporibus quibusdam earum dolorum iusto! Optio cupiditate ut neque veniam nam, ipsam aliquid nisi, est ipsum itaque soluta harum.
                         Fugiat incidunt, voluptates sit iste dignissimos quibusdam, dolores molestias deserunt fugit facilis repellat. Accusantium quis, explicabo fuga, reiciendis autem expedita eaque rerum laboriosam architecto animi ad fugiat officia exercitationem repudiandae.</p>
                     </div>
+
                     <div class="advice-column">
                         <h4 class="text-center">Miten tauottaa työpäivää?</h4>
                         <img class="front-img" src="images/hammock-break.jpg" alt="Tauko">
@@ -115,8 +130,10 @@
                         Fugiat incidunt, voluptates sit iste dignissimos quibusdam, dolores molestias deserunt fugit facilis repellat. Accusantium quis, explicabo fuga, reiciendis autem expedita eaque rerum laboriosam architecto animi ad fugiat officia exercitationem repudiandae.</p>
                     </div>
                 </div>
+                <!-- Toinen kolumni loppuu -->
             </div>
         </div>
+        <!-- Kolumnit loppuu -->
 
         <script src="js/collapse-menu.js"></script>
 

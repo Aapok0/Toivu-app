@@ -3,9 +3,10 @@
     include("includes/iheader.php");
 ?>
 
+    <!-- Sivun säiliö alkaa -->
     <div class="page-container">
 
-        <!-- Uusi päänavigaatio -->
+        <!-- Uusi päänavigaatio alkaa -->
         <div class="header-background">
             <div class="container">
                 <header class="site-header site-header__wrapper">
@@ -18,12 +19,14 @@
                         </div>
                     </div>
 
+                    <!-- Navigaation oikea laita alkaa -->
                     <div class="site-header__end">
                         <nav class="nav">
                             <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
                             <button class="nav__toggle" aria-expanded="false" type="button">
                                 Menu
                             </button>
+                            <!-- Navigaatiolinkit alkaa -->
                             <ul class="nav__wrapper no-bullets">
                                 <li class="nav__item active">
                                     <a href="index.php">
@@ -43,11 +46,14 @@
                                     include("includes/inavIndex.php");
                                 ?>
                             </ul>
+                            <!-- Navigaatiolinkit loppuu -->
                         </nav>
-                    </div>        
+                    </div>
+                    <!-- Navigaation oikea laita loppuu -->
                 </header>
             </div>
         </div>
+        <!-- Uusi päänavigaatio loppuu -->
 
         <!-- Tietosuojaseloste upotettuna suoraan PDF-tiedostona -->
         <div class="container">

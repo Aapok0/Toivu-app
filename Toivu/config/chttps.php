@@ -1,10 +1,10 @@
 <?php
-    //If the HTTPS is not found to be "on"
+    //Jos HTTPS ei ole käytössä
     if(!isset($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] != "on")
     {
-        //Tell the browser to redirect to the HTTPS URL.
+        //Käsketään selainta ohjaamaan urliin, jossa käytetään HTTPS:ää
         header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"], true, 301);
-        //Prevent the rest of the script from executing.
+        //Estä loppua skriptiä ajamasta loppuun
         exit;
     }
 ?>

@@ -3,9 +3,10 @@
     include("includes/iheader.php");
 ?>
 
+    <!-- Sivun säiliö alkaa -->
     <div class="page-container">
 
-        <!-- Uusi päänavigaatio -->
+        <!-- Uusi päänavigaatio alkaa -->
         <div class="header-background">
             <div class="container">
                 <header class="site-header site-header__wrapper">
@@ -18,12 +19,14 @@
                         </div>
                     </div>
 
+                    <!-- Navigaation oikea laita alkaa -->
                     <div class="site-header__end">
                         <nav>
                             <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
                             <button class="nav__toggle button-light" aria-expanded="false" type="button">
                                 Päävalikko
                             </button>
+                            <!-- Navigaatiolinkit alkaa -->
                             <ul class="nav__wrapper no-bullets">
                                 <li class="nav__item">
                                     <a href="index.php">
@@ -43,13 +46,17 @@
                                     include("includes/inavIndex.php");
                                 ?>
                             </ul>
+                            <!-- Navigaatiolinkit loppuu -->
                         </nav>
-                    </div>        
+                    </div>
+                    <!-- Navigaation oikea laita loppuu -->
                 </header>
             </div>
         </div>
+        <!-- Uusi päänavigaatio loppuu -->
 
-        <!-- Profiilinavigaatio, joka näkyy vain kirjautuneille -->
+        <!-- Profiilinavigaatio alkaa -->
+        <!-- Näkyy vain kirjautuneille -->
         <div class="container">
             <div class="row">
                 <div class="twelve columns profile-header profile-header__wrapper">
@@ -67,13 +74,16 @@
                 </div>
             </div>
         </div>
+        <!-- Profiilinavigaatio loppuu -->
 
-        <!-- Ensinksi käyttäjän nykyiset tiedot, jonka jälkeen nappi niiden päivitykseen ja toinen tilin poistoon. -->
+        <!-- Asetukset alkaa -->
         <div class="container top_content">
             <h1 class="text-center">Asetukset</h1>
             <div class="row">
+                <!-- Käyttäjätiedot alkaa -->
                 <div class="one-half column">
                     <!-- Haetaan käyttäjätiedot -->
+                    <!-- Ensiksi käyttäjän nykyiset tiedot, jonka jälkeen nappi niiden päivitykseen ja toinen tilin poistoon. -->
                     <?php
                         $query = "SELECT * FROM wsk21_toivu_user WHERE userID = :suser";
                         $stmt = $DBH -> prepare($query);
@@ -91,7 +101,6 @@
                         else {
                             $age = "";
                         }
-                        
 
                         //Suomennetaan sukupuoli
                         $sex = "";
@@ -104,7 +113,8 @@
                         else if ($result[7] == "other") {
                             $sex = "muu";
                         }
-
+                        
+                        //Käyttäjätiedot
                         echo "<h3 class=\"setting_head\">Käyttäjätiedot</h3>";
                         echo "<p class=\"setting_par\">Käyttäjänimi: " . $result[1] . "</p>";
                         echo "<p class=\"setting_par\">Sähköposti: " . $result[3] . "</p>";
@@ -113,13 +123,17 @@
                         echo "<p class=\"setting_par\">Pituus: " . $result[4] . "</p>";
                         echo "<p class=\"setting_par\">Paino: " . $result[5] . "</p>";
                         echo "<h3 class=\"setting_par\">Tietojen päivitys</h3>";
+                        //Tietojen päivitys
                         echo "<a class=\"setting_par\" href=\"updateAccount.php\"><button>Päivitä</button></a>";
                     ?>
 
+                    <!-- Tilin poisto -->
                     <h3 class="setting_rem">Tilinpoisto</h3>
                     <input class="setting_par" type="button" onclick="removeUser()" value="Poista tili">
                 </div>
+                <!-- Käyttäjätiedot loppuu -->
                 
+                <!-- Lomakkeet alkaa -->
                 <!-- Mahdollisuus antaa palautetta ja pyytää tukea -->
                 <div class="one-half column">
                     <h3 class="setting_head">Palaute</h3>
@@ -132,9 +146,12 @@
                         include("forms/faskSupport.php");
                     ?>
                 </div>
+                <!-- Lomakkeet loppuu -->
             </div>
         </div>
-
+        <!-- Asetukset loppuu -->
+        
+        <!-- Lomakkeiden validointi submitin jälkeen ja sen läpi mennessä lähetys -->
         <?php
             //Lomakkeen submit painettu?
             if (isset($_POST['submitFeedback'])) {
@@ -146,15 +163,16 @@
             //Lomakkeen submit painettu?
             if (isset($_POST['submitSupport'])) {
                 //***Tarkistetaan syötteet myös palvelimella
-                if (!filter_var($_POST['givenEmail'], FILTER_VALIDATE_EMAIL)) {
+                if (!filter_var($_POST['givenEmail'], FILTER_VALIDATE_EMAIL)) { //onko validi osoite?
                     $_SESSION['swarningInputSettings'] = "Virheellinen sähköposti";
                 }
                 else {
-                    include("includes/isendSupportTicket.php");
+                    include("includes/isendSupportTicket.php"); //validaatio ok? -> siirrytään laittamaan tietokantaan
                 }
             }
         ?>
-
+        
+        <!-- Virheviesti, jos lomake ei mene läpi serveripuolen validoinnista -->
         <div class="container">
             <?php
                 //***Näytetäänkö lomakesyötteen aiheuttama varoitus?
