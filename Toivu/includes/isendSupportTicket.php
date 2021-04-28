@@ -5,7 +5,7 @@
     unset($_SESSION['swarningInput']);
 
     //Tiedot kantaan
-    $data['userID'] = $_SESSION['suserID'];
+    $data['userID'] = $_SESSION['toivu_userID'];
     $data['email'] = $_POST['givenEmail'];
     $data['title'] = $_POST['givenTitle'];
     $data['smessage'] = $_POST['givenMessage'];

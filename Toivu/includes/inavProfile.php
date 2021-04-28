@@ -2,8 +2,8 @@
     //Tarkistetaan, onko käyttäjä kirjautunut, ja millä sivulla käyttäjä on ja esitetään se navigaatiossa
 
     //Käyttäjän tila
-    if($_SESSION['sloggedIn']=="yes"){
-        //echo("<li>Käyttäjä: " .$_SESSION['suserName'] . "<br>");
+    if($_SESSION['toivu_loggedIn']=="yes"){
+        //echo("<li>Käyttäjä: " .$_SESSION['toivu_userName'] . "<br>");
         $url = $_SERVER["REQUEST_URI"]; 
         $pos01 = strrpos($url, "userAccount.php");
         $pos02 = strrpos($url, "analyses.php");
@@ -16,7 +16,7 @@
             echo("<li class=\"pro-nav__item active\"><a href=\"userAccount.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_heartbeat_1608928.png\" alt=\"Profile\"><span>Etusivu</span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"analyses.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_barChart_292488.png\" alt=\"Profile\"><span>Analyysit</span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"calendar.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_calendar-3_322414.png\" alt=\"Profile\"><span>Kalenteri</span></a></li>");
-            echo("<li class=\"pro-nav__item\"><a href=\"notifications.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_icons_email_1564504.png\" alt=\"Profile\"><span class=\"inbox\">Viestit : <span class=\"counter\">" . $_SESSION['unread'] . "</span></span></a></li>");
+            echo("<li class=\"pro-nav__item\"><a href=\"notifications.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_icons_email_1564504.png\" alt=\"Profile\"><span class=\"inbox\">Viestit : <span class=\"counter\">" . $_SESSION['toivu_unread'] . "</span></span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"userSettings.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_settings_326699.png\" alt=\"Profile\"><span>Asetukset</span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"instructions.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_ic_live_help_48px_352491.png\" alt=\"Profile\"><span>Ohjeita</span></a></li>");
         }
@@ -24,7 +24,7 @@
             echo("<li class=\"pro-nav__item\"><a href=\"userAccount.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_heartbeat_1608928.png\" alt=\"Profile\"><span>Etusivu</span></a></li>");
             echo("<li class=\"pro-nav__item active\"><a href=\"analyses.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_barChart_292488.png\" alt=\"Profile\"><span>Analyysit</span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"calendar.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_calendar-3_322414.png\" alt=\"Profile\"><span>Kalenteri</span></a></li>");
-            echo("<li class=\"pro-nav__item\"><a href=\"notifications.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_icons_email_1564504.png\" alt=\"Profile\"><span class=\"inbox\">Viestit : <span class=\"counter\">" . $_SESSION['unread'] . "</span></span></a></li>");
+            echo("<li class=\"pro-nav__item\"><a href=\"notifications.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_icons_email_1564504.png\" alt=\"Profile\"><span class=\"inbox\">Viestit : <span class=\"counter\">" . $_SESSION['toivu_unread'] . "</span></span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"userSettings.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_settings_326699.png\" alt=\"Profile\"><span>Asetukset</span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"instructions.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_ic_live_help_48px_352491.png\" alt=\"Profile\"><span>Ohjeita</span></a></li>");
         }
@@ -32,7 +32,7 @@
             echo("<li class=\"pro-nav__item\"><a href=\"userAccount.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_heartbeat_1608928.png\" alt=\"Profile\"><span>Etusivu</span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"analyses.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_barChart_292488.png\" alt=\"Profile\"><span>Analyysit</span></a></li>");
             echo("<li class=\"pro-nav__item active\"><a href=\"calendar.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_calendar-3_322414.png\" alt=\"Profile\"><span>Kalenteri</span></a></li>");
-            echo("<li class=\"pro-nav__item\"><a href=\"notifications.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_icons_email_1564504.png\" alt=\"Profile\"><span class=\"inbox\">Viestit : <span class=\"counter\">" . $_SESSION['unread'] . "</span></span></a></li>");
+            echo("<li class=\"pro-nav__item\"><a href=\"notifications.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_icons_email_1564504.png\" alt=\"Profile\"><span class=\"inbox\">Viestit : <span class=\"counter\">" . $_SESSION['toivu_unread'] . "</span></span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"userSettings.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_settings_326699.png\" alt=\"Profile\"><span>Asetukset</span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"instructions.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_ic_live_help_48px_352491.png\" alt=\"Profile\"><span>Ohjeita</span></a></li>");
         }
@@ -40,7 +40,7 @@
             echo("<li class=\"pro-nav__item\"><a href=\"userAccount.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_heartbeat_1608928.png\" alt=\"Profile\"><span>Etusivu</span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"analyses.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_barChart_292488.png\" alt=\"Profile\"><span>Analyysit</span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"calendar.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_calendar-3_322414.png\" alt=\"Profile\"><span>Kalenteri</span></a></li>");
-            echo("<li class=\"pro-nav__item active\"><a href=\"notifications.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_icons_email_1564504.png\" alt=\"Profile\"><span class=\"inbox\">Viestit : <span class=\"counter\">" . $_SESSION['unread'] . "</span></span></a></li>");
+            echo("<li class=\"pro-nav__item active\"><a href=\"notifications.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_icons_email_1564504.png\" alt=\"Profile\"><span class=\"inbox\">Viestit : <span class=\"counter\">" . $_SESSION['toivu_unread'] . "</span></span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"userSettings.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_settings_326699.png\" alt=\"Profile\"><span>Asetukset</span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"instructions.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_ic_live_help_48px_352491.png\" alt=\"Profile\"><span>Ohjeita</span></a></li>");
         }
@@ -48,7 +48,7 @@
             echo("<li class=\"pro-nav__item\"><a href=\"userAccount.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_heartbeat_1608928.png\" alt=\"Profile\"><span>Etusivu</span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"analyses.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_barChart_292488.png\" alt=\"Profile\"><span>Analyysit</span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"calendar.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_calendar-3_322414.png\" alt=\"Profile\"><span>Kalenteri</span></a></li>");
-            echo("<li class=\"pro-nav__item\"><a href=\"notifications.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_icons_email_1564504.png\" alt=\"Profile\"><span class=\"inbox\">Viestit : <span class=\"counter\">" . $_SESSION['unread'] . "</span></span></a></li>");
+            echo("<li class=\"pro-nav__item\"><a href=\"notifications.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_icons_email_1564504.png\" alt=\"Profile\"><span class=\"inbox\">Viestit : <span class=\"counter\">" . $_SESSION['toivu_unread'] . "</span></span></a></li>");
             echo("<li class=\"pro-nav__item active\"><a href=\"userSettings.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_settings_326699.png\" alt=\"Profile\"><span>Asetukset</span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"instructions.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_ic_live_help_48px_352491.png\" alt=\"Profile\"><span>Ohjeita</span></a></li>");
         }
@@ -56,7 +56,7 @@
             echo("<li class=\"pro-nav__item\"><a href=\"userAccount.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_heartbeat_1608928.png\" alt=\"Profile\"><span>Etusivu</span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"analyses.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_barChart_292488.png\" alt=\"Profile\"><span>Analyysit</span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"calendar.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_calendar-3_322414.png\" alt=\"Profile\"><span>Kalenteri</span></a></li>");
-            echo("<li class=\"pro-nav__item\"><a href=\"notifications.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_icons_email_1564504.png\" alt=\"Profile\"><span class=\"inbox\">Viestit : <span class=\"counter\">" . $_SESSION['unread'] . "</span></span></a></li>");
+            echo("<li class=\"pro-nav__item\"><a href=\"notifications.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_icons_email_1564504.png\" alt=\"Profile\"><span class=\"inbox\">Viestit : <span class=\"counter\">" . $_SESSION['toivu_unread'] . "</span></span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"userSettings.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_settings_326699.png\" alt=\"Profile\"><span>Asetukset</span></a></li>");
             echo("<li class=\"pro-nav__item active\"><a href=\"instructions.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_ic_live_help_48px_352491.png\" alt=\"Profile\"><span>Ohjeita</span></a></li>");
         }
@@ -64,7 +64,7 @@
             echo("<li class=\"pro-nav__item\"><a href=\"userAccount.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_heartbeat_1608928.png\" alt=\"Profile\"><span>Etusivu</span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"analyses.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_barChart_292488.png\" alt=\"Profile\"><span>Analyysit</span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"calendar.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_calendar-3_322414.png\" alt=\"Profile\"><span>Kalenteri</span></a></li>");
-            echo("<li class=\"pro-nav__item\"><a href=\"notifications.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_icons_email_1564504.png\" alt=\"Profile\"><span class=\"inbox\">Viestit : <span class=\"counter\">" . $_SESSION['unread'] . "</span></span></a></li>");
+            echo("<li class=\"pro-nav__item\"><a href=\"notifications.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_icons_email_1564504.png\" alt=\"Profile\"><span class=\"inbox\">Viestit : <span class=\"counter\">" . $_SESSION['toivu_unread'] . "</span></span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"userSettings.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_settings_326699.png\" alt=\"Profile\"><span>Asetukset</span></a></li>");
             echo("<li class=\"pro-nav__item\"><a href=\"instructions.php\"><img class=\"pro-nav-icon\" src=\"images/iconfinder_ic_live_help_48px_352491.png\" alt=\"Profile\"><span>Ohjeita</span></a></li>");
         }

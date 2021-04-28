@@ -3,7 +3,7 @@
     include_once("config/cconfig.php");
 
     //Tiedot kantaan
-    $data['userID'] = $_SESSION['suserID'];
+    $data['userID'] = $_SESSION['toivu_userID'];
     $data['title'] = $_POST['givenTitle'];
     $data['fmessage'] = $_POST['givenMessage'];
     $data['rating'] = $_POST['givenRating'];

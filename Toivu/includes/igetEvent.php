@@ -13,7 +13,7 @@
     }
 
     //Haetaan kaikki kalenteritiedot, jotka liittyvät käyttäjään
-    $session_user = $_SESSION['suserID'];
+    $session_user = $_SESSION['toivu_userID'];
     $data = array();
     $query = "SELECT * FROM wsk21_toivu_calendar WHERE userID = :suser ORDER BY calID";
     $stmt = $DBH -> prepare($query);

@@ -4,7 +4,7 @@
 
     //Viestien hakeminen tietokannasta
     $data = array();
-    $session_user = $_SESSION['suserID'];
+    $session_user = $_SESSION['toivu_userID'];
     $query = "SELECT * FROM wsk21_toivu_notifications WHERE userID = :suser ORDER BY notTime DESC";
     $stmt = $DBH -> prepare($query);
     $stmt -> bindParam(':suser', $session_user);

@@ -2,7 +2,7 @@ $( function() {
     $( "#datepicker" ).datepicker({
         changeMonth: true,
         changeYear: true,
-        dateFormat: "yy/mm/dd",
+        dateFormat: "dd/mm/yy",
         yearRange: "-100:+0",
     });
 });

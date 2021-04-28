@@ -15,7 +15,7 @@
         $stmt = $DBH -> prepare($query);
         $stmt -> execute(
             array(
-                ':user' => $_SESSION['suserID'],
+                ':user' => $_SESSION['toivu_userID'],
                 ':title' => $_POST['title'],
                 ':mood' => $_POST['mood'],
                 ':start_event' => $startDate,

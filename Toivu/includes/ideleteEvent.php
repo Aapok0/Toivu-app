@@ -9,7 +9,7 @@
         $stmt -> execute(
             array(
                 ':id' => $_POST['id'],
-                ':suser' => $_SESSION['suserID']
+                ':suser' => $_SESSION['toivu_userID']
             )
         );
     }

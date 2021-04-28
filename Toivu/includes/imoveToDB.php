@@ -12,18 +12,22 @@
     if (empty($_POST['givenSex'])) {
         $_POST['givenSex'] = "none";
     }
+
+    //Syntymäpäivän formatointi tietokantaan
+    $bday = str_replace('/', '-', $_POST['givenBday']);
+    $bday = date("Y-m-d", strtotime($bday));
       
     //***Tiedot sessioon - annettu oikeanlaisena
-    $_SESSION['sloggedIn'] = "yes";
-    $_SESSION['suserName'] = $_POST['givenUsername'];
-    $_SESSION['suserEmail'] = $_POST['givenEmail'];
+    $_SESSION['toivu_loggedIn'] = "yes";
+    $_SESSION['toivu_userName'] = $_POST['givenUsername'];
+    $_SESSION['toivu_userEmail'] = $_POST['givenEmail'];
           
     //Tiedot kantaan
     $data['uname'] = $_POST['givenUsername'];
     $data['email'] = $_POST['givenEmail'];
     $data['height'] = $_POST['givenHeight'];
     $data['uweight'] = $_POST['givenWeight'];
-    $data['bday'] = $_POST['givenBday'];
+    $data['bday'] = $bday;
     $data['sex'] = $_POST['givenSex'];
     $data['perm'] = $_POST['givenPerm'];
     $data['terms'] = $_POST['givenTerms'];
@@ -35,11 +39,15 @@
             
         //Haetaan userID sessioon
         $query = "SELECT userID FROM wsk21_toivu_user WHERE userEmail = :email";
-        $stmt = $DBH->prepare($query);
-        $stmt -> bindParam(':email', $_SESSION['suserEmail']);
+        $stmt = $DBH -> prepare($query);
+        $stmt -> bindParam(':email', $_SESSION['toivu_userEmail']);
         $stmt -> execute();
         $result = $stmt -> fetch();
-        $_SESSION['suserID'] = $result[0];
+        $_SESSION['toivu_userID'] = $result[0];
+
+        //Lähetetään tervetuloa-viesti
+        include("includes/iwelcomeMessage.php");
+
         echo("<script>location.href = 'userAccount.php';</script>");
     } 
     catch (PDOException $e) {
