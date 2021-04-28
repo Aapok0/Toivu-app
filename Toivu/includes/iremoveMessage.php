@@ -3,7 +3,7 @@
     include_once("../config/cconfig.php");
 
     //Viesti poistetaan tietokannasta
-    $session_user = $_SESSION['suserID'];
+    $session_user = $_SESSION['toivu_userID'];
     var_dump($_POST['id']);
     $array = array(
         'suser' => $session_user,

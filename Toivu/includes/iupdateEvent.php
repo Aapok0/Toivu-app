@@ -18,7 +18,7 @@
                 ':start_event' => $startDate,
                 ':end_event' => $endDate,
                 ':id' => $_POST['id'],
-                ':suser' => $_SESSION['suserID']
+                ':suser' => $_SESSION['toivu_userID']
             )
         );
     }

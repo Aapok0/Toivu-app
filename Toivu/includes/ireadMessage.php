@@ -3,7 +3,7 @@
     include_once("../config/cconfig.php");
 
     //Luettu-statuksen päivittäminen tietokantaan
-    $session_user = $_SESSION['suserID'];
+    $session_user = $_SESSION['toivu_userID'];
     $read = true;
     $array = array(
         'nread' => $read,

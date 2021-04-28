@@ -76,7 +76,17 @@
                 }
             }
             else if (isset($_POST['submitEmail'])) {
-                if (!filter_var($_POST['givenEmail'], FILTER_VALIDATE_EMAIL)) {
+                //***Email ei saa olla käytetty aiemmin
+                $sql = "SELECT COUNT(*) FROM wsk21_toivu_user where userEmail =  " . "'".$_POST['givenEmail']."'";
+            
+                $kysely = $DBH -> prepare($sql);
+                $kysely -> execute();				
+                $tulos = $kysely -> fetch();
+
+                if ($tulos[0] != 0) { //email ei ole käytössä
+                    $_SESSION['swarningInputUpdate'] = "Sähköposti on varattu";
+                }
+                else if (!filter_var($_POST['givenEmail'], FILTER_VALIDATE_EMAIL)) {
                     $_SESSION['swarningInputUpdate'] = "Virheellinen sähköposti";
                 }
                 else {
@@ -110,7 +120,14 @@
                 include("includes/iupdateDB.php");
             }
             else if (isset($_POST['submitBday'])) {
-                include("includes/iupdateDB.php");
+                //regex löydetty sivustolta https://www.sitepoint.com/community/t/php-regex-needed-for-dd-mm-yyyy-format/6945/5, alkuperäinen lähde https://regexlib.com/REDetails.aspx?regexp_id=409
+                if (!preg_match('~^(((0[1-9]|[12]\\d|3[01])\\/(0[13578]|1[02])\\/((19|[2-9]\\d)\\d{2}))|((0[1-9]|[12]\\d|30)\\/(0[13456789]|1[012])\\/((19|[2-9]\\d)\\d{2}))|((0[1-9]|1\\d|2[0-8])\\/02\\/((19|[2-9]\\d)\\d{2}))|(29\\/02\\/((1[6-9]|[2-9]\\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$~', $_POST['givenBday'])) {
+                    var_dump("124");
+                    $_SESSION['swarningInputUpdate'] = "Syntymäpäivä annettu väärässä muodossa. Valitse päivä avautuvasta kalenterista.";
+                }
+                else {
+                    include("includes/iupdateDB.php");
+                }
             }
             else if (isset($_POST['submitSex'])) {
                 include("includes/iupdateDB.php");

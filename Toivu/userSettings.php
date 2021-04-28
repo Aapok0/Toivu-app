@@ -77,7 +77,7 @@
                     <?php
                         $query = "SELECT * FROM wsk21_toivu_user WHERE userID = :suser";
                         $stmt = $DBH -> prepare($query);
-                        $stmt -> bindParam(':suser', $_SESSION['suserID']);
+                        $stmt -> bindParam(':suser', $_SESSION['toivu_userID']);
                         $stmt -> execute();
                         $result = $stmt -> fetch();
                         

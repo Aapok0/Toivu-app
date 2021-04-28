@@ -89,10 +89,10 @@
                     //email löytyi
                     //var_dump($tulosOlio);
                     if (password_verify($givenPasswordAdded,$tulosOlio->userPwd)) {
-                        $_SESSION['sloggedIn'] = "yes";
-                        $_SESSION['suserName'] = $tulosOlio->userName;
-                        $_SESSION['suserEmail'] = $tulosOlio->userEmail;
-                        $_SESSION['suserID'] = $tulosOlio->userID;
+                        $_SESSION['toivu_loggedIn'] = "yes";
+                        $_SESSION['toivu_userName'] = $tulosOlio->userName;
+                        $_SESSION['toivu_userEmail'] = $tulosOlio->userEmail;
+                        $_SESSION['toivu_userID'] = $tulosOlio->userID;
                         echo("<script>location.href = 'userAccount.php';</script>");
                     }
                     else {
