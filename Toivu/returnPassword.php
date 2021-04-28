@@ -55,15 +55,13 @@
         </div>
         <!-- Uusi päänavigaatio loppuu -->
 
-        <!-- Lomake, jolla kirjaudutaan sisään -->
+        <!-- Lomake, jolla palautetaan salasana -->
         <div class="container top_content">
             <div class="row">
                 <div class="one-half column">
                     <?php
-                        include("forms/flogInUser.php");
+                        include("forms/freturnPassword.php");
                     ?>
-                    <!-- Salasanan palautus -->
-                    <a class="form_link" href="./returnPassword.php">Unohditko salasanasi?</a>
                 </div>
 
                 <!-- Logo lomakkeen vieressä -->
@@ -73,53 +71,62 @@
             </div>
         </div>
 
-        <!-- Lomakkeen syötteiden validointi ja läpi päästyä kirjautuminen sisään -->
+        <!-- Lomakkeen syötteen validointi ja läpi päästyä sähköpostin lähetys -->
         <?php
-            //Lomakkeen submit painettu?
-            if (isset($_POST['submitUser'])) {
-                //***Tarkistetaan syötteet myös palvelimella
-                if (!filter_var($_POST['givenEmail'], FILTER_VALIDATE_EMAIL)) { //onko validi osoite?
-                    $_SESSION['swarningInput'] = "Virheellinen sähköposti";
+            //Funktio, joka luo uuden salasanan
+            function newPassword() {
+                $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ12345678901234567890';
+                $password = array();
+                $charLength = strlen($characters) - 1;
+                for ($i = 0; $i < 12; $i++) {
+                    $c = rand(0, $charLength);
+                    $password[] = $characters[$c];
                 }
-                else {
-                    unset($_SESSION['swarningInput']);
-                } 
-                try {
-                    //Tiedot kannasta, hakuehto
-                    $data['email'] = $_POST['givenEmail'];
-                    $STH = $DBH -> prepare("SELECT userID, userName, userPwd, userEmail FROM wsk21_toivu_user WHERE userEmail = :email;");
-                    $STH -> execute($data);
-                    $STH -> setFetchMode(PDO::FETCH_OBJ);
-                    $tulosOlio = $STH->fetch();
-                    //lomakkeelle annettu salasana + suola
-                    $givenPasswordAdded = $_POST['givenPassword'].$added;
+                return implode($password);
+            }
+
+            //Lomakkeen submit painettu?
+            if (isset($_POST['submitPass'])) {
+                //***Tarkistetaan syötteet myös palvelimella
+
+                //Tiedot kannasta, hakuehto
+                $data['email'] = $_POST['givenEmail'];
+                $STH = $DBH -> prepare("SELECT userEmail FROM wsk21_toivu_user WHERE userEmail = :email;");
+                $STH -> execute($data);
+                $STH -> setFetchMode(PDO::FETCH_OBJ);
+                $tulosOlio = $STH->fetch();
+    
+                //Löytyikö email kannasta?
+                if ($tulosOlio != NULL) {
+                    //Luodaan uusi salasana
+                    $newpass = newPassword();
+                    //Suolataan uutta salasanaa
+                    $newpassAdded = password_hash($newpass.$added, PASSWORD_BCRYPT);
+
+                    //Päivitetään salasana tietokantaan
+                    $sql = "UPDATE wsk21_toivu_user SET userPwd = :newpass WHERE userEmail = :email;";
+                    $stmt = $DBH -> prepare($sql);
+                    $stmt -> execute(array(
+                        'newpass' => $newpassAdded,
+                        'email' => $_POST['givenEmail']
+                    ));
+
+                    //Lähetetään uusi salasana sähköpostilla käyttäjälle
+                    $recipient = $_POST['givenEmail'];
+                    $subject = "Uusi salasanasi Toivu-sovellukseen";
+                    $sender = "Toivu";
+                    $senderEmail = "noreply@toivu.fi";
+                    $message = "Hei,\n\ntässä uusi salasanasi: $newpass\n\nja muista heti kirjauduttuasi vaihtaa salasana uuteen sovelluksen asetuksista.";
+
+                    $mailBody = "Nimi: $sender\nEmail: $senderEmail\n\n$message"; //Luodaan sähköpostin viesti
+
+                    mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>"); //Lähetetään syötteiden mukaan
         
-                    //Löytyikö email kannasta?
-                    if ($tulosOlio != NULL) {
-                        //email löytyi
-                        //var_dump($tulosOlio);
-                        if (password_verify($givenPasswordAdded,$tulosOlio->userPwd)) {
-                            $_SESSION['toivu_loggedIn'] = "yes";
-                            $_SESSION['toivu_userName'] = $tulosOlio->userName;
-                            $_SESSION['toivu_userEmail'] = $tulosOlio->userEmail;
-                            $_SESSION['toivu_userID'] = $tulosOlio->userID;
-                            echo("<script>location.href = 'userAccount.php';</script>");
-                        }
-                        else {
-                        $_SESSION['swarningInput'] = "Väärä salasana";
-                        }
-                    }
-                    else {
-                    $_SESSION['swarningInput'] = "Väärä sähköposti";
-                    }
-                } 
-                catch (PDOException $e) {
-                    file_put_contents('log/DBErrors.txt', 'logInUser.php: '.$e -> getMessage()."\n", FILE_APPEND);
-                    $_SESSION['swarningInput'] = 'Ongelma tietokannassa';
+                    echo("<script>location.href = 'logInUser.php';</script>"); //Palataan sovellukseen
                 }
             }
         ?>
-        
+
         <!-- Virheviesti, jos lomake ei mene läpi serveripuolen validoinnista -->
         <div class="container">
             <?php

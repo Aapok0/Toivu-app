@@ -25,6 +25,7 @@
         $url = $_SERVER["REQUEST_URI"]; 
         $pos1 = strrpos($url, "logInUser.php");
         $pos2 = strrpos($url, "createAccount.php");
+        $pos3 = strrpos($url, "returnPassword.php");
 
         if ($pos1 != false) { //ollaan kirjautumissivulla
             echo("<li class=\"nav__item active\"><a href=\"logInUser.php\"><img class=\"nav-icon\" src=\"images/iconfinder_sign-in_298868.png\" alt=\"Profile\"><span>Kirjaudu sisään</span></a></li>");
