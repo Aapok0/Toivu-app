@@ -42,7 +42,7 @@
 
     // Create axes
     var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-    dateAxis.renderer.minGridDistance = 50;
+    dateAxis.renderer.minGridDistance = 120;
 
     // Create series
     function createAxisAndSeries(field, name, opposite, bullet) {
@@ -70,6 +70,9 @@
         bullet.height = 12;
         bullet.horizontalCenter = "middle";
         bullet.verticalCenter = "middle";
+
+        var bullethover = bullet.states.create("hover");
+        bullethover.properties.scale = 1.5;
         
         var triangle = bullet.createChild(am4core.Triangle);
         triangle.stroke = interfaceColors.getFor("background");
@@ -77,12 +80,18 @@
         triangle.direction = "top";
         triangle.width = 12;
         triangle.height = 12;
+
+        var bullethover2 = triangle.states.create("hover");
+        bullethover2.properties.scale = 1.5;
         break;
 
         default:
         var bullet = series.bullets.push(new am4charts.CircleBullet());
         bullet.circle.stroke = interfaceColors.getFor("background");
         bullet.circle.strokeWidth = 2;
+
+        var bullethover = bullet.states.create("hover");
+        bullethover.properties.scale = 1.5;
         break;
     }
     
