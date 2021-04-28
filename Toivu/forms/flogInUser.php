@@ -8,7 +8,7 @@
         <p>
             Salasana
             <br />
-            <input type="password" name="givenPassword" placeholder="salasana, vähintään 8 merkkiä" maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required/>
+            <input type="password" name="givenPassword" placeholder="salasana, vähintään 8 merkkiä" maxlength="20" required/>
         </p>
         <p>
             <br />
