@@ -8,8 +8,8 @@
         $stmt = $DBH -> prepare($query);
         $stmt -> execute(
             array(
-                ':id' => $_POST['id'],
-                ':suser' => $_SESSION['toivu_userID']
+                ':id' => $_POST['id'], //Poistetaan oikea viesti
+                ':suser' => $_SESSION['toivu_userID'] //Varmistetaan käyttäjä
             )
         );
     }

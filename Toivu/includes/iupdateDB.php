@@ -17,7 +17,7 @@
                 ':suser' => $suser
             ));
             $_SESSION['toivu_userName'] = $_POST['givenUsername'];
-            echo("<script>location.href = 'userSettings.php';</script>");
+            echo("<script>location.href = 'userSettings.php';</script>"); //palataan asetussivulle
         }
         catch (PDOException $e) {
             file_put_contents('log/DBErrors.txt', 'updateAccount.php: '.$e -> getMessage()."\n", FILE_APPEND);
@@ -37,7 +37,7 @@
                 ':suser' => $suser
             ));
             $_SESSION['toivu_userEmail'] = $_POST['givenEmail'];
-            echo("<script>location.href = 'userSettings.php';</script>");
+            echo("<script>location.href = 'userSettings.php';</script>"); //palataan asetussivulle
         }
         catch (PDOException $e) {
             file_put_contents('log/DBErrors.txt', 'updateAccount.php: '.$e -> getMessage()."\n", FILE_APPEND);
@@ -56,7 +56,7 @@
                 ':height' => $height,
                 ':suser' => $suser
             ));
-            echo("<script>location.href = 'userSettings.php';</script>");
+            echo("<script>location.href = 'userSettings.php';</script>"); //palataan asetussivulle
         }
         catch (PDOException $e) {
             file_put_contents('log/DBErrors.txt', 'updateAccount.php: '.$e -> getMessage()."\n", FILE_APPEND);
@@ -75,7 +75,7 @@
                 ':uweight' => $uweight,
                 ':suser' => $suser
             ));
-            echo("<script>location.href = 'userSettings.php';</script>");
+            echo("<script>location.href = 'userSettings.php';</script>"); //palataan asetussivulle
         }
         catch (PDOException $e) {
             file_put_contents('log/DBErrors.txt', 'updateAccount.php: '.$e -> getMessage()."\n", FILE_APPEND);
@@ -98,7 +98,7 @@
                 ':bday' => $bday,
                 ':suser' => $suser
             ));
-            echo("<script>location.href = 'userSettings.php';</script>");
+            echo("<script>location.href = 'userSettings.php';</script>"); //palataan asetussivulle
         }
         catch (PDOException $e) {
             file_put_contents('log/DBErrors.txt', 'updateAccount.php: '.$e -> getMessage()."\n", FILE_APPEND);
@@ -117,7 +117,7 @@
                 ':sex' => $sex,
                 ':suser' => $suser
             ));
-            echo("<script>location.href = 'userSettings.php';</script>");
+            echo("<script>location.href = 'userSettings.php';</script>"); //palataan asetussivulle
         }
         catch (PDOException $e) {
             file_put_contents('log/DBErrors.txt', 'updateAccount.php: '.$e -> getMessage()."\n", FILE_APPEND);
@@ -137,7 +137,7 @@
                 ':pwd' => $pwd,
                 ':suser' => $suser
             ));
-            echo("<script>location.href = 'userSettings.php';</script>");
+            echo("<script>location.href = 'userSettings.php';</script>"); //palataan asetussivulle
         }
         catch (PDOException $e) {
             file_put_contents('log/DBErrors.txt', 'updateAccount.php: '.$e -> getMessage()."\n", FILE_APPEND);

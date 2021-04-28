@@ -3,9 +3,10 @@
     include("includes/iheader.php");
 ?>
 
+    <!-- Sivun säiliö alkaa -->
     <div class="page-container">
 
-        <!-- Uusi päänavigaatio -->
+        <!-- Uusi päänavigaatio alkaa -->
         <div class="header-background noprint">
             <div class="container">
                 <header class="site-header site-header__wrapper">
@@ -18,12 +19,14 @@
                         </div>
                     </div>
 
+                    <!-- Navigaation oikea laita alkaa -->
                     <div class="site-header__end">
                         <nav>
                             <!-- Navigaation tilalle tulee hampurilaismenu ruudun pienentyessä -->
                             <button class="nav__toggle button-light" aria-expanded="false" type="button">
                                 Päävalikko
                             </button>
+                            <!-- Navigaatiolinkit alkaa -->
                             <ul class="nav__wrapper no-bullets">
                                 <li class="nav__item">
                                     <a href="index.php">
@@ -43,13 +46,17 @@
                                     include("includes/inavIndex.php");
                                 ?>
                             </ul>
+                            <!-- Navigaatiolinkit loppuu -->
                         </nav>
-                    </div>        
+                    </div>
+                    <!-- Navigaation oikea laita loppuu -->
                 </header>
             </div>
         </div>
+        <!-- Uusi päänavigaatio loppuu -->
 
-        <!-- Profiilinavigaatio, joka näkyy vain kirjautuneille -->
+        <!-- Profiilinavigaatio alkaa -->
+        <!-- Näkyy vain kirjautuneille -->
         <div class="container noprint">
             <div class="row">
                 <div class="twelve columns profile-header profile-header__wrapper">
@@ -67,6 +74,7 @@
                 </div>
             </div>
         </div>
+        <!-- Profiilinavigaatio loppuu -->
 
         <div class="container profile-page">
             <!-- Graafit -->

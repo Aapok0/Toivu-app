@@ -2,7 +2,7 @@
     session_start();
     include_once("../config/cconfig.php");
 
-    //Muutetaan boolean binääriksi
+    //Muutetaan binääri booleaniksi
     function isTrue($bool) {
         if ($bool == 1) {
             return true;
@@ -13,7 +13,7 @@
     }
 
     //Haetaan kaikki kalenteritiedot, jotka liittyvät käyttäjään
-    $session_user = $_SESSION['toivu_userID'];
+    $session_user = $_SESSION['toivu_userID']; //Varmistetaan käyttäjä
     $data = array();
     $query = "SELECT * FROM wsk21_toivu_calendar WHERE userID = :suser ORDER BY calID";
     $stmt = $DBH -> prepare($query);
@@ -32,5 +32,5 @@
         );
     }
     
-    echo json_encode($data);
+    echo json_encode($data); //Lähetetään tiedot fullcalendar pluginille
 ?>

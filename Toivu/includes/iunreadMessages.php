@@ -25,5 +25,5 @@
             $unread++;
         }
     }
-    $_SESSION['toivu_unread'] = $unread;
+    $_SESSION['toivu_unread'] = $unread; //lukemattomien viestien määrä, joka esitetään navigaatiossa
 ?>

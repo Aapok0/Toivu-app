@@ -4,8 +4,8 @@
 
     //Viestien hakeminen tietokannasta
     $data = array();
-    $session_user = $_SESSION['toivu_userID'];
-    $query = "SELECT * FROM wsk21_toivu_notifications WHERE userID = :suser ORDER BY notTime DESC";
+    $session_user = $_SESSION['toivu_userID']; //Varmistetaan käyttäjä
+    $query = "SELECT * FROM wsk21_toivu_notifications WHERE userID = :suser ORDER BY notTime DESC"; //Järjestetään ajan mukaan
     $stmt = $DBH -> prepare($query);
     $stmt -> bindParam(':suser', $session_user);
     $stmt -> execute();
@@ -23,10 +23,10 @@
         $isread = "";
         $status = boolval($result[$i]['notRead']);
         if ($status == false) {
-            $isread = "X";
+            $isread = "X"; //Lukematon
         }
         else if ($status == true) {
-            $isread = "✓";
+            $isread = "✓"; //Luettu
         }
 
         $data[$i] = array(
@@ -38,7 +38,7 @@
         );
     }
 
-    //Viestit taulukkoon
+    //Viestit taulukkoon, joka toimii viestien saapuneet-kansiona
     echo "<table id=\"inbox\">";
         echo "<thead>";
             echo "<tr class=\"bolder\">";
@@ -51,6 +51,7 @@
         echo "</thead>";
 
         echo "<tbody>";
+        //Käydään läpi juuri tehty käyttäjän viesti-array rivi kerrallaan ja lisätään taulukkoon
         for ($i=0; $i <= $N-1; $i++) {
             $id = $data[$i][0];
             $title = $data[$i][1];
@@ -59,10 +60,10 @@
             $event2 = "removeMessage('$id')"; //Johtaa scriptiin ja sieltä php-tiedostoon, jotka poistaa viestin tietokannasta
             echo "<tr>";
                 echo "<td class=\"message_title inbox_td\">" . $data[$i][1] . "</td>";
-                echo "<td class=\"inbox_td\"><button class=\"openMessage\" onmousedown=\"$event\">Avaa</button></td>";
+                echo "<td class=\"inbox_td\"><button class=\"openMessage\" onmousedown=\"$event\">Avaa</button></td>"; //Liitetään spesifi viesti luku-nappiin
                 echo "<td class=\"inbox_td\">" . $data[$i][3] . "</td>";
                 echo "<td class=\"inbox_td\">" . $data[$i][4] . "</td>";
-                echo "<td class=\"remove_message inbox_td\"><button onclick=\"$event2\">Poista</button></td>";
+                echo "<td class=\"remove_message inbox_td\"><button onclick=\"$event2\">Poista</button></td>"; //Liitetään spesifi viesti poisto-nappiin
             echo "<tr>";
         }
         echo "</tbody>";
