@@ -6,7 +6,7 @@
     <div class="page-container">
 
         <!-- Uusi päänavigaatio -->
-        <div class="header-background">
+        <div class="header-background noprint">
             <div class="container">
                 <header class="site-header site-header__wrapper">
                     <div class="site-header__start">
@@ -50,7 +50,7 @@
         </div>
 
         <!-- Profiilinavigaatio, joka näkyy vain kirjautuneille -->
-        <div class="container">
+        <div class="container noprint">
             <div class="row">
                 <div class="twelve columns profile-header profile-header__wrapper">
                     <nav class="profile-header__end">
@@ -75,6 +75,15 @@
                 include("includes/igraph2.php");
                 include("includes/igraph3.php");
             ?>
+        </div>
+
+        <!-- HRV-analyysit ja tiedot taulukkoon -->
+        <div class="container row">
+            <div class="twelve columns">
+                <?php
+                    include("includes/ireadiness.php");
+                ?>
+            </div>
         </div>
 
         <script src="js/collapse-menu.js"></script>

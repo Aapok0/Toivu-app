@@ -1,5 +1,5 @@
 <fieldset><legend class="setting_par">Hae apua Toivun tuelta</legend>
-    <form class="setting_par" name="suppForm" onsubmit="return validateForm()" method="post">
+    <form class="setting_par" name="suppForm" method="post">
         <p>
             Sähköposti <span class="big_font">*</span>
             <br />

@@ -1,5 +1,5 @@
 <?php
-    //Readiness-analyysi
+    //Readiness-analyysi (Lähteet: doi: 10.3389/fpubh.2017.00258, https://www.kubios.com/hrv-analysis-methods/, https://www.duodecimlehti.fi/duo50084)
     function readiness($RR) {
         //Alustetaan ensin muuttuja
         $rmssd = 0;
@@ -24,7 +24,7 @@
         return round($readiness, 2);
     }
 
-    //pNN50-analyysi
+    //pNN50-analyysi (Lähteet: doi: 10.3389/fpubh.2017.00258, https://www.kubios.com/hrv-analysis-methods/, https://www.duodecimlehti.fi/duo50084)
     function pNN50($RR) {
         //Alustetaan ensin muuttuja
         $NN50 = 0;
@@ -72,6 +72,7 @@
 
     //HRV-datat taulukossa
     echo "<h2 class=\"text-center\">Yhteenveto sinun mittauksista ja analyyseista</h2>";
+    echo "<h4 class=\"text-center noprint\">Tulosta tuloksesi työterveyttä varten <button onclick=\"window.print();return false;\">Tulosta</button></h4>";
     echo "<table id=\"analysis\">";
         echo "<thead>";
             echo "<tr class=\"bolder\">";

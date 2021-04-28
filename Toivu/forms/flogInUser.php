@@ -1,5 +1,5 @@
 <fieldset><legend>Kirjautumistiedot</legend>
-    <form name="logform" onsubmit="return validateForm()" method="post">
+    <form name="logform" method="post">
         <p>
             Sähköposti 
             <br />

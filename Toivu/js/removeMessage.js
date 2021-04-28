@@ -1,4 +1,4 @@
-function removeMessage($id) {
+function removeMessage(id) {
     var remove = confirm("Haluatko varmasti poistaa viestin pysyvästi?");
     if (remove == true) {
         $.ajax({
@@ -14,6 +14,7 @@ function removeMessage($id) {
                 console.error(xhr);
             }
         });
+        setTimeout(function(){location.reload()}, 1000);
 
         //window.location.href = "includes/iremoveMessage.php";
     }

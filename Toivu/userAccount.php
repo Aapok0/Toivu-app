@@ -116,15 +116,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- HRV-analyysit ja tiedot taulukkoon -->
-            <div class="row">
-                <div class="twelve columns">
-                    <?php
-                        include("includes/ireadiness.php");
-                    ?>
-                </div>
-            </div>
         </div>
 
         <script src="js/collapse-menu.js"></script>

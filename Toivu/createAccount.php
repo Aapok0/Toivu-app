@@ -64,11 +64,22 @@
     </div>
     
     <?php
+        
         //Lomakkeen submit painettu?
         if (isset($_POST['submitUser'])) {
+            //***Email ei saa olla käytetty aiemmin
+            $sql = "SELECT COUNT(*) FROM wsk21_toivu_user where userEmail =  " . "'".$_POST['givenEmail']."'";
+        
+            $kysely = $DBH -> prepare($sql);
+            $kysely -> execute();				
+            $tulos = $kysely -> fetch();
+
             //***Tarkistetaan syötteet myös palvelimella
             if (strlen($_POST['givenUsername']) < 4) {
                 $_SESSION['swarningInputCreate'] = "Puutteellinen käyttäjänimi (väh. 4 merkkiä)";
+            }
+            else if ($tulos[0] != 0) { //email ei ole käytössä
+                $_SESSION['swarningInputCreate'] = "Sähköposti on varattu";
             }
             else if (!filter_var($_POST['givenEmail'], FILTER_VALIDATE_EMAIL)) {
                 $_SESSION['swarningInputCreate'] = "Virheellinen sähköposti";

@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             calendar.unselect()
             calendar.refetchEvents()
+            setTimeout(function(){location.reload()}, 1000);
         },
 
         //Tapahtumia voi siirtää hiirellä
@@ -135,7 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             calendar.unselect()
-            calendar.refetchEvents()
         },
 
         //Tapahtumien poisto tehdään klikkaamalla tapahtumaa. Tästä kysytään varmistusta.
@@ -156,6 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             calendar.unselect()
             calendar.refetchEvents()
+            setTimeout(function(){location.reload()}, 1000);
         }
     });
     calendar.render();

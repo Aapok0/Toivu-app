@@ -1,0 +1,5 @@
+/* Määrittelee mitkä osiot sivulta printataan */
+
+.noprint, footer {
+    display: none;
+}

@@ -3,7 +3,7 @@
     header("Content-Type: application/json; charset=UTF-8");
     include_once("../config/cconfig.php");
 
-    //Readiness-analyysi
+    //Readiness-analyysi (Lähteet: doi: 10.3389/fpubh.2017.00258, https://www.kubios.com/hrv-analysis-methods/, https://www.duodecimlehti.fi/duo50084)
     function readiness($RR) {
         //Alustetaan ensin muuttuja
         $rmssd = 0;
@@ -28,7 +28,7 @@
         return $readiness;
     }
 
-    //pNN50-analyysi
+    //pNN50-analyysi (Lähteet: doi: 10.3389/fpubh.2017.00258, https://www.kubios.com/hrv-analysis-methods/, https://www.duodecimlehti.fi/duo50084)
     function pNN50($RR) {
         //Alustetaan ensin muuttuja
         $NN50 = 0;
