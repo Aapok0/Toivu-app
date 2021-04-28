@@ -99,9 +99,11 @@
             else if ($_POST['givenPassword'] != $_POST['givenPasswordVerify']) {
                 $_SESSION['swarningInputCreate'] = "Annettu salasana ja vahvistus eivät ole samat";
             }
-            // regex löydetty sivustolta https://www.sitepoint.com/community/t/php-regex-needed-for-dd-mm-yyyy-format/6945/5, alkuperäinen lähde https://regexlib.com/REDetails.aspx?regexp_id=409
-            else if (!preg_match('~^(((0[1-9]|[12]\\d|3[01])\\/(0[13578]|1[02])\\/((19|[2-9]\\d)\\d{2}))|((0[1-9]|[12]\\d|30)\\/(0[13456789]|1[012])\\/((19|[2-9]\\d)\\d{2}))|((0[1-9]|1\\d|2[0-8])\\/02\\/((19|[2-9]\\d)\\d{2}))|(29\\/02\\/((1[6-9]|[2-9]\\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$~', $_POST['givenBday', $_POST['givenBday'])) {
-                $_SESSION['swarningInputCreate'] = "Syntymäpäivä annettu väärässä muodossa. Valitse päivä avautuvasta kalenterista.";
+            else if (!empty($_POST['givenBday'])) {
+                // regex löydetty sivustolta https://www.sitepoint.com/community/t/php-regex-needed-for-dd-mm-yyyy-format/6945/5, alkuperäinen lähde https://regexlib.com/REDetails.aspx?regexp_id=409
+                if (!preg_match('~^(((0[1-9]|[12]\\d|3[01])\\/(0[13578]|1[02])\\/((19|[2-9]\\d)\\d{2}))|((0[1-9]|[12]\\d|30)\\/(0[13456789]|1[012])\\/((19|[2-9]\\d)\\d{2}))|((0[1-9]|1\\d|2[0-8])\\/02\\/((19|[2-9]\\d)\\d{2}))|(29\\/02\\/((1[6-9]|[2-9]\\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$~', $_POST['givenBday'])) {
+                    $_SESSION['swarningInputCreate'] = "Syntymäpäivä annettu väärässä muodossa. Valitse päivä avautuvasta kalenterista.";
+                }
             }
             else if (!isset($_POST['givenPerm'])) {
                 $_SESSION['swarningInputCreate'] = "Henkilötietojen keräämiselle tulee antaa lupa, jotta sovellusta voi käyttää.";

@@ -39,11 +39,15 @@
             
         //Haetaan userID sessioon
         $query = "SELECT userID FROM wsk21_toivu_user WHERE userEmail = :email";
-        $stmt = $DBH->prepare($query);
+        $stmt = $DBH -> prepare($query);
         $stmt -> bindParam(':email', $_SESSION['toivu_userEmail']);
         $stmt -> execute();
         $result = $stmt -> fetch();
         $_SESSION['toivu_userID'] = $result[0];
+
+        //Lähetetään tervetuloa-viesti
+        include("includes/iwelcomeMessage.php");
+
         echo("<script>location.href = 'userAccount.php';</script>");
     } 
     catch (PDOException $e) {

@@ -56,6 +56,7 @@
                 <?php
                     include("forms/flogInUser.php");
                 ?>
+                
             </div>
 
             <div class="one-half column">
