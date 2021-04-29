@@ -87,8 +87,17 @@
             </div>
         </div>
 
+        <!-- Skriptit alkaa -->
+        <!-- Toivu scripts -->
         <script src="js/collapse-menu.js"></script>
         <script src="js/fullcalendar.js"></script>
+        <!-- FullCalendar scripts -->
+        <script src='fullcalendar/lib/main.min.js'></script>
+        <script src='fullcalendar/lib/locales/fi.js'></script>
+        <!-- Jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <!-- Skriptit loppuu -->
 
 <?php
     include("includes/ifooter.php");
