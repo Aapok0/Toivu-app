@@ -31,14 +31,14 @@
             <br />
             <span class="desc">Pituus senttimetreinä</span>
             <br />
-            <input type="number" name="givenHeight" min="50" max="300"/>
+            <input type="number" name="givenHeight" placeholder="pituus senttimetreinä" min="50" max="300"/>
         </p>
         <p>
             Paino
             <br />
             <span class="desc">Paino kilogrammoina</span>
             <br />
-            <input type="number" name="givenWeight" min="30" max="500"/>
+            <input type="number" name="givenWeight" placeholder="paino kilogrammoina" min="30" max="500"/>
         </p>
         <p>
             Syntymäpäivä

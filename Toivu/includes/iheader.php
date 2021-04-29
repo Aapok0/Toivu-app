@@ -11,7 +11,7 @@
         <meta charset="utf-8"/>
         <meta name="description" content="HRV-analysis web-application">
         <meta name="author" content="Aapo Kokko, Roni Heininen, Aku Korhonen and Jaakko Buchelnikov">
-        <title>Toivu - Beta 0.9</title>
+        <title>Toivu - 1.0</title>
 
         <!-- ** MOBIILIMETA ** -->
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -30,7 +30,7 @@
         <!-- Jquery -->
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <!-- Toivu styles -->
-        <link rel="stylesheet" href="css/main.min.css"/>
+        <link rel="stylesheet" href="css/main.css"/>
         <link rel="stylesheet" media="print" href="css/print.css">
 </head>
 <body>

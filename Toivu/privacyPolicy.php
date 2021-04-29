@@ -60,7 +60,7 @@
             <div class="row">
                 <div class="twelve columns top_content">
                     <h1 class="text-center">Tietosuojaseloste</h1>
-                    <iframe src="images/Tietosuojaseloste.pdf" width="100%" height="1000px"></iframe>
+                    <iframe src="images/Tietosuojaseloste.pdf" width="100%" height="1000"></iframe>
                 </div>
             </div>
         </div>

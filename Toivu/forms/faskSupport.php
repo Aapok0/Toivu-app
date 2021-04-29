@@ -17,7 +17,7 @@
             <br />
             <span class="desc">Max. 1000 merkkiä</span>
             <br />
-            <textarea rows="5" cols="40" type="text" name="givenMessage" placeholder="kirjoita tähän viestisi" maxlength="1000" required></textarea>
+            <textarea rows="5" cols="40" name="givenMessage" placeholder="kirjoita tähän viestisi" maxlength="1000" required></textarea>
         </p>
         <p class="desc">
             <span class="big_font">*</span> tarkoittaa pakollista tietoa

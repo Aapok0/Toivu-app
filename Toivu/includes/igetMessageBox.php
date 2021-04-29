@@ -47,7 +47,7 @@
                 echo "<th class=\"bolder\">Saapunut</th>";
                 echo "<th class=\"bolder\">Luettu</th>";
                 echo "<th class=\"bolder\">Poista viesti</th>";
-            echo "<tr>";
+            echo "</tr>";
         echo "</thead>";
 
         echo "<tbody>";
@@ -64,7 +64,7 @@
                 echo "<td class=\"inbox_td\">" . $data[$i][3] . "</td>";
                 echo "<td class=\"inbox_td\">" . $data[$i][4] . "</td>";
                 echo "<td class=\"remove_message inbox_td\"><button onclick=\"$event2\">Poista</button></td>"; //Liitetään spesifi viesti poisto-nappiin
-            echo "<tr>";
+            echo "</tr>";
         }
         echo "</tbody>";
     echo "</table>";

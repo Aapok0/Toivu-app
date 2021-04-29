@@ -93,7 +93,7 @@
                 echo "<td class=\"analysis_td\">" . $data_array[$i][3] . "</td>";
                 echo "<td class=\"analysis_td\">" . $data_array[$i][4] . "</td>";
                 echo "<td class=\"analysis_td\">" . $data_array[$i][5] . "</td>";
-            echo "<tr>";
+            echo "</tr>";
         }
         echo "</tbody>";
     echo "</table>";
