@@ -76,9 +76,7 @@
         </div>
         <!-- Profiilinavigaatio loppuu -->
 
-        <!-- Ohjeita ja neuvoja siihen miten sovellusta käytetään ja tulkitaan -->
-        
-        
+        <!-- Ohjeita ja neuvoja siihen miten sovellusta käytetään ja tulkitaan --> 
         <div class="container profile-page">
             <div class="row">
                 <div class="twelve columns top_content">
@@ -119,15 +117,11 @@
                                                     4. Kalenterissa on myös mahdollista merkitä sama tapahtuma monelle päivälle klikkaamalla yhtä päivää ja siirtämällä sitten pohjaan painetun kursorin muiden päivien kohdalle.
                                 </p>
                             </div>
-
-
-          
-
-        <!-- Termien selityksiä ja muita neuvoja -->
-
                 </div>
             </div>
         </div>
+
+        <!-- Käyttöohjeet loppuu -->
 
         <!-- Skriptit alkaa -->
         <!-- Toivu scripts -->
