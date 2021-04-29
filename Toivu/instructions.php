@@ -76,14 +76,52 @@
         </div>
         <!-- Profiilinavigaatio loppuu -->
 
-        <!-- Ohjeita ja neuvoja siihen miten sovellusta käytetään ja tulkitaan -->
+        <!-- Ohjeita ja neuvoja siihen miten sovellusta käytetään ja tulkitaan --> 
         <div class="container profile-page">
             <div class="row">
-                <div class="twelve columns">
-                    <h2 class="text-center">Ohjeita sovelluksen käyttöön</h2>
+                <div class="twelve columns top_content">
+                        <h2 class="text-center">Ohjeita sovelluksen käyttöön</h2>
+                            <div class="advice-column">
+                                <h4 class="text-center">Mittaa sykevälivaihteluarvosi</h4>
+                                <img class="front-img" src="images/Polar_mittari.jpg" alt="Kuva mittarista">
+                                <p class="advice">  1. Mittaukseen voit käyttää mitä tahansa sykevälivaihteluarvoa mittaavaa laitetta.<br>
+                                                    <br>
+                                                    2. Noudata mittalaitteen mukana tulevia ohjeita mittauksen suorittamiseksi.</p>
+                            </div>
+                            <div class="advice-column">
+                                <h4 class="text-center">Tarkastele mittaustuloksia graafeista</h4>
+                                <img class="front-img" src="images/example1.png" alt="Kuva graafista">
+                                <p class="advice">  1. Graafeista näet sykevaihtelun, leposykkeen, sekä levollisuusanalyysin.<br>
+                                                    <br>
+                                                    2. Kahdessa ensimmäisessä graafissa on mahdollista muuttaa tietojen aikaväliä vaaka-akselilla ja mitattuja tietoja pystyakselilla. Tämän voit tehdä siirtämällä graafin vieressä ja alla olevia harmaita palloja.<br>
+                                                    <br>
+                                                    3. Kaikkien graafien tiedot on mahdollista nähdä tarkemmin, jos siirrät kursorin graafin päälle.<br>
+                                                    <br>
+                                                    4 Levollisuusanalyysigraafissa esitetyt asiat, eli pNN 50 ja Readiness, tarkoittavat:<br>
+                                                    <br>
+                                                     pNN 50: Mittaa, kuinka monta prosenttia sydämen peräkkäisistä lyönneistä eroaa toisistaan ainakin 50ms. Kuten normaalissakin sykevälivaihtelussa, korkea arvo tarkoittaa parempaa mittaustulosta. Tiivistettynä se on siis vaihtoehtoinen mittaustapa ihmisen sykevälivaihtelulle.<br>
+                                                    <br> 
+                                                     Readiness: Tarkoittaa leposykevälien keskimääräistä vaihtelua. Koska tämä arvo mittaa leposykettä, paras aika tehdä readiness mittaus on aamulla juuri heräämisen jälkeen. Tässäkin korkeampi arvo tarkoittaa terveellisempää mittaustulosta.
+                                </p>
+                            </div>
+
+                            <div class="advice-column">
+                                <h4 class="text-center">Kirjaa päivittäiset tuntemuksesi päiväkirjaan</h4>
+                                <img class="front-img" src="images/example2.png" alt="Kuva päiväkirjasta">
+                                <p class="advice">  1. Kalenteriin voit kirjata päivittäisen olotilasi klikkaamalla sitä päivää kalenterissa, johon haluat merkitä olotilasi.<br>
+                                                    <br>
+                                                    2. klikkauksen jälkeen sovellus tarjoaa sinulle tekstilaatikon, johon voit kirjoittaa. Kirjoittamisen jälkeen sovellus kysyy päivittäistä olotilaasi, jonka jälkeen se tallentuu kyseisen päivän kohdalle.<br>
+                                                    <br>
+                                                    3. Voit myös poistaa jonkin merkinnän klikkaamalla sitä ja varmistamalla poiston sivun yläosaan ilmestyvästä ilmoituksesta.<br>
+                                                    <br>
+                                                    4. Kalenterissa on myös mahdollista merkitä sama tapahtuma monelle päivälle klikkaamalla yhtä päivää ja siirtämällä sitten pohjaan painetun kursorin muiden päivien kohdalle.
+                                </p>
+                            </div>
                 </div>
             </div>
         </div>
+
+        <!-- Käyttöohjeet loppuu -->
 
         <!-- Skriptit alkaa -->
         <!-- Toivu scripts -->
