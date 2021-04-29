@@ -241,11 +241,14 @@ img.logo__banner {
     flex-direction: column;
     box-shadow: var(--shadow);
     padding: 1rem;
+    min-height: 900px;
     margin-bottom: 50px;
 }
 
 .advice {
     margin-top: 2rem;
+    margin-left: 24.4062px;
+    margin-right: 24.4062px;
 }
 
 /* NEW NAVIGATION */
