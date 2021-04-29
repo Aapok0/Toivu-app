@@ -135,9 +135,12 @@
                 }
             ?>
         </div>
-
+        
+        <!-- Skriptit alkaa -->
+        <!-- Toivu scripts -->
         <script src="js/collapse-menu.js"></script>
         <script src="js/datepicker.js"></script>
+        <!-- Skriptit loppuu -->
 
 <?php
     include("includes/ifooter.php");

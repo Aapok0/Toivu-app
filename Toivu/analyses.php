@@ -94,7 +94,16 @@
             </div>
         </div>
 
+        <!-- Skriptit alkaa -->
+        <!-- Toivu scripts -->
         <script src="js/collapse-menu.js"></script>
+        <script src="js/ToivuTheme.js"></script>
+        <!-- amGraph scripts -->
+        <script src="amcharts4/core.js"></script>
+        <script src="amcharts4/charts.js"></script>
+        <script src="amcharts4/animated.js"></script>
+        <script src="amcharts4/fi_FI.js"></script>
+        <!-- Skriptit loppuu -->
 
 <?php
     include("includes/ifooter.php");

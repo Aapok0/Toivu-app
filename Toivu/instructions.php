@@ -85,7 +85,10 @@
             </div>
         </div>
 
+        <!-- Skriptit alkaa -->
+        <!-- Toivu scripts -->
         <script src="js/collapse-menu.js"></script>
+        <!-- Skriptit loppuu -->
 
 <?php
     include("includes/ifooter.php");

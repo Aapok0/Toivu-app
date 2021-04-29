@@ -182,9 +182,14 @@
             ?>
         </div>
         
+        <!-- Skriptit alkaa -->
+        <!-- Toivu scripts -->
         <script src="js/collapse-menu.js"></script>
         <script src="js/removeUser.js"></script>
         <script src="js/rating.js"></script>
+        <!-- Jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!-- Skriptit loppuu -->
 
 <?php
     include("includes/ifooter.php");
