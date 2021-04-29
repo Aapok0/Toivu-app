@@ -12,7 +12,7 @@
             <br />
             <span class="desc">Max. 1000 merkkiä</span>
             <br />
-            <textarea rows="5" cols="40" type="text" name="givenMessage" placeholder="kirjoita tähän palautteesi" maxlength="1000" required></textarea>
+            <textarea rows="5" cols="40" name="givenMessage" placeholder="kirjoita tähän palautteesi" maxlength="1000" required></textarea>
         </p>
         <p>
             Arvio sovelluksesta 1-5:

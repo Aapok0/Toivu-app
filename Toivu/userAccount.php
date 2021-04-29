@@ -80,11 +80,9 @@
         <div class="container profile-page">
             <div class="row">
                 <div class="twelve columns">
-                    <h1>
-                        <?php
-                            echo("<h1 class=\"text-center first-heading\">Tervetuloa takaisin " . $_SESSION['toivu_userName'] . "!</h1>");
-                        ?>
-                    </h1>
+                    <?php
+                        echo("<h1 class=\"text-center first-heading\">Tervetuloa takaisin " . $_SESSION['toivu_userName'] . "!</h1>");
+                    ?>
                 </div>
             </div>
 

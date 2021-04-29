@@ -123,9 +123,9 @@
                         echo "<p class=\"setting_par\">Pituus: " . $result[4] . "</p>";
                         echo "<p class=\"setting_par\">Paino: " . $result[5] . "</p>";
                         echo "<h3 class=\"setting_par\">Tietojen päivitys</h3>";
-                        //Tietojen päivitys
-                        echo "<a class=\"setting_par\" href=\"updateAccount.php\"><button>Päivitä</button></a>";
                     ?>
+                    <!-- Tietojen päivitys -->
+                    <input class="setting_par" type="button" onclick="location.href='./updateAccount.php'" value="Päivitä">
 
                     <!-- Tilin poisto -->
                     <h3 class="setting_rem">Tilinpoisto</h3>

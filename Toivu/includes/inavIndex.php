@@ -29,15 +29,15 @@
 
         if ($pos1 != false) { //ollaan kirjautumissivulla
             echo("<li class=\"nav__item active\"><a href=\"logInUser.php\"><img class=\"nav-icon\" src=\"images/iconfinder_sign-in_298868.png\" alt=\"Profile\"><span>Kirjaudu sisään</span></a></li>");
-            echo("<li class=\"nav__item\"><a href=\"createAccount.php\"><img class=\"nav-icon\" src=\"images/iconfinder_add_user_309049.png\" alt=\"Profile\"><span>Rekisteröinti</a></span></li>");
+            echo("<li class=\"nav__item\"><a href=\"createAccount.php\"><img class=\"nav-icon\" src=\"images/iconfinder_add_user_309049.png\" alt=\"Profile\"><span>Rekisteröinti</span></a></li>");
         }
         else if ($pos2 != false) { //ollaan rekisteröintisivulla
             echo("<li class=\"nav__item\"><a href=\"logInUser.php\"><img class=\"nav-icon\" src=\"images/iconfinder_sign-in_298868.png\" alt=\"Profile\"><span>Kirjaudu sisään</span></a></li>");
-            echo("<li class=\"nav__item active\"><a href=\"createAccount.php\"><img class=\"nav-icon\" src=\"images/iconfinder_add_user_309049.png\" alt=\"Profile\"><span>Rekisteröinti</a></span></li>");
+            echo("<li class=\"nav__item active\"><a href=\"createAccount.php\"><img class=\"nav-icon\" src=\"images/iconfinder_add_user_309049.png\" alt=\"Profile\"><span>Rekisteröinti</span></a></li>");
         }
         else {
             echo("<li class=\"nav__item\"><a href=\"logInUser.php\"><img class=\"nav-icon\" src=\"images/iconfinder_sign-in_298868.png\" alt=\"Profile\"><span>Kirjaudu sisään</span></a></li>");
-            echo("<li class=\"nav__item\"><a href=\"createAccount.php\"><img class=\"nav-icon\" src=\"images/iconfinder_add_user_309049.png\" alt=\"Profile\"><span>Rekisteröinti</a></span></li>");
+            echo("<li class=\"nav__item\"><a href=\"createAccount.php\"><img class=\"nav-icon\" src=\"images/iconfinder_add_user_309049.png\" alt=\"Profile\"><span>Rekisteröinti</span></a></li>");
         }
     }
 ?>
