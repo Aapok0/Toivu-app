@@ -30,7 +30,7 @@
         <!-- Jquery -->
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <!-- Toivu styles -->
-        <link rel="stylesheet" href="css/main.css"/>
+        <link rel="stylesheet" href="css/main.min.css"/>
         <link rel="stylesheet" media="print" href="css/print.css">
 </head>
 <body>
