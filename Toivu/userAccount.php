@@ -97,17 +97,22 @@
                     <div class="advice-column">
                         <h4 class="text-center">Hengitysharjoitukset</h4>
                         <img class="front-img" src="images/nose-breathing2.jpg" alt="Nenähengitys">
-                        <p class="advice">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, aperiam! Nisi facilis inventore nulla, obcaecati mollitia optio asperiores, voluptatum quo, distinctio unde eius quaerat deserunt autem corrupti explicabo voluptatibus error.
-                        Nobis at repudiandae expedita tempore laborum impedit, eligendi accusantium ut, sit temporibus quibusdam earum dolorum iusto! Optio cupiditate ut neque veniam nam, ipsam aliquid nisi, est ipsum itaque soluta harum.
-                        Fugiat incidunt, voluptates sit iste dignissimos quibusdam, dolores molestias deserunt fugit facilis repellat. Accusantium quis, explicabo fuga, reiciendis autem expedita eaque rerum laboriosam architecto animi ad fugiat officia exercitationem repudiandae.</p>
+                        <p class="advice">Oikein tehdyllä hengitysharjoituksella on rentouttava vaikutus. Hengityksessä käytetään useita eri hengityslihaksia, joista pallea on tehokkain. Stressaantuneena pallean 
+                        käyttö hengityksessä kuitenkin vähenee ja apuhengityslihaksien osus kasvaa. Tämä tekee hengityksestä vaikeampaa ja voi johtaa ahdistuksen tunteeseen. Palleahengityksessä pyritään käyttämään 
+                        hengityslihaksena palleaa apuhengityslihaksien sijaan. Palleahengitystä voi tehdä joko seisten, istuen tai selinmakuulta. Kiinnitä huomiota hengitykseen. Sisäänhengitys lähtee syvältä palleasta 
+                        ja keuhkot täytetään ilmalla alas asti. Oikean hengitystekniikan myötä muut lihasryhmät rentoutuvat ja rauhallisuuden tunne lisääntyy lähes välittömästi.
+                        <br><br>Lähde: www.mielenterveystalo.fi
+                        </p>
                     </div>
 
                     <div class="advice-column">
                         <h4 class="text-center">Apua nukahtamiseen</h4>
                         <img class="front-img" src="images/sleep-problems.jpg" alt="Uniongelmat">
-                        <p class="advice">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, aperiam! Nisi facilis inventore nulla, obcaecati mollitia optio asperiores, voluptatum quo, distinctio unde eius quaerat deserunt autem corrupti explicabo voluptatibus error.
-                        Nobis at repudiandae expedita tempore laborum impedit, eligendi accusantium ut, sit temporibus quibusdam earum dolorum iusto! Optio cupiditate ut neque veniam nam, ipsam aliquid nisi, est ipsum itaque soluta harum.
-                        Fugiat incidunt, voluptates sit iste dignissimos quibusdam, dolores molestias deserunt fugit facilis repellat. Accusantium quis, explicabo fuga, reiciendis autem expedita eaque rerum laboriosam architecto animi ad fugiat officia exercitationem repudiandae.</p>
+                        <p class="advice">Unettomuuteen voi olla apuna elämäntapojen, rutiinien ja ajatusmallien muuttaminen. Tapojen muuttaminen voi olla vaikeaa ja vaatia paljon harjoittelua. Epäsäännöllisessä vuorotyössä 
+                        itselle sopivan unirytmin rakentaminen voi olla haasteellista ja vaatia erityistä huomioimista. Unettomuuden hoidossa huomioitavia seikkoja ovat muun muassa elämäntavat, liikunta, ravinto, iltarutiinit 
+                        ja nukkumisympäristö. Ennen nukkumaanmenoa on hyvä rentoutua. Rentoutumistapoja voivat olla esimerkiksi hengitysharjoitukset tai lihasrentoutukset.
+                        <br><br>Lähde: www.mielenterveystalo.fi
+                        </p>
                     </div>
                 </div>
                 <!-- Ensimmäinen kolumni loppuu -->
@@ -117,17 +122,22 @@
                     <div class="advice-column">
                         <h4 class="text-center">Lähde liikkeelle!</h4>
                         <img class="front-img" src="images/people-walking-dog-.jpg" alt="Ulkona kävely">
-                        <p class="advice">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, aperiam! Nisi facilis inventore nulla, obcaecati mollitia optio asperiores, voluptatum quo, distinctio unde eius quaerat deserunt autem corrupti explicabo voluptatibus error.
-                        Nobis at repudiandae expedita tempore laborum impedit, eligendi accusantium ut, sit temporibus quibusdam earum dolorum iusto! Optio cupiditate ut neque veniam nam, ipsam aliquid nisi, est ipsum itaque soluta harum.
-                        Fugiat incidunt, voluptates sit iste dignissimos quibusdam, dolores molestias deserunt fugit facilis repellat. Accusantium quis, explicabo fuga, reiciendis autem expedita eaque rerum laboriosam architecto animi ad fugiat officia exercitationem repudiandae.</p>
+                        <p class="advice">Liikunta on yksi hyvinvoinnin perustoista. Liikunta auttaa ylläpitämään lihaksistoa ja luustoa sekä laskee verenpainetta. Liikunnalla voidaan purkaa vaikeita tunteita ja vähentää stressiä. 
+                        Säännöllinen liikunta on myös hyvä keino ehkäistä masennusta. Liikunnan seurauksena erittyy mielihyvän tuntemuksesta vastaavia kehon hormoneja. Liikunnalla voidaan myös parantaa itseluottamusta ja itsetuntoa. 
+                        Liikunta on näin ollen erittäin hyvä keino rentoutumiseen ja palautumiseen osana arkea. Muista, että liikunnan ei aina tarvitse olla fyysisesti raskasta - esimerkiksi kävely on hyvä liikunnan muoto, jonka voi 
+                        lisätä arkeen hyötyliikuntana. 
+                        <br><br>Lähde: www.mielenterveystalo.fi
+                        </p>
                     </div>
 
                     <div class="advice-column">
                         <h4 class="text-center">Miten tauottaa työpäivää?</h4>
                         <img class="front-img" src="images/hammock-break.jpg" alt="Tauko">
-                        <p class="advice">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, aperiam! Nisi facilis inventore nulla, obcaecati mollitia optio asperiores, voluptatum quo, distinctio unde eius quaerat deserunt autem corrupti explicabo voluptatibus error.
-                        Nobis at repudiandae expedita tempore laborum impedit, eligendi accusantium ut, sit temporibus quibusdam earum dolorum iusto! Optio cupiditate ut neque veniam nam, ipsam aliquid nisi, est ipsum itaque soluta harum.
-                        Fugiat incidunt, voluptates sit iste dignissimos quibusdam, dolores molestias deserunt fugit facilis repellat. Accusantium quis, explicabo fuga, reiciendis autem expedita eaque rerum laboriosam architecto animi ad fugiat officia exercitationem repudiandae.</p>
+                        <p class="advice">Taukojen pitäminen työpäivän aikana on tärkeä osa töissä jaksamista. Tauot pienentävät terveydelle haitallista kehon rasitusta ja kokonaiskuormitusta. Tauot lisäävät myös työtehokkuutta. Tauon 
+                        aikana kannattaa harjoittaa taukoliikuntaa. Taukoliikunnassa voit verrytellä työpäivän aikana väsyviä lihaksia, jotta lihakset kestävät paremmin rasitusta jäljellä olevan työpäivän aikana. Venyttelyn ja lihasten 
+                        herättelyn aikaansaama verenkierto lihaksissa voivat myös olla apuna väsymyksen tunteen ehkäisemiseksi. Taukoliikuntaa olisi hyvä tehdä ainakin 2-3 kertaa työpäivän aikana. 
+                        <br><br>Lähde: www.työkykypassi.fi
+                        </p>
                     </div>
                 </div>
                 <!-- Toinen kolumni loppuu -->
