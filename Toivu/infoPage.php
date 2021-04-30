@@ -83,6 +83,7 @@
         <!-- Skriptit alkaa -->
         <!-- Toivu scripts -->
         <script src="js/collapse-menu.js"></script>
+        <script src="js/confirmEmpty.js"></script>
         <!-- Skriptit loppuu -->
 
 <?php

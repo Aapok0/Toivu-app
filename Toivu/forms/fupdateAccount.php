@@ -114,7 +114,7 @@
         <p>
             <br />
             <input type="submit" name="submitSex" value="Päivitä"/>
-            <input type="reset"  value="Tyhjennä"/>
+            <input type="reset" onclick="return confirmEmpty()" value="Tyhjennä"/>
             <input type="button" onclick="location.href='userSettings.php'" value="Palaa takaisin"/>
         </p>
     </form>
