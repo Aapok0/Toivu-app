@@ -97,6 +97,7 @@
         <!-- Skriptit alkaa -->
         <!-- Toivu scripts -->
         <script src="js/collapse-menu.js"></script>
+        <script src="js/confirmEmpty.js"></script>
         <script src="js/ToivuTheme.js"></script>
         <!-- amGraph scripts -->
         <script src="amcharts4/core.js"></script>

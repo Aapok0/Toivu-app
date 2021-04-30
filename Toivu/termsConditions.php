@@ -28,7 +28,7 @@
                             </button>
                             <!-- Navigaatiolinkit alkaa -->
                             <ul class="nav__wrapper no-bullets">
-                                <li class="nav__item active">
+                                <li class="nav__item">
                                     <a href="index.php">
                                         <img class="nav-icon" src="images/iconfinder_home_1608930.png" alt="Home">
                                         <span>Koti</span>
@@ -78,6 +78,7 @@
         <!-- Skriptit alkaa -->
         <!-- Toivu scripts -->
         <script src="js/collapse-menu.js"></script>
+        <script src="js/confirmEmpty.js"></script>
         <!-- Skriptit loppuu -->
 
 <?php

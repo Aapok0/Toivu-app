@@ -22,7 +22,7 @@
         </p>
         <p>
             <input type="submit" name="submitContact" value="Lähetä"/>
-            <input type="reset"  value="Tyhjennä"/>
+            <input type="reset" onclick="return confirmEmpty()" value="Tyhjennä"/>
         </p>
     </form>
 </fieldset>

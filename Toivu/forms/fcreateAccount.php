@@ -75,7 +75,7 @@
         <p>
             <br />
             <input type="submit" name="submitUser" value="Rekisteröidy"/>
-            <input type="reset"  value="Tyhjennä"/>
+            <input type="reset" onclick="return confirmEmpty()" value="Tyhjennä"/>
             <input type="button" onclick="location.href='index.php'" value="Palaa takaisin"/>
         </p>
     </form>

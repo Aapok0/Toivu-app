@@ -98,12 +98,14 @@
         </div>
 
         <!-- Skriptit alkaa -->
-        <!-- Toivu scripts -->
-        <script src="js/collapse-menu.js"></script>
-        <script src="js/openMessage.js"></script>
-        <script src="js/removeMessage.js"></script>
         <!-- Jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <!-- Toivu scripts -->
+        <script src="js/collapse-menu.js"></script>
+        <script src="js/confirmEmpty.js"></script>
+        <script src="js/openMessage.js"></script>
+        <script src="js/removeMessage.js"></script>
         <!-- Skriptit loppuu -->
 
 <?php

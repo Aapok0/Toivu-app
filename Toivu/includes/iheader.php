@@ -11,7 +11,7 @@
         <meta charset="utf-8"/>
         <meta name="description" content="HRV-analysis web-application">
         <meta name="author" content="Aapo Kokko, Roni Heininen, Aku Korhonen and Jaakko Buchelnikov">
-        <title>Toivu - 1.0</title>
+        <title>Toivu - 1.0.2</title>
 
         <!-- ** MOBIILIMETA ** -->
         <meta name="viewport" content="width=device-width, initial-scale=1"/>

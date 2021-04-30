@@ -24,7 +24,7 @@
         </p>
         <p>
             <input type="submit" name="submitSupport" value="Lähetä"/>
-            <input type="reset"  value="Tyhjennä"/> 
+            <input type="reset" onclick="return confirmEmpty()" value="Tyhjennä"/> 
         </p>
     </form>
 </fieldset>

@@ -8,7 +8,7 @@
         <p>
             <br />
             <input type="submit" name="submitPass" value="Lähetä"/>
-            <input type="reset"  value="Tyhjennä"/>
+            <input type="reset" onclick="return confirmEmpty()" value="Tyhjennä"/>
             <input type="button" onclick="location.href='logInUser.php'" value="Palaa takaisin"/>
         </p>
     </form>

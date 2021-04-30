@@ -106,18 +106,21 @@
                 else if ($_POST['givenPassword'] != $_POST['givenPasswordVerify']) { //salasanat täsmää
                     $_SESSION['swarningInputCreate'] = "Annettu salasana ja vahvistus eivät ole samat";
                 }
+                else if (!isset($_POST['givenPerm'])) { //onko annettu lupa kerätä tietoja?
+                    $_SESSION['swarningInputCreate'] = "Henkilötietojen keräämiselle tulee antaa lupa, jotta sovellusta voi käyttää.";
+                }
+                else if (!isset($_POST['givenTerms'])) { //onko hyväksytty käyttöehdot?
+                    $_SESSION['swarningInputCreate'] = "Rekisteröityminen vaatii käyttöehtojen hyväksymisen.";
+                }
                 else if (!empty($_POST['givenBday'])) { //onko päivämäärää annettu?
                     //onko päivämäärä valittu avautuvasta kalenterista ja onko se validi?
                     //regex löydetty sivustolta https://www.sitepoint.com/community/t/php-regex-needed-for-dd-mm-yyyy-format/6945/5, alkuperäinen lähde https://regexlib.com/REDetails.aspx?regexp_id=409
                     if (!preg_match('~^(((0[1-9]|[12]\\d|3[01])\\/(0[13578]|1[02])\\/((19|[2-9]\\d)\\d{2}))|((0[1-9]|[12]\\d|30)\\/(0[13456789]|1[012])\\/((19|[2-9]\\d)\\d{2}))|((0[1-9]|1\\d|2[0-8])\\/02\\/((19|[2-9]\\d)\\d{2}))|(29\\/02\\/((1[6-9]|[2-9]\\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$~', $_POST['givenBday'])) {
                         $_SESSION['swarningInputCreate'] = "Syntymäpäivä annettu väärässä muodossa. Valitse päivä avautuvasta kalenterista.";
                     }
-                }
-                else if (!isset($_POST['givenPerm'])) { //onko annettu lupa kerätä tietoja?
-                    $_SESSION['swarningInputCreate'] = "Henkilötietojen keräämiselle tulee antaa lupa, jotta sovellusta voi käyttää.";
-                }
-                else if (!isset($_POST['givenTerms'])) { //onko hyväksytty käyttöehdot?
-                    $_SESSION['swarningInputCreate'] = "Rekisteröityminen vaatii käyttöehtojen hyväksymisen.";
+                    else {
+                        include("includes/imoveToDB.php");
+                    }
                 }
                 else { //kaikki validaatiot ok? -> siirrytään laittamaan tietokantaan
                     include("includes/imoveToDB.php");
@@ -137,9 +140,13 @@
         </div>
         
         <!-- Skriptit alkaa -->
+        <!-- Jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <!-- Toivu scripts -->
         <script src="js/collapse-menu.js"></script>
         <script src="js/datepicker.js"></script>
+        <script src="js/confirmEmpty.js"></script>
         <!-- Skriptit loppuu -->
 
 <?php
