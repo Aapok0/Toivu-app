@@ -10,7 +10,7 @@
         <p>
             <br />
             <input type="submit" name="submitName" value="Päivitä"/>
-            <input type="reset"  value="Tyhjennä"/>
+            <input type="reset" onclick="return confirmEmpty()" value="Tyhjennä"/>
             <input type="button" onclick="location.href='userSettings.php'" value="Palaa takaisin"/>
         </p>
     </form>
@@ -24,7 +24,7 @@
         <p>
             <br />
             <input type="submit" name="submitEmail" value="Päivitä"/>
-            <input type="reset"  value="Tyhjennä"/>
+            <input type="reset" onclick="return confirmEmpty()" value="Tyhjennä"/>
             <input type="button" onclick="location.href='userSettings.php'" value="Palaa takaisin"/>
         </p>
     </form>
@@ -47,7 +47,7 @@
         <p>
             <br />
             <input type="submit" name="submitPass" value="Päivitä"/>
-            <input type="reset"  value="Tyhjennä"/>
+            <input type="reset" onclick="return confirmEmpty()" value="Tyhjennä"/>
             <input type="button" onclick="location.href='userSettings.php'" value="Palaa takaisin"/>
         </p>
     </form>
@@ -63,7 +63,7 @@
         <p>
             <br />
             <input type="submit" name="submitHeight" value="Päivitä"/>
-            <input type="reset"  value="Tyhjennä"/>
+            <input type="reset" onclick="return confirmEmpty()" value="Tyhjennä"/>
             <input type="button" onclick="location.href='userSettings.php'" value="Palaa takaisin"/>
         </p>
     </form>
@@ -79,7 +79,7 @@
         <p>
             <br />
             <input type="submit" name="submitWeight" value="Päivitä"/>
-            <input type="reset"  value="Tyhjennä"/>
+            <input type="reset" onclick="return confirmEmpty()" value="Tyhjennä"/>
             <input type="button" onclick="location.href='userSettings.php'" value="Palaa takaisin"/>
         </p>
     </form>
@@ -95,7 +95,7 @@
         <p>
             <br />
             <input type="submit" name="submitBday" value="Päivitä"/>
-            <input type="reset"  value="Tyhjennä"/>
+            <input type="reset" onclick="return confirmEmpty()" value="Tyhjennä"/>
             <input type="button" onclick="location.href='userSettings.php'" value="Palaa takaisin"/>
         </p>
     </form>
